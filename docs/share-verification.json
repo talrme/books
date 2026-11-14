@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-14",
+  "layouts": 352,
+  "checks": [
+    "Bookshelf shares clean root URL without query, page, order or view preferences; copy feedback and dialog dismissal work",
+    "All four books share exact book from inside story, open on cover in a fresh browser page; native share receives correct title/URL; modal keys never turn or close the book",
+    "352 cover/story/back layouts across eight sizes: subtle sharing stays reachable without overlapping navigation; hidden throughout fullscreen and restored on exit",
+    "Native cancellation stays quiet; native failure offers copy; denied clipboard selects link with manual-copy instructions; browsers without native sharing retain Copy link"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Native OS share sheet mocked; physical Safari/iPad not tested."
+  ]
+}

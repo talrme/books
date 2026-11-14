@@ -8,7 +8,7 @@
  const vars = b => `--book-bg:${b.color};--book-ink:${b.ink};--frame:${frame(b)}`;
  const $ = s => document.querySelector(s);
  const icon = (name) => {
-   const paths = {settings:'<path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="var(--bg)"/><circle cx="16" cy="17" r="3" fill="var(--bg)"/>',expand:'<path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/>',reread:'<path fill="#fff9dd" d="M12 9C8 6 5 6 2 7v13c4-1 7 0 10 2 3-2 6-3 10-2V7c-3-1-6-1-10 2Z"/><path d="M12 10v12M7 3a7 7 0 0 1 12 1M19 1v4h-4"/><path fill="#efbc42" stroke="none" d="m5 1 1 2 2 1-2 1-1 2-1-2-2-1 2-1Z"/>',bookshelf:'<path fill="#e99eab" d="m3 5 4-1 3 15-4 1Z"/><path fill="#efd066" d="M10 3h4v16h-4Z"/><path fill="#97bedc" d="m16 7 4 1-2 12-4-1Z"/><path d="M2 21h20M4 8l3-1M11 7h2m4 3 2 1"/>',right:'<path d="m9 5 7 7-7 7"/>',left:'<path d="m15 5-7 7 7 7"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',book:'<path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2Z"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',replay:'<path d="M3 10a9 9 0 1 1 2 8M3 3v7h7"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/>',moon:'<path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10Z"/>',flower:'<path d="M12 8C3-5-5 13 8 12c-13 9 5 17 4 4 9 13 17-5 4-4C29 3 11-5 12 8Z"/><circle cx="12" cy="12" r="2"/>',rainbow:'<path d="M2 20v-5a10 10 0 0 1 20 0v5M6 20v-5a6 6 0 0 1 12 0v5M10 20v-5a2 2 0 0 1 4 0v5"/>',spark:'<path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/>',leaf:'<path d="M20 3C6 0 0 11 7 18S24 18 20 3ZM3 22 16 9"/>',compass:'<circle cx="12" cy="12" r="10"/><path d="m16 8-2 6-6 2 2-6Z"/>',cloud:'<path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 1 1 0 12Z"/>'};
+   const paths = {share:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10.5 6-4M9 13.5l6 4"/>',settings:'<path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="var(--bg)"/><circle cx="16" cy="17" r="3" fill="var(--bg)"/>',expand:'<path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/>',reread:'<path fill="#fff9dd" d="M12 9C8 6 5 6 2 7v13c4-1 7 0 10 2 3-2 6-3 10-2V7c-3-1-6-1-10 2Z"/><path d="M12 10v12M7 3a7 7 0 0 1 12 1M19 1v4h-4"/><path fill="#efbc42" stroke="none" d="m5 1 1 2 2 1-2 1-1 2-1-2-2-1 2-1Z"/>',bookshelf:'<path fill="#e99eab" d="m3 5 4-1 3 15-4 1Z"/><path fill="#efd066" d="M10 3h4v16h-4Z"/><path fill="#97bedc" d="m16 7 4 1-2 12-4-1Z"/><path d="M2 21h20M4 8l3-1M11 7h2m4 3 2 1"/>',right:'<path d="m9 5 7 7-7 7"/>',left:'<path d="m15 5-7 7 7 7"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',book:'<path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2Z"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',replay:'<path d="M3 10a9 9 0 1 1 2 8M3 3v7h7"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/>',moon:'<path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10Z"/>',flower:'<path d="M12 8C3-5-5 13 8 12c-13 9 5 17 4 4 9 13 17-5 4-4C29 3 11-5 12 8Z"/><circle cx="12" cy="12" r="2"/>',rainbow:'<path d="M2 20v-5a10 10 0 0 1 20 0v5M6 20v-5a6 6 0 0 1 12 0v5M10 20v-5a2 2 0 0 1 4 0v5"/>',spark:'<path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/>',leaf:'<path d="M20 3C6 0 0 11 7 18S24 18 20 3ZM3 22 16 9"/>',compass:'<circle cx="12" cy="12" r="10"/><path d="m16 8-2 6-6 2 2-6Z"/>',cloud:'<path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 1 1 0 12Z"/>'};
    return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.spark}</svg>`;
  };
  const esc = v => String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -34,8 +34,46 @@
  document.documentElement.style.setProperty('--ink',concept.ink);
  document.documentElement.style.setProperty('--accent',concept.accent);
  document.title = concept.name+' · Miri’s Little World';
- $('#app').innerHTML = `<main id="library"><header class="site-header"><a class="brand" href="./"><span class="brand-mark"><img src="shared/book-stack.svg" alt="" width="38" height="38"></span><h1>Miri’s books</h1></a><div class="shelf-tools"><button class="shelf-settings-trigger" data-shelf-settings aria-label="Settings">${icon('settings')}<span>Settings</span></button><button class="fullscreen-toggle shelf-fullscreen" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div id="shelf"></div></main><section id="reader" class="reader reader-paper" hidden role="region" aria-label="Book reader"><header class="reader-header"><button class="back-library" data-close aria-label="Back to bookshelf">${icon('left')}<span>Bookshelf</span></button><span class="reader-title"></span><div class="reader-tools"><button class="fullscreen-toggle" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div class="reader-stage" id="reader-stage"></div><footer class="reader-footer"><div class="reader-controls"><button class="page-prev" data-prev aria-label="Previous page">${icon('left')}</button><div class="reading-position"><span class="page-counter" aria-live="polite" aria-atomic="true"></span><nav class="page-dots" aria-label="Book pages"></nav></div><button class="page-next" data-next aria-label="Next page">${icon('right')}</button></div></footer></section><div class="sr-only" role="status" id="status"></div>`;
+ $('#app').innerHTML = `<main id="library"><header class="site-header"><a class="brand" href="./"><span class="brand-mark"><img src="shared/book-stack.svg" alt="" width="38" height="38"></span><h1>Miri’s books</h1></a><div class="shelf-tools"><button class="shelf-settings-trigger" data-shelf-settings aria-label="Settings">${icon('settings')}<span>Settings</span></button><button class="fullscreen-toggle shelf-fullscreen" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div id="shelf"></div></main><section id="reader" class="reader reader-paper" hidden role="region" aria-label="Book reader"><header class="reader-header"><button class="back-library" data-close aria-label="Back to bookshelf">${icon('left')}<span>Bookshelf</span></button><span class="reader-title"></span><div class="reader-tools"><button class="fullscreen-toggle" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div class="reader-stage" id="reader-stage"></div><footer class="reader-footer"><div class="reader-controls"><button class="page-prev" data-prev aria-label="Previous page">${icon('left')}</button><div class="reading-position"><span class="page-counter" aria-live="polite" aria-atomic="true"></span><nav class="page-dots" aria-label="Book pages"></nav></div><button class="page-next" data-next aria-label="Next page">${icon('right')}</button></div></footer></section><div class="share-dock"><button data-open-share aria-label="Share" title="Share">${icon('share')}<span>Share</span></button></div><dialog class="share-dialog" aria-labelledby="share-title"><div class="share-heading"><h2 id="share-title">Share</h2><button data-close-share aria-label="Close sharing">×</button></div><p class="share-description"></p><label for="share-url">Link</label><input id="share-url" type="url" readonly spellcheck="false"><div class="share-actions"><button data-copy-link>Copy link</button><button data-native-share>${icon('share')}<span>Share…</span></button></div><p class="share-status" role="status" aria-live="polite"></p></dialog><div class="sr-only" role="status" id="status"></div>`;
 
+
+ // Share the selected book, not its current page or local shelf preferences.
+ const shareDialog=$('.share-dialog');
+ let shareDetails=null;
+ function openShare() {
+   if(isSiteFullscreen())return;
+   shelfOrder.cancelDrag();
+   const url=new URL('./',location.href);
+   if(active)url.hash='book='+encodeURIComponent(active.id);
+   shareDetails={title:active?active.title:concept.name,url:url.href};
+   $('#share-title').textContent=active?'Share this book':'Share bookshelf';
+   $('.share-description').textContent=active?active.title:'Miri’s books';
+   $('#share-url').value=shareDetails.url;
+   $('.share-status').textContent='';
+   $('[data-native-share]').hidden=typeof navigator.share!=='function';
+   shareDialog.showModal();
+   $('[data-close-share]').focus({preventScroll:true});
+ }
+ async function copyShareLink() {
+   if(!shareDetails)return;
+   const link=shareDetails.url,status=$('.share-status');
+   try{
+     if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');
+     await navigator.clipboard.writeText(link);status.textContent='Link copied.';
+   }catch{
+     const input=$('#share-url');input.focus();input.select();
+     let copied=false;try{copied=document.execCommand('copy');}catch{}
+     status.textContent=copied?'Link copied.':'Link selected. Touch and hold to copy, or use your keyboard’s Copy command.';
+   }
+ }
+ async function nativeShare() {
+   if(!shareDetails)return;
+   if(typeof navigator.share!=='function'){await copyShareLink();return;}
+   try{await navigator.share(shareDetails);}
+   catch(error){if(error.name!=='AbortError')$('.share-status').textContent='Sharing is unavailable right now. You can copy the link instead.';}
+ }
+ shareDialog.addEventListener('close',()=>{$('[data-open-share]').focus({preventScroll:true});});
+ shareDialog.addEventListener('click',e=>{if(e.target===shareDialog){const r=shareDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)shareDialog.close();}});
 
  const reader=$('#reader'),fullscreenRoot=document.documentElement;
  let fullscreenPending=false,wasSiteFullscreen=false,lastFullscreenExit=-Infinity;
@@ -202,6 +240,10 @@
  document.addEventListener('click',e=>{
    if(e.target.closest('.brand')&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&e.button===0){e.preventDefault();renderShelf();window.scrollTo(0,0);return;}
    const b=e.target.closest('button');if(!b)return;
+   if(b.hasAttribute('data-open-share')){openShare();return;}
+   if(b.hasAttribute('data-close-share')){shareDialog.close();return;}
+   if(b.hasAttribute('data-copy-link')){void copyShareLink();return;}
+   if(b.hasAttribute('data-native-share')){void nativeShare();return;}
    if(b.hasAttribute('data-fullscreen')){void toggleFullscreen();return;}
    if(b.dataset.open){openBook(b.dataset.open,-1);return;}
    if(b.hasAttribute('data-close')){closeBook();return;}
@@ -215,7 +257,7 @@
    if(e.key==='Escape'&&(isSiteFullscreen()||performance.now()-lastFullscreenExit<350)){
      e.preventDefault();void leaveFullscreen().catch(()=>{});return;
    }
-   if(!active)return;
+   if($('dialog[open]')||!active)return;
    if(e.key==='Escape'){e.preventDefault();closeBook();}
    if(e.key==='ArrowRight'){e.preventDefault();turnTo(pageIndex+1);}
    if(e.key==='ArrowLeft'){e.preventDefault();turnTo(pageIndex-1);}

@@ -18,7 +18,7 @@ Settings also lets you choose **Gentle page turn** or **Instant — no animation
 
 Books finish on a dimensional back cover with a large “The End,” a small reused cover illustration, a tiny creation month/year beneath the image, and playful Read Again and Bookshelf actions. Portrait phones turn a full-width leaf from its outer edge; other layouts turn the right half-page left across the center (240 ms). Previous reverses the direction. Both stay clipped to the book bounds. Covers fade in place; rapid navigation immediately interrupts the animation. On wider layouts the old stationary half stays visible until the leaf lands, and the next illustration is decoded before reveal to avoid flicker. A C before the numbered navigation returns to the front cover.
 
-Reading progress are saved in this browser. Tapping a cover always starts at the cover. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.
+Reading progress is saved in this browser. Tapping a cover always starts at the cover. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.
 
 The 40 individual illustrations use the parent-supplied family reference, including Miri’s light braids and her missing two upper front teeth. The raw family photo is not committed or published. Images are screen-oriented 1254-pixel square illustrations, optimized to WebP.
 
@@ -62,3 +62,5 @@ Favorites have been removed across all devices. Ignore legacy favorites/start-vi
 The shelf has no drag icons or Continue reading links. Ignore legacy showContinue preferences. Covers support mouse drag, touch hold-and-drag, and keyboard reordering.
 
 Book view is saved in `miri-books-shelf-v1` as `view: "covers" | "list"`, defaulting to covers for older preferences. Settings offers Bookshelf and Compact list. The list shows small dimensional covers, titles, page counts, and creation month/year; the whole row opens or reorders the book. Mouse drag, touch hold-and-drag and keyboard arrows work in both views. Sorting and both resets preserve the chosen view; synchronize view changes across tabs. Use `shared/book-stack.svg` beside the site title instead of the flower, including on narrow phones.
+
+Use the subtle Share button in the bottom right to share the bookshelf, or the exact book currently open. Book links start on the front cover. The panel offers Copy link and the device’s Share option where supported; sharing is hidden in fullscreen. Its connected-dots icon follows the existing Workout site.

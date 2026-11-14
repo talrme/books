@@ -169,3 +169,20 @@ body.theme-parade .book-drag-ghost{position:fixed;z-index:1000;pointer-events:no
 .books-list .book-card.drop-before:before,.books-list .book-card.drop-after:after{height:3px;width:auto;left:8px;right:8px;bottom:auto;box-shadow:0 0 0 2px #fffaf0}.books-list .book-card.drop-before:before{top:-7px}.books-list .book-card.drop-after:after{top:auto;bottom:-7px}
 @media(max-width:600px){.theme-parade .list-cover-wrap .cover-button{gap:14px;min-height:88px;padding:10px 12px}.list-thumbnail{width:48px;height:60px}.list-details strong{font-size:17px}.list-details>span{font-size:10px}.list-arrow{display:none}.theme-parade .books-grid.books-list{padding:20px 0}}
 @media(max-width:360px){.site-header .brand-mark{display:grid;width:25px;height:25px}.brand{gap:5px}.brand h1{font-size:18px}.site-fullscreen .site-header{padding-right:46px}}
+
+/* Quiet sharing stays outside the book and disappears during fullscreen reading. */
+.theme-parade #library{padding-bottom:78px}
+.share-dock{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));z-index:25}
+.share-dock button{display:flex;align-items:center;justify-content:center;gap:7px;min-width:44px;min-height:44px;padding:8px 11px;color:#70697b;background:#f8ead2eb;border:1px solid #28275112;border-radius:22px;font-size:11px}
+.share-dock svg{width:16px;height:16px}.share-dock button:hover{color:#282751;background:#fffaf0}
+.site-fullscreen .share-dock{display:none}
+.share-dialog{width:min(400px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:22px;border:1.5px solid #282751;border-radius:17px 13px 19px 14px;background:#fffaf0;color:#282751;box-shadow:5px 6px 0 #28275120}
+.share-dialog::backdrop{background:#28275160}.share-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.share-heading h2{font-family:var(--round);font-size:23px;letter-spacing:-.04em}.share-heading button{min-width:44px;min-height:44px;border:1px solid #28275125;border-radius:50%;font-size:28px}
+.share-description{font-size:14px;line-height:1.5;margin:14px 0 20px}.share-dialog label{display:block;font-size:11px;margin-bottom:7px;color:#70697b}.share-dialog input{width:100%;min-height:44px;border:1px solid #28275135;border-radius:9px;padding:10px;font:inherit;font-size:12px;background:white;color:#282751}
+.share-dialog input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.share-actions{display:flex;gap:10px;margin-top:16px}.share-actions button{min-height:44px;padding:10px 16px;border:1px solid #28275130;border-radius:11px;font-size:12px;font-weight:650;display:flex;align-items:center;justify-content:center;gap:8px}.share-actions [data-copy-link]{background:#eee9f7}.share-actions svg{width:17px;height:17px}.share-status{min-height:18px;font-size:11px;line-height:1.5;margin-top:13px;color:#70697b}
+@media(max-width:600px){.share-dock{right:max(8px,env(safe-area-inset-right))}.share-dock button{width:44px;padding:10px}.share-dock button>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+/* Keep sharing beside navigation, with scrollable page numbers on tighter widths. */
+html:not(.site-fullscreen) .reader-controls{padding-right:90px}
+.reading-position{min-width:0}.page-counter{flex-shrink:0}.page-dots{min-width:0;overflow-x:auto;scrollbar-width:none}.page-dots::-webkit-scrollbar{display:none}.page-dots button{flex-shrink:0}
+.page-prev,.page-next{flex-shrink:0}
+@media(max-width:600px){html:not(.site-fullscreen) .reader-controls{padding-right:56px}}
