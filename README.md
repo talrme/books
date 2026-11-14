@@ -1,77 +1,46 @@
-# Miri’s Little World
+# Miri’s books — Paper Parade
 
-Ten working static website designs, sharing three original illustrated storybooks for reading together around age four. Open `index.html` to compare the designs. Open `stories.html` to review the story drafts.
+A small family bookshelf with three illustrated books for reading together around age four. Paper Parade is the selected design, with uneven colorful borders, dimensional book bindings, and a compact header.
 
-## Website
+**Website:** https://talrme.github.io/books/
 
-Repository: https://github.com/talrme/books
+**Story review:** https://talrme.github.io/books/stories.html
 
-GitHub Pages: https://talrme.github.io/books/
+## Reading
 
-Each numbered design folder is a separate staging URL under that address.
+Open a large front cover, then tap the right side to turn it. Tap the left side to go back. Swipes, keyboard arrows, numbered navigation, and arrow buttons also work. Escape returns to the shelf. The reader fills the window and adapts to portrait or landscape without showing two story pages at once.
 
-## Preview
+Books finish on a back cover with a short description, their creation month and year, up to two randomly ordered other books, and read-again/bookshelf buttons. All three books were created in November 2026. Recommendations use the existing library; no AI requests occur while reading.
 
-Double-click `index.html`, or serve this folder for consistent browser storage:
+Favorites and reading progress are saved in this browser. Tapping a cover starts at the cover; an unfinished book also has a separate “Continue at page…” link. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.
+
+The 27 individual illustrations use the parent-supplied family reference, including Miri’s light braids and her missing two upper front teeth. The raw family photo is not committed or published. Images are screen-oriented 1254-pixel square illustrations, optimized to WebP.
+
+## Run or publish
+
+Open `index.html`, or serve this folder:
 
 ```sh
 python3 -m http.server 8080
 ```
 
-Visit http://localhost:8080. On an iPad on the same Wi-Fi, use your computer’s local network address and port 8080. No packages, build step, API key, login, or AI connection is needed. An internet connection is not needed after downloading the site.
+Visit http://localhost:8080. There are no packages, build steps, accounts, external fonts, runtime AI calls, or API keys. Publish this directory to GitHub Pages from the publishing branch's root; retain `.nojekyll` and relative asset paths. The old `03-paper-parade/` URL redirects to the root, preserving book links. The other design experiments and comparison gallery were removed after the parent selected Paper Parade. Git history retains prior versions.
 
-## Publish to GitHub Pages
+## Create and revise with Codex
 
-Copy the **contents of this folder**, including `.nojekyll`, into your repository root. In the repository’s Settings → Pages, choose deployment from your publishing branch and `/(root)`. The root URL opens the comparison gallery; each numbered folder is a separate working staging URL. All assets and links use relative paths, including on project Pages URLs.
+Open this project and say “I want a new book.” Follow the [five questions and editing workflow](docs/BOOK_CREATION.md): numbered storyboard, text/pacing edits, visual direction, illustrations, reading preview, revisions, and publication. Start at any stage for an existing book.
 
-Keep `shared/`, the ten numbered folders, and `previews/` together. The ten designs share the reader, story data, and illustrations; they are separate routes in one deployable static site. No other personal website has been changed.
+Current plans: [Swimming](docs/books/swim/PLAN.md), [Avi](docs/books/avi/PLAN.md), and [Blue bike adventure](docs/books/adventure/PLAN.md). New books use the [book-plan template](docs/templates/BOOK_PLAN.md).
 
-## What works
+Examples: “Give the Spaceship two pages,” “Move the dance party to page 5,” or “Keep page 4’s words, but change the illustration.” Suggestions alone do not change the public book.
 
-- All three books in every design: a cover, eight illustrated story pages, and an ending.
-- Book favorites and favorites filtering, saved per browser and origin.
-- Resume the last story page. State is shared across the ten staging designs on the same origin.
-- Click/tap arrows, swipe left/right, or use keyboard arrows. Escape returns to the shelf.
-- Browser back, direct book/page links, page indicators, read again, and return to shelf.
-- One story page at a time: illustration and text side by side in landscape; stacked in portrait. Layout changes preserve your place.
-- Distinct ripple, paper flutter, and dimensional turn transitions; opening and ending animation; reduced-motion support.
-- A persistent design shortlist in the comparison gallery.
+- `shared/books.js`: story words, image descriptions, back-cover descriptions, creation dates, and book colors.
+- `shared/library.js`: bookshelf, reader, favorites, progress, side taps, swipes, flips, and related books.
+- `shared/library.css`: Paper Parade shelf and responsive reader.
+- `shared/assets/`: one cover and eight illustrations per book.
+- `docs/STORY_GUIDE.md`: family and illustration notes.
+- `docs/DESIGN_GUIDE.md`: reader behavior and verification requirements.
+- `docs/art-prompts-family.json`: exact built-in image generation prompts for the current art.
+- `docs/verification.json`: most recent browser verification report.
 
-There are no games, hotspots, narration, sounds, live story generation, analytics, accounts, or backend. Favorites and progress do not sync between devices. Private browsing, cleared site data, a different hostname, and `file://` storage behavior can affect persistence. No service worker is installed; the site does not promise offline caching from a hosted URL.
-
-## The ten designs
-
-| Folder | Design | Main difference |
-|---|---|---|
-| `01-little-library/` | The Little Library | Warm paper, big book covers, classic shelf |
-| `02-moonbeam/` | Moonbeam | Midnight sky, arched covers, dim bedtime reader |
-| `03-paper-parade/` | Paper Parade | Bold type, wonky colored paper, playful energy |
-| `04-rainbow-room/` | The Rainbow Room | Pastel story tiles, rounded shapes, friendly room |
-| `05-reading-nook/` | The Reading Nook | Walnut shelf, clothbound-style books, warm light |
-| `06-story-cinema/` | Story Cinema | Large illustrated feature, small poster collection |
-| `07-sunday-stories/` | Sunday Stories | Numbered editorial journal, horizontal story rows |
-| `08-little-atlas/` | Little Atlas | Offset field-guide cards along a story trail |
-| `09-cloud-nine/` | Cloud Nine | One floating featured story, carousel and thumbnails |
-| `10-pocket-stories/` | Pocket Stories | Compact app-style list with simple tabs |
-
-## Edit or create books with Codex
-
-Open this folder as your Codex project. Say “I want a new book.” `AGENTS.md` routes Codex to the [five-question brief and editing workflow](docs/BOOK_CREATION.md).
-
-The workflow is: **five questions → numbered page plan → revise words and pacing → visual direction → illustrated reading preview → revisions → publish**. Start at any stage. Ask for page-count suggestions, move scenes to specific pages, split or combine pages, edit the words, or replace an illustration while keeping its text. Feedback can use page numbers or scene descriptions. Codex maintains the page mapping and regenerates only affected art.
-
-Current editable plans: [Swimming](docs/books/swim/PLAN.md), [Avi](docs/books/avi/PLAN.md), and [Blue bike adventure](docs/books/adventure/PLAN.md). New books use the [book-plan template](docs/templates/BOOK_PLAN.md).
-
-Examples: “Give the Spaceship two pages,” “Move the dance party to page 5,” “Suggest a gentler ending,” or “Keep page 4’s words, but redraw Miri using the family photo.” Asking for suggestions produces a proposal; it does not automatically change the public book.
-
-- `shared/books.js`: story text, image descriptions, colors, illustration style, page-turn style.
-- `shared/concepts.js`: ten design definitions.
-- `shared/app.js`: library, favorites, reader, gestures, progress, and animation logic.
-- `shared/styles.css`: responsive reader and all ten visual treatments.
-- `shared/assets/`: 27 optimized WebP images, three covers and 24 story illustrations.
-- `docs/STORY_GUIDE.md`: characters, family details, tone, and story summaries.
-- `docs/DESIGN_GUIDE.md`: layout, motion, accessibility, storage, and verification requirements.
-- `docs/art-prompts.json`: exact prompts used with the built-in image-generation tool.
-- `docs/verification.json`: automated browser verification results.
-
-The initial published illustrations are invented storybook interpretations. A family photo supplied afterward is the reference for future illustration work; the written character notes are in `docs/STORY_GUIDE.md`. The raw family photo is not included in this repository. Current assets are screen-oriented first-draft illustrations, approximately 414 × 414 pixels each; larger individual illustrations can be generated after choosing a direction.
+The site has no narration, sound, games, hotspots, analytics, backend, or service worker. Hosted URLs do not promise offline caching. Use the story-review page for reviewing the words and pictures together.

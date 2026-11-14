@@ -1,7 +1,8 @@
 {
   "date": "2026-11-13",
-  "browser": "Headless installed Google Chrome; touch input emulated via CDP",
-  "pageLayouts": 2400,
+  "design": "Paper Parade",
+  "browser": "Installed headless Google Chrome, including CDP touch emulation",
+  "layouts": 240,
   "viewports": [
     {
       "width": 320,
@@ -37,22 +38,24 @@
     }
   ],
   "checks": [
-    "10 shelves \u00d7 8 viewport sizes; 3 books \u00d7 cover + 8 pages + ending in every design and viewport",
-    "Favorites reload persistence, filtering, removal and empty state in all ten designs",
-    "Resume on reload and shelf reopen; page preserved through rotation; keyboard arrows, Escape, and direct page navigation",
-    "Browser state shared across staging designs",
-    "Cloud Nine carousel arrows and thumbnail selection",
-    "Browser back closes the reader",
-    "Touch-emulated swipe changes a page",
-    "Gallery filters, shortlist, and shortlist persistence",
-    "All 24 illustrated draft pages available for story review",
-    "All three animated turn styles; close and reopen during a transition"
+    "Three books from front cover through all numbered pages to back cover at eight phone/tablet/desktop sizes",
+    "Compact shelf with only selected design",
+    "Back covers have creation month/year and two different related books",
+    "Favorites persist after reload; filter and empty state work",
+    "Cover opens first; separate continue link preserves resume; rotation preserves page",
+    "Right and left sides of the page turn forward and backward",
+    "Keyboard arrows and Escape",
+    "Related book opens its front cover; read again opens current front cover",
+    "Browser back and bookmarked Paper Parade redirect",
+    "Touch swipe advances exactly once, with no synthetic-click double turn",
+    "Story review has 24 updated illustrations",
+    "Dimensional flip animation, rapid-tap locking, and close/open during a turn",
+    "Reader works when browser storage is unavailable"
   ],
   "issues": [],
   "errors": [],
-  "failedRequests": [],
+  "missing": [],
   "limitations": [
-    "Not tested on a physical iPad/Safari.",
-    "These browser checks ran against the local build before deployment."
+    "Not tested on a physical iPad/Safari."
   ]
 }

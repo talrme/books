@@ -2,17 +2,17 @@
 
 - Book ID: avi
 - Stage: Published first draft; open for revision
-- Current revision: 1 — initial published story
+- Current revision: 2 — family-reference illustrations and back cover
 - Audience and language: Age four, English, read together
 - Story brief: A story about becoming a big sister. One tiny brother. So much love.
 - Feeling: Warm, reassuring, child-sized wonder
 - Illustration style: Paper collage
-- Character references: See ../../STORY_GUIDE.md. These existing images predate the supplied family photo; use the family reference in future requested illustration revisions.
-- Motion: flutter
+- Character references: See ../../STORY_GUIDE.md. Current illustrations use the supplied family reference, including Miri’s light braids and missing two upper front teeth.
+- Motion: flip
 - Current story-page count: 8, excluding cover and ending
 - Pacing recommendation: Start from this eight-moment version; suggest a shorter, longer, or reordered sequence when the parent's feedback calls for it.
 - Publication scope: The first draft is already public. Follow the scope of the next edit request; suggestions alone do not change the published book.
-- Current reader: https://talrme.github.io/books/01-little-library/#book=avi&page=-1
+- Current reader: https://talrme.github.io/books/#book=avi&page=-1
 
 ## Numbered storyboard
 
@@ -20,7 +20,7 @@
 
 - Cover title: Avi, Our Rainbow Baby
 - Illustration: Existing Paper collage cover showing the story's central characters and setting.
-- Image status: Existing, published first draft.
+- Image status: Current family-reference cover.
 - Current asset: shared/assets/avi-0.webp
 
 ### Page 1 — avi-s01
@@ -28,7 +28,7 @@
 - Scene ID: avi-s01
 - Words: Miri has a very important job today. She is going to be a big sister! At the hospital, she waits with Abba. “Is Avi ready?”
 - Illustration: Miri and Abba wait outside the hospital with flowers for Mama and baby Avi.
-- Image status: Existing, published first draft; available for revision.
+- Image status: Current family-reference illustration; available for revision.
 - Current asset: shared/assets/avi-1.webp
 - Editorial notes: Awaiting parent feedback.
 
@@ -37,7 +37,7 @@
 - Scene ID: avi-s02
 - Words: Here comes Mama. And here comes… a tiny nose! Tiny fingers! Tiny Avi! “Welcome home, Rainbow Baby,” whispers Miri.
 - Illustration: Mama and Abba bring safely swaddled Avi home while Miri welcomes her baby brother.
-- Image status: Existing, published first draft; available for revision.
+- Image status: Current family-reference illustration; available for revision.
 - Current asset: shared/assets/avi-2.webp
 - Editorial notes: Awaiting parent feedback.
 
@@ -46,7 +46,7 @@
 - Scene ID: avi-s03
 - Words: Mama holds Avi close. Miri offers him one finger. His little hand curls around it. “Oh,” says Miri. “He knows me.”
 - Illustration: Miri gently touches Avi’s tiny hand while Mama cradles him safely.
-- Image status: Existing, published first draft; available for revision.
+- Image status: Current family-reference illustration; available for revision.
 - Current asset: shared/assets/avi-3.webp
 - Editorial notes: Awaiting parent feedback.
 
@@ -55,7 +55,7 @@
 - Scene ID: avi-s04
 - Words: Time for a dance party! Mama twirls. Miri wiggles. Abba holds Avi and gently sways. Avi gives one enormous, very tiny yawn.
 - Illustration: Miri and Mama dance while Abba gently sways with baby Avi safely cradled in his arms.
-- Image status: Existing, published first draft; available for revision.
+- Image status: Current family-reference illustration; available for revision.
 - Current asset: shared/assets/avi-4.webp
 - Editorial notes: Awaiting parent feedback.
 
@@ -64,7 +64,7 @@
 - Scene ID: avi-s05
 - Words: Their Tesla Model Y is waiting outside. But Miri knows its secret name. “All aboard the Spaceship!” Everyone buckles in. Click, click!
 - Illustration: The family gets ready for a ride in their white Model Y, with child seats ready in the back.
-- Image status: Existing, published first draft; available for revision.
+- Image status: Current family-reference illustration; available for revision.
 - Current asset: shared/assets/avi-5.webp
 - Editorial notes: Awaiting parent feedback.
 
@@ -73,7 +73,7 @@
 - Scene ID: avi-s06
 - Words: In Miri’s imagination, the Spaceship whooshes past the moon. “Captain Avi,” she says, “that rainbow planet looks like you!” Avi snoozes through space.
 - Illustration: In a pretend adventure, the family’s white Spaceship car glides among stars and a rainbow planet, everyone safely buckled in.
-- Image status: Existing, published first draft; available for revision.
+- Image status: Current family-reference illustration; available for revision.
 - Current asset: shared/assets/avi-6.webp
 - Editorial notes: Awaiting parent feedback.
 
@@ -82,7 +82,7 @@
 - Scene ID: avi-s07
 - Words: Back on Earth, they gather around the table. Mama, Abba, Miri… and Avi. “There’s room for everyone,” says Miri. “Especially my Rainbow Baby.”
 - Illustration: Miri, Abba, and Mama share a warm family meal while Mama cradles Avi.
-- Image status: Existing, published first draft; available for revision.
+- Image status: Current family-reference illustration; available for revision.
 - Current asset: shared/assets/avi-7.webp
 - Editorial notes: Awaiting parent feedback.
 
@@ -91,20 +91,22 @@
 - Scene ID: avi-s08
 - Words: At bedtime, Avi makes a squeak. Miri makes a kiss. “Tomorrow,” she whispers, “I’ll show you everything.” Being a big sister feels like love.
 - Illustration: Miri settles into bed with Mama beside her and Abba holding sleeping Avi nearby.
-- Image status: Existing, published first draft; available for revision.
+- Image status: Current family-reference illustration; available for revision.
 - Current asset: shared/assets/avi-8.webp
 - Editorial notes: Awaiting parent feedback.
 
-### Ending
+### Back cover
 
-- Ending title: Our family has a little more rainbow.
-- Ending subtitle: Goodnight, Miri. Goodnight, Avi.
-- Treatment: Cover vignette, brief decorative burst, read again and bookshelf controls.
+- Description: Avi is coming home, and Miri has so much to show him: dance parties, the family Spaceship, and a place around the table. A little story about becoming a big sister.
+- Created: November 2026
+- Related books: Up to two other library books, shuffled per opening.
+- Actions: Read again and Bookshelf.
 
 ## Revision log
 
 | Revision | Change | Scene IDs affected | Image work needed | State |
 |---|---|---|---|---|
+| 2 | Family-reference art, dimensional flips, and a book-jacket back cover; story words/order unchanged | All | Completed | Published revision |
 | 1 | Existing first draft transcribed into this editorial plan without changing the book | All | None for this documentation change | Published draft |
 
 ## Page mapping

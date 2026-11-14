@@ -10,15 +10,15 @@ Ask these together when the user says “I want a new book.” Accept short answ
 2. **What happens?** Main idea, characters, places, and any real details or exact phrases to include.
 3. **How should it feel?** Funny, comforting, adventurous, sleepy, or another mood; anything to avoid.
 4. **How should it look?** Watercolor, paper collage, gouache/pencil, or another illustration style. Reuse the family's established appearance and any available photo reference; ask about appearance only when something is missing or the user wants a change.
-5. **How should the book move?** Choose a watery ripple, paper flutter, classic page turn, or another requested transition. These affect only opening, page turns, and the ending. The current reader implements `ripple`, `flutter`, and `turn`; do not promise another effect is implemented until it is.
+5. **How should the book move?** Use the selected dimensional page flip by default; ask whether the user wants a quieter treatment or another specific effect. These affect only opening, page turns, and the ending. The current reader implements `flip` with an instant reduced-motion path; do not promise another effect is implemented until it is.
 
-Use defaults for omitted optional choices: eight story pages plus cover and ending, English, age four, and a warm, reassuring tone. Eight pages is a starting suggestion, not a fixed limit. Include a recommended length and the reason in the next deliverable instead of adding a sixth mandatory question. If the user says to choose or go ahead, use reasonable defaults without another confirmation. No games or in-story interactions.
+Use defaults for omitted optional choices: eight story pages plus front and back covers, English, age four, and a warm, reassuring tone. Eight pages is a starting suggestion, not a fixed limit. Include a recommended length and the reason in the next deliverable instead of adding a sixth mandatory question. If the user says to choose or go ahead, use reasonable defaults without another confirmation. No games or in-story interactions.
 
 ## 2. Show a numbered story plan
 
 The first creative deliverable is a complete, readable storyboard. Recommend a page count and explain the pacing in one sentence. Offer a shorter or longer option when that would help. Use the book-plan template in `templates/BOOK_PLAN.md` and save the working plan at `docs/books/<book-id>/PLAN.md` so later chats can continue it.
 
-Show the cover and ending separately. Number story pages **1 through N**, matching the printed numbers in the reader. For every page include:
+Show the front and back covers separately. Number story pages **1 through N**, matching the printed numbers in the reader. For every page include:
 
 - The exact draft words, usually 20–40 words and one clear moment per page.
 - A short illustration description: who is present, what they are doing, the setting, and essential visual details.
@@ -80,11 +80,11 @@ Check the current plan against the actual reader: scene order, printed page numb
 
 ## Implementation notes
 
-- Add or update the object in `shared/books.js` with a unique stable book slug. Fields: `id`, `title`, `short`, `category`, `color`, `ink`, `accent`, `style`, `motion`, `end`, `endSub`, `pages`. Each page contains `text` and `alt`.
+- Add or update the object in `shared/books.js` with a unique stable book slug. Fields: `id`, `title`, `short`, `category`, `color`, `ink`, `accent`, `style`, `motion`, `description`, `created`, `pages`. Each page contains `text` and `alt`.
 - Keep stable scene IDs in the working plan and map them to the current reader page numbers and asset filenames. The current reader uses array order; it does not yet use scene IDs at runtime.
 - Save `shared/assets/<book-id>-0.webp` for the cover and `<book-id>-1.webp` through `<book-id>-N.webp` for story pages. For a reorder, remap the image files together with the text; stage files in temporary storage first to avoid overwriting another scene's image.
 - Human page 1 is array index 0 and deep-link `page=0`; the cover uses `page=-1` and the ending uses `page=N`. Always use human page numbers in conversation.
-- The shelf and `stories.html` enumerate shared book data automatically. The comparison gallery's three quick links refer to the original books; leave those intact unless the user requests a change.
+- The shelf and `stories.html` enumerate shared book data automatically. Add `description` (back-cover blurb) and `created` (YYYY-MM, actual creation month) for each new book. The back cover shuffles up to two other saved books; it never generates new stories at runtime. The design comparison gallery has been removed. Maintain the old Paper Parade route as a redirect to the root.
 - After changing page count/order, check page indicators, direct links, ending, and saved progress. The current reader stores an array index, so an old saved position may point at a different scene after a reorder. For structural revisions, preserve the scene position with a migration or deliberately reset the affected book's progress without clearing favorites or other books.
 - Update the working plan and `STORY_GUIDE.md` in the same change as the book. The plan is the editorial record; the published text is in `shared/books.js`. Check that their words and scene order agree before publishing.
 

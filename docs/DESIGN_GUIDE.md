@@ -1,46 +1,35 @@
-# Reader and library design guide
+# Paper Parade design and reader guide
 
-## Scope
+## Selected direction
 
-A calm reading experience, with interesting motion around the book rather than activities inside it. Keep the three stories independent of the ten site treatments. One reader engine drives all ten, with different visual framing.
+Paper Parade is the only site design. Use a compact header with the bookshelf name and all/favorites tabs. Let the book covers occupy the shelf. Keep the playful uneven borders and slight rotations, with embossed-looking hinges, page blocks, and shadows that make the books feel dimensional. Do not restore marketing headings, subtitles, duplicate card titles, the ten-design gallery, or other themes.
 
-## Layout
+## Reader
 
-Landscape: one illustration on the left and its text on the right. Portrait: the same illustration above the text. These are two parts of **one story page**, not two separate story pages. Fit the reader within dynamic viewport height; preserve the current page through rotation. Use contain for illustrations so the original composition is visible. Allow shelves and the gallery to scroll naturally. Do not lock orientation.
+Use nearly the entire browser viewport. Portrait stacks a single illustration above its text; landscape places them side by side. These are two parts of one story page. Keep the illustration uncropped with `object-fit: contain`. Adapt dynamically to rotation without changing the current page. Do not require orientation lock.
 
-Test 320×568, 390×844, 844×390, 768×1024, 834×1194, 1024×768, 1194×834, and 1440×1000. Include the cover and ending; text must not overlap the printed page number or controls. Check longer titles and longest page text.
+A book opens to a large front cover, with no additional “Open the book” button. A cover click always opens the cover; the shelf's separate continue link can resume an unfinished book. Advance from the cover using the right side, arrow, keyboard, or swipe.
 
-## Motion
+The final screen is a back cover styled like the book jacket. It contains `description`, `created` (YYYY-MM formatted to month/year), a shuffled selection of up to two different other books, Read again, and Bookshelf. Hide recommendations when there are no other books; handle a single recommendation. Pick recommendations once per opening, without changing them during a resize. No “you did it,” “until next time,” confetti, completion rewards, or congratulatory screen.
 
-- Swimming: gentle blurred fade out, expanding circle reveal in.
-- Avi: slight paper rotation and vertical drift.
-- Blue bike: directional perspective rotation.
-- Opening: a short lift into the reader. Ending: a brief one-shot burst around the cover, then stillness.
-- No looping animations while reading, no auto turns, no sound.
-- Respect `prefers-reduced-motion`; animations should become instant and decorative ending bursts hidden.
+Show a printed page number on every story page and a current-page counter. Cover/back cover have labels rather than story numbers. Numbered navigation is optional on narrow screens; arrow buttons remain at least 44 pixels. Cover previous and back-cover next are disabled.
 
-## Navigation and accessibility
+## Navigation and motion
 
-Arrow buttons, pointer/touch swipes, keyboard left/right arrows, Escape to shelf, page indicators, deep links and browser back. A cover, eight story pages, and an ending. The reader is the focused region when opened; hidden library controls must not remain in the tab order. Previous is disabled on the cover; next is disabled at the end. After closing, focus returns to a usable library opener. Use meaningful alt text per illustration. Keep navigation and favorite controls large enough for fingers. Indicators are supplementary smaller targets with an equivalent accessible arrow control.
+Tap/click anywhere on the left or right half of the reading area for previous/next. Ignore interactive child controls and deliberate text selections. Pointer/touch swipes, keyboard arrows, Escape, page buttons, deep links, and browser back must work. A swipe followed by a synthetic click must turn only one page.
 
-## Browser state
+Use a dimensional folding-sheet animation with a moving shadow. Lock additional turns during a flip. Closing or opening another book during a turn must not corrupt its state. Respect `prefers-reduced-motion` with instant transitions. No automatic turns, looping animations, or surprise sound.
 
-`miri-books-v1`: `{ favorites: [bookId], progress: { [bookId]: pageIndex } }`. Cover = -1; story = 0 to N-1; ending = N. Only resume an in-progress story; completed books reopen at the cover. Browser storage is optional: blocked/corrupt data must not break the app. The ten staging routes share this key on the same origin. `miri-design-shortlist` holds shortlisted concept IDs separately. No backend or device sync.
+## State and paths
 
-## Hosting
+`miri-books-v1` contains `{ favorites: [bookId], progress: { [bookId]: pageIndex } }`. Cover is -1, story pages are 0..N-1, back cover is N. Opening the front cover does not erase prior progress. Continue links appear only for valid story positions, not completed books. Preserve favorites and other books' positions when making structural revisions. Handle corrupt/blocked storage.
 
-Plain HTML/CSS/JavaScript, locally bundled images, no build process. Publish the site root to GitHub Pages. Never hardcode `/shared/` or `/assets/`, because a project Pages site uses a repository prefix. Preserve `.nojekyll`. Every numbered folder is a full working design route, sharing sibling assets; keep the tree together.
+The root URL is the bookshelf. The previous Paper Parade route redirects to it while preserving hash parameters. Assets are relative to the root. Use an asset revision query when replacing art so returning readers receive the update. Keep the raw family reference photo outside the public repository. Recommendations are local library links, never an AI-generation request.
 
-## Verification checklist
+## Verification
 
-- All ten library routes render; all images load.
-- Every book can be read from cover through ending; previous, replay, and shelf return work.
-- Favorite toggle, empty favorites, filter, reload persistence, and sharing state across variants work.
-- Reading position persists on reload and when returning from the shelf; resizing keeps the page.
-- Touch/pointer swipes and keyboard arrows change pages once.
-- Page links and browser back do not leave hidden/duplicate readers.
-- No horizontal overflow on phone or iPad. Reader text remains inside its panel.
-- Reduced-motion path is instant. Normal animations finish and rapid taps/close do not corrupt state.
-- Gallery filters, shortlist persistence, and story-draft review page work.
+Check 320×568, 390×844, 844×390, 768×1024, 834×1194, 1024×768, 1194×834, and 1440×1000. Test all three books from cover through back cover at every size. Check long titles, all printed numbers, text not overlapping controls/numbers, image loading, horizontal overflow, back-cover scrolling on short displays, and actions remaining usable.
 
-The initial automated browser run uses installed headless Chrome, including touch-emulated iPad/phone viewports. Physical iPad Safari testing remains a final device check after hosting.
+Verify favorites/empty state/reload, separate cover and resume behavior, orientation changes, side taps, touch swipe without double turns, keyboard arrows, direct page navigation, replay, return to shelf, related-book links, recommendation exclusions, and browser back. Check normal and reduced motion, including rapid taps and closing mid-animation. Confirm all 24 story words match their editorial plans.
+
+Headless Chrome with touch emulation provides automated coverage. A physical iPad/Safari check remains a device-specific follow-up. Publish only after relevant checks pass and verify the live root and books before reporting deployment.

@@ -12,13 +12,14 @@ For revisions, accept page numbers, quoted text, scene descriptions, and overall
 
 ## Product rules
 
-- Reading, opening a book, turning pages, finishing, returning to the shelf, and favorites are the only child-facing interactions.
+- Reading, opening a book, turning pages, returning to the shelf, favorites, and following another book from the back cover are the child-facing interactions.
 - No games, puzzles, hotspots, branching choices, collectible rewards, auto-advancing pages, or surprise sounds.
-- Use the written family appearance notes and the supplied photo when available for future illustrations. Do not commit or publish the raw family reference photo. The initial published pictures predate that reference.
+- Use the written family appearance notes and the supplied photo when available for future illustrations. Do not commit or publish the raw family reference photo. The current illustrations use that reference. Miri has light braids and both upper front teeth missing; show the gap in her smile.
 - Preserve exact family names: Miri, Avi, Mama, Abba, Ayla, Asher. Abba means her dad; Rainbow Baby is Miri’s affectionate name for Avi. Do not infer a pregnancy-loss history.
+- Open books on a large front cover without an extra “Open the book” button. Use dimensional page flips, side taps, swipes, and arrows. The final screen is a back cover with a description, creation month/year, a shuffled selection of other books, and read-again/bookshelf buttons. No celebratory end messages.
 - Optimize for iPad while supporting portrait/landscape phones and desktop. Show one story page at a time, never squeeze two story pages onto a phone. Never require orientation lock.
 - Keep the site static and GitHub Pages compatible. No runtime AI requests, API keys, accounts, external fonts, analytics, or new dependencies without a concrete user need.
-- Treat the ten numbered folders as design experiments. Maintain shared content and reader behavior until the user chooses a design. Do not silently remove the gallery or other experiments.
+- Paper Parade is the selected design. Keep its compact shelf, playful uneven borders, and dimensional spines/page edges. The design gallery and other experiments have been removed at the user’s request. Keep the old Paper Parade URL redirect working.
 - Keep favorites and reading progress in the versioned browser-storage key already used by the app. Protect against denied storage and corrupt values.
 - Honor reduced motion, keyboard navigation, meaningful image descriptions, and visible focus. Keep essential controls at least 44 CSS pixels.
 - Follow the user’s existing authorization for publishing. If a repository is connected and deployment is requested, finish the book and relevant checks, then publish within that scope. Do not invent a new approval ceremony.
