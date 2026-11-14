@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-14",
+  "browser": "Installed headless Chrome",
+  "layouts": 704,
+  "turns": 40,
+  "checks": [
+    "Legacy favorite-only start view shows all books; favorites removed from saved reading data; progress/custom order survive; sorting, reset and keyboard reorder work",
+    "704 reader layouts across four books, eight screen sizes, normal/fullscreen; text/actions fit and exit remains visible; fullscreen survives shelf/book/end navigation",
+    "40 forward/backward animation checks: full-width leaf with no stationary half on portrait phones; center half-sheet retained on wider layouts",
+    "Phone fullscreen uses a 44\u00d744 corner X; explicit exit preserves current reader",
+    "Ten slow-image interruption cases across phone and desktop: finish, rapid navigation, close/open, resize, and instant preferences; canceled transitions never reappear",
+    "Device reduced motion stays instant"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Phone/tablet dimensions emulated; physical Safari/iPad not tested."
+  ]
+}
