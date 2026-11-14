@@ -44,3 +44,7 @@ Examples: “Give the Spaceship two pages,” “Move the dance party to page 5,
 - `docs/verification.json`: most recent browser verification report.
 
 The site has no narration, sound, games, hotspots, analytics, backend, or service worker. Hosted URLs do not promise offline caching. Use the story-review page for reviewing the words and pictures together.
+
+## Icon
+
+`shared/book-stack.svg` is the simple three-book icon, using Paper Parade’s blue, pink, and yellow. `shared/favicon.svg`, `shared/icon-192.png`, and `shared/apple-touch-icon.png` provide browser and home-screen versions. All Websites links to the 192-pixel icon.

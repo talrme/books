@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="#f6f0e3"/><path d="M12 16q10-3 20 4 10-7 20-4v30q-10-3-20 4-10-7-20-4Z" fill="none" stroke="#294d46" stroke-width="3"/><path d="M32 20v29" stroke="#294d46" stroke-width="3"/><circle cx="45" cy="16" r="7" fill="#c15c42"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#f8ead2"/>
+  <g stroke="#282751" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="rotate(-5 32 46)">
+      <rect x="10" y="39" width="44" height="14" rx="3" fill="#e7c658"/>
+      <path d="M22 44h31v5H22" fill="#fffaf0"/>
+      <path d="M18 40v12" fill="none"/>
+    </g>
+    <g transform="rotate(4 31 33)">
+      <rect x="9" y="26" width="44" height="14" rx="3" fill="#e99eab"/>
+      <path d="M21 31h31v5H21" fill="#fffaf0"/>
+      <path d="M17 27v12" fill="none"/>
+    </g>
+    <g transform="rotate(-6 33 20)">
+      <rect x="12" y="13" width="43" height="14" rx="3" fill="#97bedc"/>
+      <path d="M24 18h30v5H24" fill="#fffaf0"/>
+      <path d="M20 14v12" fill="none"/>
+    </g>
+  </g>
+</svg>
