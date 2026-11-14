@@ -49,7 +49,9 @@
     "Browser back and bookmarked Paper Parade redirect",
     "Touch swipe advances exactly once, with no synthetic-click double turn",
     "Story review has 24 updated illustrations",
-    "Subtle 180 ms animation; every rapid arrow counts immediately; boundaries, C shortcut, and close/open during motion work",
+    "Immediate rapid arrows, boundaries, C shortcut, and close/open during motion work",
+    "Half-width sheet folds right to left and reverses within book bounds; reading surface stays stationary at all eight sizes for every book",
+    "Reduced motion removes an active turn and prevents subsequent animation",
     "Reader works when browser storage is unavailable"
   ],
   "issues": [],

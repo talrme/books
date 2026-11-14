@@ -16,7 +16,7 @@
  try { saved = JSON.parse(localStorage.getItem('miri-books-v1') || '{}') || {}; } catch {}
  let favorites = new Set(Array.isArray(saved.favorites) ? saved.favorites.filter(id=>books.some(b=>b.id===id)) : []);
  let progress = saved.progress && typeof saved.progress === 'object' ? saved.progress : {};
- let filter = 'all', active = null, pageIndex = -1, pageAnimation = null;
+ let filter = 'all', active = null, pageIndex = -1, pageAnimation = null, turnLayer = null;
  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
  const persist = () => {try {localStorage.setItem('miri-books-v1',JSON.stringify({favorites:[...favorites],progress}));} catch {}};
  const cover = b => imageUrl(b);
@@ -91,21 +91,46 @@
  }
  function stopAnimation() {
    pageAnimation?.cancel();pageAnimation=null;
+   turnLayer?.remove();turnLayer=null;
  }
- function animatePage(direction) {
+ function animatePage(direction,previous) {
    if(reduce.matches)return;
-   const surface=$('#reader-stage .book-surface');
-   pageAnimation=surface.animate([
-     {opacity:.82,transform:`perspective(1800px) translateX(${direction*5}px) rotateY(${direction*2}deg)`},
-     {opacity:1,transform:'none'}
-   ],{duration:180,easing:'ease-out'});
+   const stage=$('#reader-stage'),surface=stage.querySelector('.book-surface');
+   // Covers fade in place; only a half-sheet turns, never the whole reading surface.
+   if(!previous?.classList.contains('story-page')||!surface.classList.contains('story-page')){
+     pageAnimation=surface.animate([{opacity:.88},{opacity:1}],{duration:160,easing:'ease-out'});
+     return;
+   }
+   const rect=surface.getBoundingClientRect(),stageRect=stage.getBoundingClientRect();
+   const layer=document.createElement('div');layer.className='page-turn-layer';
+   layer.setAttribute('aria-hidden','true');layer.inert=true;
+   layer.style.cssText=`left:${rect.left-stageRect.left}px;top:${rect.top-stageRect.top}px;width:${rect.width}px;height:${rect.height}px;${vars(active)}`;
+   const sheet=document.createElement('div');sheet.className='turning-half '+(direction>0?'turn-forward':'turn-backward');
+   for(const [side,source] of [['front',previous],['back',surface]]){
+     const face=document.createElement('div');face.className='turn-face turn-'+side;
+     const clone=source.cloneNode(true);
+     clone.removeAttribute('id');clone.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));
+     clone.style.cssText=`position:absolute;top:0;left:${(side==='front')===(direction>0)?-rect.width/2:0}px;width:${rect.width}px;height:${rect.height}px;margin:0;box-shadow:none;`;
+     face.append(clone);sheet.append(face);
+   }
+   layer.append(sheet);stage.append(layer);turnLayer=layer;
+   const animation=sheet.animate([
+     {transform:'rotateY(0deg)'},
+     {transform:`rotateY(${direction>0?-180:180}deg)`}
+   ],{duration:240,easing:'ease-in-out',fill:'forwards'});
+   pageAnimation=animation;
+   animation.finished.then(()=>{
+     layer.remove();
+     if(pageAnimation===animation){pageAnimation=null;turnLayer=null;}
+   },()=>layer.remove());
  }
  function turnTo(index) {
    if(!active||index===pageIndex||index< -1||index>active.pages.length)return;
    const direction=index>pageIndex?1:-1;
    stopAnimation();
+   const previous=$('#reader-stage .book-surface');
    pageIndex=index;if(index===-1){progress[active.id]=-1;persist();}
-   renderPage();setHash();animatePage(direction);
+   renderPage();setHash();animatePage(direction,previous);
  }
  document.addEventListener('click',e=>{
    const b=e.target.closest('button');if(!b)return;
@@ -133,6 +158,8 @@
    const p=new URLSearchParams(location.hash.slice(1));const id=p.get('book');
    if(id&&books.some(b=>b.id===id)){const n=p.has('page')?Number(p.get('page')):-1;openBook(id,Number.isInteger(n)?n:-1,false);}else closeBook(false);
  };
+ window.addEventListener('resize',stopAnimation);
+ reduce.addEventListener('change',stopAnimation);
  window.addEventListener('hashchange',fromHash);
  window.addEventListener('storage',e=>{if(e.key==='miri-books-v1'){try{const state=JSON.parse(e.newValue||'{}');favorites=new Set(Array.isArray(state.favorites)?state.favorites:[]);renderShelf();if(active)$('.reader-actions').innerHTML=favoriteButton(active);}catch{}}});
  renderShelf();fromHash();

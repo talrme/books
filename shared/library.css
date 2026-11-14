@@ -68,3 +68,11 @@ body.reading{overflow:hidden}.reader{position:fixed;inset:0;z-index:20;display:f
 @media(max-width:760px){.back-cover.reader-cover{width:min(100%,calc((100dvh - 120px)*.8));border-width:12px;padding:25px 16px 22px 28px;gap:clamp(20px,4vh,36px)}.back-cover .end-title{font-size:clamp(48px,10vw,72px)}}
 @media(max-height:620px) and (orientation:portrait){.back-cover.reader-cover{padding:20px 10px 16px 22px;gap:20px}.end-picture{width:110px}.back-cover .end-title{font-size:48px}.back-cover .end-action{font-size:11px;gap:8px}}
 @media(max-height:620px) and (orientation:landscape){.back-cover.reader-cover{width:min(620px,100%);border-width:10px;padding:20px 28px 20px 40px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:12px 25px}.back-cover .end-title{font-size:clamp(44px,9vh,62px);align-self:end}.end-picture{grid-column:2;grid-row:1 / 3;width:min(100%,32vh);max-width:100%;justify-self:center}.back-cover .back-actions{align-self:start;gap:10px}.back-cover .end-action{font-size:11px;gap:7px;min-height:65px}.action-picture{width:38px;height:36px}.action-picture svg{width:25px;height:25px}}
+
+/* A single half-sheet folds across the center, clipped to the book itself. */
+.page-turn-layer{position:absolute;z-index:5;pointer-events:none;overflow:hidden;border-radius:7px;isolation:isolate;contain:paint}
+.turning-half{position:absolute;top:0;bottom:0;width:50%;transform-style:preserve-3d;will-change:transform}
+.turn-forward{left:50%;transform-origin:left center}.turn-backward{left:0;transform-origin:right center}
+.turn-face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;background:var(--reader-paper)}
+.turn-back{transform:rotateY(180deg)}
+.turn-face:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#2827510d,transparent 12%,transparent 88%,#2827510a)}

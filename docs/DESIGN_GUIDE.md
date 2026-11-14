@@ -18,13 +18,13 @@ Show a printed page number on every story page and a current-page counter. Cover
 
 Tap/click anywhere on the left or right half of the reading area for previous/next. Ignore interactive child controls and deliberate text selections. Pointer/touch swipes, keyboard arrows, Escape, page buttons, deep links, and browser back must work. A swipe followed by a synthetic click must turn only one page.
 
-Use a subtle 180 ms page entrance (5 px travel, 2 degrees of perspective, gentle opacity change). Navigation updates immediately; cancel the previous animation on every new turn rather than blocking input. Rapid repeated keyboard arrows must advance by the number of presses, up to the boundary. Cancel motion on close/open and respect `prefers-reduced-motion` with instant transitions. No automatic turns, looping animations, or surprise sound.
+Keep the reading surface stationary. Turn only a half-width sheet around the book’s center: right to left for next, left to right for previous, in 240 ms. Clip the overlay to the book bounds, without perspective enlargement, whole-surface rotation, or travel beyond its edges. Covers use a gentle 160 ms opacity change in place. Navigation updates immediately; cancel the previous animation on every new turn rather than blocking input. Rapid repeated keyboard arrows must advance by the number of presses, up to the boundary. Cancel motion on close/open and respect `prefers-reduced-motion` with instant transitions. No automatic turns, looping animations, or surprise sound.
 
 ## State and paths
 
 `miri-books-v1` contains `{ favorites: [bookId], progress: { [bookId]: pageIndex } }`. Cover is -1, story pages are 0..N-1, back cover is N. Opening the front cover does not erase prior progress. Continue links appear only for valid story positions, not completed books. Preserve favorites and other books' positions when making structural revisions. Handle corrupt/blocked storage.
 
-The root URL is the bookshelf. The previous Paper Parade route redirects to it while preserving hash parameters. Assets are relative to the root. Use an asset revision query when replacing art so returning readers receive the update. Keep the raw family reference photo outside the public repository. Recommendations are local library links, never an AI-generation request.
+The root URL is the bookshelf. The previous Paper Parade route redirects to it while preserving hash parameters. Assets are relative to the root. Use an asset revision query when replacing art so returning readers receive the update. Keep the raw family reference photo outside the public repository.
 
 ## Verification
 
