@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-14",
+  "layouts": 32,
+  "checks": [
+    "Newest-first shelf and parent review; later-added book first for ties",
+    "All four back covers at eight responsive sizes: tiny November 2026 note below image, no overlap or clipping",
+    "Replay and favorites persistence/filter retain newest-first order"
+  ],
+  "issues": [],
+  "errors": []
+}

@@ -43,7 +43,7 @@ window.BOOKS = [
         "alt": "Miri, Ayla, and Asher snuggle in towels while Abba gives Miri a proud hug."
       }
     ],
-    "created": "2026-11",
+    "created": "2026-11-13",
     "description": "A bike ride with Abba, a pool full of bubbles, and a swimming lesson with Ayla and Asher. Miri discovers that a little courage can begin with a very little splash."
   },
   {
@@ -90,7 +90,7 @@ window.BOOKS = [
         "alt": "Miri settles into bed with Mama beside her and Abba holding sleeping Avi nearby."
       }
     ],
-    "created": "2026-11",
+    "created": "2026-11-13",
     "description": "Avi is coming home, and Miri has so much to show him: dance parties, the family Spaceship, and a place around the table. A little story about becoming a big sister."
   },
   {
@@ -137,7 +137,7 @@ window.BOOKS = [
         "alt": "At home, Miri wears her paper crown and tells Mama and Abba about her adventure, with her blue bike by the door."
       }
     ],
-    "created": "2026-11",
+    "created": "2026-11-13",
     "description": "With a homemade map, her blue bike, and Abba beside her, Miri sets off to find a very big adventure. A snail, a rainbow, and a picnic might be just the beginning."
   },
   {
@@ -150,7 +150,7 @@ window.BOOKS = [
     "accent": "#bf7c9c",
     "style": "Dreamy watercolor",
     "motion": "flip",
-    "created": "2026-11",
+    "created": "2026-11-14",
     "description": "Avi and Miri sing through rain, sunshine, and a make-believe rainbow adventure before a joyful school show.",
     "pages": [
       {
@@ -203,4 +203,4 @@ window.BOOKS = [
       }
     ]
   }
-];
+].reverse().sort((a,b)=>(b.created||'').localeCompare(a.created||''));

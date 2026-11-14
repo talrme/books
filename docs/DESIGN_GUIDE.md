@@ -2,7 +2,7 @@
 
 ## Selected direction
 
-Paper Parade is the only site design. Use a compact header with the bookshelf name and all/favorites tabs. Let the book covers occupy the shelf. Keep the playful uneven borders and slight rotations, with embossed-looking hinges, page blocks, and shadows that make the books feel dimensional. Do not restore marketing headings, subtitles, duplicate card titles, the ten-design gallery, or other themes.
+Paper Parade is the only site design. Use a compact header with the bookshelf name and all/favorites tabs. Let the book covers occupy the shelf. Sort by creation date, newest first, breaking ties by later-added books first. Preserve each book’s frame color when sorting. Keep the playful uneven borders and slight rotations, with embossed-looking hinges, page blocks, and shadows that make the books feel dimensional. Do not restore marketing headings, subtitles, duplicate card titles, the ten-design gallery, or other themes.
 
 ## Reader
 
@@ -10,7 +10,7 @@ Use nearly the entire browser viewport. Portrait stacks a single illustration ab
 
 A book opens to a large front cover, with no additional “Open the book” button. A cover click always opens the cover; the shelf's separate continue link can resume an unfinished book. Advance from the cover using the right side, arrow, keyboard, or swipe.
 
-The final screen is a dimensional back cover with the same uneven border, embossed hinge, and page-edge shadows as the front cover. Show a large “The End,” a small reused cover illustration, and two actions with playful illustrated icons: Read Again and Bookshelf. No blurb, creation date, recommendations, or other ending content.
+The final screen is a dimensional back cover with the same uneven border, embossed hinge, and page-edge shadows as the front cover. Show a large “The End,” a small reused cover illustration, and two actions with playful illustrated icons: Read Again and Bookshelf. Add a tiny “Created Month Year” note beneath the image. No blurb or recommendations.
 
 Show a printed page number on every story page and a current-page counter. Cover/back cover have labels rather than story numbers. Place a C before page 1 to return to the front cover, with a meaningful accessible label and current-page state. Numbered navigation is optional on narrow screens; arrow buttons remain at least 44 pixels. Cover previous and back-cover next are disabled.
 

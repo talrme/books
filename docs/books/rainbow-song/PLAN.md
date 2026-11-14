@@ -123,6 +123,7 @@
 - Heading: The End
 - Illustration: Small reused cover image
 - Treatment: Shared dimensional cover with embossed spine and uneven border
+- Creation note: Tiny creation month/year beneath the image.
 - Actions: Read Again and Bookshelf only
 
 ## Revision log

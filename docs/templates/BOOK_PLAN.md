@@ -46,7 +46,7 @@ Use the full draft words for each scene. A scene ID stays fixed when its page nu
 - Heading: The End
 - Illustration: Small reused front-cover image.
 - Treatment: Dimensional cover with uneven border, embossed spine, and page edges.
-- Actions: Read Again and Bookshelf, with playful illustrated icons. No other content.
+- Actions: Read Again and Bookshelf, with playful illustrated icons. Include a tiny creation month/year beneath the image.
 
 ## Revision log
 

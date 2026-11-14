@@ -10,7 +10,9 @@ A small family bookshelf with four illustrated books for reading together around
 
 Open a large front cover, then tap the right side to turn it. Tap the left side to go back. Swipes, keyboard arrows, numbered navigation, and arrow buttons also work. Escape returns to the shelf. The reader fills the window and adapts to portrait or landscape without showing two story pages at once.
 
-Books finish on a dimensional back cover with a large “The End,” a small reused cover illustration, and playful Read Again and Bookshelf actions. Only the right half-page folds left across the center, within the stationary book’s bounds (240 ms); previous reverses the direction. Covers fade in place; rapid navigation immediately interrupts the animation. A C before the numbered navigation returns to the front cover.
+Books are listed newest first by creation date, with later-added books first when dates tie.
+
+Books finish on a dimensional back cover with a large “The End,” a small reused cover illustration, a tiny creation month/year beneath the image, and playful Read Again and Bookshelf actions. Only the right half-page folds left across the center, within the stationary book’s bounds (240 ms); previous reverses the direction. Covers fade in place; rapid navigation immediately interrupts the animation. A C before the numbered navigation returns to the front cover.
 
 Favorites and reading progress are saved in this browser. Tapping a cover starts at the cover; an unfinished book also has a separate “Continue at page…” link. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.
 

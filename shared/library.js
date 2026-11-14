@@ -4,7 +4,7 @@
  const concept = {name:'Miri’s books',layout:'parade',reader:'paper',font:'round',color:'#f8ead2',ink:'#282751',accent:'#ce4055'};
  const assetRoot = 'shared/assets/';
  const imageUrl = (b,n=0) => `${assetRoot}${b.id}-${n}.webp?v=family2`;
- const frame = b => ['#97bedc','#e99eab','#e7c658','#b8a0cf'][books.indexOf(b)%4];
+ const frame = b => ({swim:'#97bedc',avi:'#e99eab',adventure:'#e7c658','rainbow-song':'#b8a0cf'}[b.id] || '#97bedc');
  const vars = b => `--book-bg:${b.color};--book-ink:${b.ink};--frame:${frame(b)}`;
  const $ = s => document.querySelector(s);
  const icon = (name) => {
@@ -20,6 +20,11 @@
  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
  const persist = () => {try {localStorage.setItem('miri-books-v1',JSON.stringify({favorites:[...favorites],progress}));} catch {}};
  const cover = b => imageUrl(b);
+ const creationLabel = b => {
+   if(!/^\d{4}-\d{2}(?:-\d{2})?$/.test(b.created||''))return '';
+   const date=new Date(b.created.slice(0,7)+'-01T12:00:00Z');
+   return Number.isNaN(date.getTime())?'':new Intl.DateTimeFormat('en-US',{month:'long',year:'numeric',timeZone:'UTC'}).format(date);
+ };
  const favoriteButton = b => `<button class="favorite ${favorites.has(b.id)?'is-favorite':''}" data-favorite="${b.id}" aria-label="${favorites.has(b.id)?'Remove':'Add'} ${esc(b.title)} ${favorites.has(b.id)?'from':'to'} favorites" aria-pressed="${favorites.has(b.id)}">${icon('heart')}</button>`;
  const readLabel = b => Number.isInteger(progress[b.id]) && progress[b.id]>=0 && progress[b.id]<b.pages.length ? 'Keep reading' : 'Read story';
  const coverArt = b => `<img src="${cover(b)}" alt="${esc(b.title)} cover illustration"><span class="cover-label"><strong>${esc(b.title)}</strong></span><span class="cover-spine" aria-hidden="true"></span>`;
@@ -77,7 +82,7 @@
    if(coverPage){
      stage.innerHTML=`<div class="cover-spread"><article class="reader-cover book-surface" style="${vars(b)}" aria-label="${esc(b.title)} front cover">${coverArt(b)}</article></div>`;
    }else if(back){
-     stage.innerHTML=`<div class="cover-spread"><article class="reader-cover back-cover book-surface" style="${vars(b)}" aria-label="${esc(b.title)} back cover"><h2 class="end-title">The End</h2><figure class="end-picture"><img src="${cover(b)}" alt="${esc(b.title)} cover illustration"></figure><div class="back-actions"><button class="end-action" data-replay><span class="action-picture reread-picture">${icon('reread')}</span><span>Read Again</span></button><button class="end-action" data-close><span class="action-picture shelf-picture">${icon('bookshelf')}</span><span>Bookshelf</span></button></div><span class="cover-spine" aria-hidden="true"></span></article></div>`;
+     stage.innerHTML=`<div class="cover-spread"><article class="reader-cover back-cover book-surface" style="${vars(b)}" aria-label="${esc(b.title)} back cover"><h2 class="end-title">The End</h2><div class="end-illustration"><figure class="end-picture"><img src="${cover(b)}" alt="${esc(b.title)} cover illustration"></figure>${creationLabel(b)?`<p class="creation-note">Created ${esc(creationLabel(b))}</p>`:''}</div><div class="back-actions"><button class="end-action" data-replay><span class="action-picture reread-picture">${icon('reread')}</span><span>Read Again</span></button><button class="end-action" data-close><span class="action-picture shelf-picture">${icon('bookshelf')}</span><span>Bookshelf</span></button></div><span class="cover-spine" aria-hidden="true"></span></article></div>`;
    }else{
      const p=b.pages[pageIndex];
      stage.innerHTML=`<article class="story-page book-surface"><div class="page-picture"><img src="${imageUrl(b,pageIndex+1)}" alt="${esc(p.alt)}" fetchpriority="high"></div><div class="page-copy"><p class="story-text">${esc(p.text)}</p><span class="printed-page" aria-label="Page ${pageIndex+1}">${pageIndex+1}</span></div></article>`;
