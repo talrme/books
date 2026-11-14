@@ -63,3 +63,5 @@ Keep a subtle connected-dots Share control in normal browsing/reading, hidden th
 Suppress native tap highlighting on the document and reader surface as well as controls, so phone page taps never flash a blue overlay. Keep keyboard focus indicators and intentional text selection available.
 
 Do not automatically focus the fullscreen button on initial load or fullscreen state changes. Touch browsing should show no focus ring; keyboard focus on fullscreen uses a quiet neutral outline, never the red accent ring.
+
+Settings uses inline illustrated choice cards instead of select dropdowns: two Book view tiles, a 2×2 Book order grid, and two Page turns choices. Use labeled native radio inputs styled as cards (no visible radio circles), semantic fieldset legends, checked highlights/checkmarks, and neutral visible keyboard focus. Preserve standard radio arrow-key interaction, immediate local saving, cross-tab synchronization, existing resets and all preference keys. Keep the close button sticky and targets at least 44px tall. The grouped layout and quiet selected treatment draw from Paths to Peace’s settings panel.

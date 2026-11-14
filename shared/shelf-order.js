@@ -30,23 +30,45 @@ window.createShelfOrder = ({books,onChange,announce}) => {
    return [...newest];
  }
  const dialog=document.createElement('dialog');dialog.className='shelf-settings';dialog.setAttribute('aria-labelledby','shelf-settings-title');
- dialog.innerHTML=`<div class="settings-heading"><h2 id="shelf-settings-title">Settings</h2><button class="settings-close" aria-label="Close settings" autofocus>×</button><button class="fullscreen-toggle settings-fullscreen" data-fullscreen hidden aria-pressed="false">Fullscreen</button></div><p class="fullscreen-message" role="status" hidden></p><section class="settings-section" aria-labelledby="settings-shelf-title"><h3 id="settings-shelf-title">Bookshelf</h3><label for="shelf-view">Book view</label><select id="shelf-view"><option value="covers">Bookshelf</option><option value="list">Compact list</option></select><label for="shelf-sort">Book order</label><select id="shelf-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title (A–Z)</option><option value="custom">Custom order</option></select><p class="settings-help">Drag a book to move it. On touch screens, hold the cover first. Arrow keys move a focused cover.</p><button class="reset-shelf-order">Reset order</button></section><section class="settings-section" aria-labelledby="settings-reading-title"><h3 id="settings-reading-title">Reading</h3><label for="reading-motion">Page turns</label><select id="reading-motion" aria-describedby="reading-motion-help"><option value="system">Gentle page turn</option><option value="instant">Instant — no animation</option></select><p class="settings-help" id="reading-motion-help">Always respects your device’s reduced-motion setting.</p><button class="reset-reading-settings">Reset reading settings</button></section><p class="settings-local">Saved in this browser. Your reading progress stays safe when you reset settings.</p>`;
+ const settingIcon=name=>{
+   const paths={
+     covers:'<rect x="3" y="4" width="7" height="15" rx="1.5" fill="#97bedc"/><path d="M5 5v13"/><rect x="14" y="5" width="7" height="15" rx="1.5" fill="#e99eab"/><path d="M16 6v13"/>',
+     list:'<rect x="3" y="4" width="5" height="6" rx="1" fill="#97bedc"/><path d="M12 6h9m-9 3h6"/><rect x="3" y="14" width="5" height="6" rx="1" fill="#e99eab"/><path d="M12 16h9m-9 3h6"/>',
+     newest:'<path d="M7 20V4m-4 4 4-4 4 4M15 6h6m-6 6h4m-4 6h2"/>',
+     oldest:'<path d="M7 4v16m-4-4 4 4 4-4M15 6h2m-2 6h4m-4 6h6"/>',
+     title:'<path d="m3 11 3-7 3 7M4 9h4m7 4h6l-6 7h6M15 4h6m-3-3v6"/>',
+     custom:'<rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M15 5h5v5m-3-8 3 3-3 3M9 19H4v-5m3 8-3-3 3-3"/>',
+     system:'<path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2Z"/>',
+     instant:'<path d="m13 2-9 12h7l-1 8 10-13h-8Z"/>'
+   };
+   return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${paths[name]}</svg>`;
+ };
+ const choices=(name,title,options,extra='')=>`<fieldset class="settings-choices ${extra}"><legend>${title}</legend><div class="choice-grid">${options.map(([value,label])=>`<label class="setting-option"><input type="radio" name="${name}" value="${value}"><span class="choice-body">${settingIcon(value)}<span>${label}</span><span class="choice-check" aria-hidden="true">✓</span></span></label>`).join('')}</div></fieldset>`;
+ dialog.innerHTML=`<div class="settings-heading"><h2 id="shelf-settings-title">Settings</h2><button class="settings-close" aria-label="Close settings" autofocus>×</button><button class="fullscreen-toggle settings-fullscreen" data-fullscreen hidden aria-pressed="false">Fullscreen</button></div><p class="fullscreen-message" role="status" hidden></p><section class="settings-section" aria-label="Bookshelf settings">${choices('book-view','Book view',[['covers','Bookshelf'],['list','Compact list']],'view-choices')}${choices('book-order','Book order',[['newest','Newest first'],['oldest','Oldest first'],['title','Title A–Z'],['custom','Custom']])}<div class="settings-under-options"><p class="settings-help">Drag books to arrange them.<br>On touch screens, hold a cover first.</p><button class="reset-shelf-order">Reset order</button></div></section><section class="settings-section" aria-label="Reading settings">${choices('page-motion','Page turns',[['system','Gentle'],['instant','Instant']])}<div class="settings-under-options"><p class="settings-help">Respects your device’s<br>reduced-motion setting.</p><button class="reset-reading-settings">Reset</button></div></section><p class="settings-local">Saved in this browser.</p>`;
  document.body.append(dialog);
- const viewSelect=dialog.querySelector('#shelf-view'),select=dialog.querySelector('#shelf-sort'),motionSelect=dialog.querySelector('#reading-motion');
  const help=document.createElement('span');help.id='shelf-reorder-help';help.className='sr-only';help.textContent='Drag to move this book; on a touch screen, hold the cover first. Arrow keys move it earlier or later. Escape cancels a drag.';document.body.append(help);
- const syncSettings=()=>{select.value=mode;viewSelect.value=view;motionSelect.value=motion;};syncSettings();
+ const syncSettings=()=>{
+   for(const [name,value] of [['book-view',view],['book-order',mode],['page-motion',motion]]){
+     dialog.querySelectorAll(`input[name="${name}"]`).forEach(input=>input.checked=input.value===value);
+   }
+ };syncSettings();
  function refresh(changes={}){persist();syncSettings();onChange(changes);}
  trigger.addEventListener('click',()=>{cancelDrag();syncSettings();dialog.showModal();});
  dialog.querySelector('.settings-close').addEventListener('click',()=>dialog.close());
  dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
  dialog.addEventListener('close',()=>trigger.focus({preventScroll:true}));
- viewSelect.addEventListener('change',()=>{view=viewSelect.value;refresh();announce(view==='list'?'Compact list view selected.':'Bookshelf view selected.');});
- select.addEventListener('change',()=>{
-   if(select.value==='custom'&&!customOrder.length)customOrder=orderedBooks().map(b=>b.id);
-   mode=select.value;refresh();announce('Book order changed to '+select.selectedOptions[0].textContent+'.');
+ dialog.addEventListener('change',e=>{
+   const input=e.target;if(!input.matches('input[type="radio"]'))return;
+   if(input.name==='book-view'){
+     view=input.value;refresh();announce(view==='list'?'Compact list view selected.':'Bookshelf view selected.');
+   }else if(input.name==='book-order'){
+     if(input.value==='custom'&&!customOrder.length)customOrder=orderedBooks().map(b=>b.id);
+     mode=input.value;refresh();announce('Book order changed to '+input.closest('label').querySelector('.choice-body>span').textContent+'.');
+   }else if(input.name==='page-motion'){
+     motion=input.value;refresh();announce(motion==='instant'?'Page turns are now instant.':'Gentle page turns enabled.');
+   }
  });
  dialog.querySelector('.reset-shelf-order').addEventListener('click',()=>{mode='newest';customOrder=[];refresh();announce('Book order reset. Newest first.');});
- motionSelect.addEventListener('change',()=>{motion=motionSelect.value;refresh();announce(motion==='instant'?'Page turns are now instant.':'Gentle page turns enabled.');});
  dialog.querySelector('.reset-reading-settings').addEventListener('click',()=>{motion='system';refresh();announce('Reading settings restored. Book order and reading progress preserved.');});
 
  function applyMove(source,target,after){

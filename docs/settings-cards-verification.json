@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-14",
+  "checks": [
+    "Eight inline radio cards replace all dropdowns; view/order/motion respond to touch, persist and reflect resets without erasing custom order or progress",
+    "Eight phone/tablet/desktop sizes in and out of fullscreen: no clipped choices or horizontal overflow, 44px targets, sticky close remains reachable on short screens",
+    "Native radio arrow keys, checked states, neutral keyboard focus, storage updates and Escape dismissal work"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Phone and tablet sizes emulated in Chrome; physical Safari/iPad not tested."
+  ]
+}
