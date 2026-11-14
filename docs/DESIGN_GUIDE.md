@@ -12,7 +12,7 @@ A book opens to a large front cover, with no additional “Open the book” butt
 
 The final screen is a dimensional back cover with the same uneven border, embossed hinge, and page-edge shadows as the front cover. Show a large “The End,” a small reused cover illustration, and two actions with playful illustrated icons: Read Again and Bookshelf. Add a tiny “Created Month Year” note beneath the image. No blurb or recommendations.
 
-Show a printed page number on every story page and a current-page counter. Cover/back cover have labels rather than story numbers. Place a C before page 1 to return to the front cover, with a meaningful accessible label and current-page state. Numbered navigation is optional on narrow screens; arrow buttons remain at least 44 pixels. Cover previous and back-cover next are disabled.
+Show a printed page number on every story page and a current-page counter. Cover/back cover have labels rather than story numbers. Place F before page 1 and B after the final page, linking to the front and back covers, with meaningful accessible labels and current-page states. Numbered navigation is optional on narrow screens; arrow buttons remain at least 44 pixels. Cover previous and back-cover next are disabled.
 
 ## Navigation and motion
 

@@ -174,7 +174,7 @@
    $('.page-prev').disabled=coverPage;$('.page-next').disabled=back;
    $('.page-next').setAttribute('aria-label',coverPage?'Turn the cover':pageIndex===b.pages.length-1?'Turn to back cover':'Next page');
    $('.page-counter').textContent=coverPage?'Cover':back?'Back cover':`${pageIndex+1} / ${b.pages.length}`;
-   $('.page-dots').innerHTML=`<button data-page="-1" class="${coverPage?'current':''}" aria-label="Go to cover" ${coverPage?'aria-current="page"':''}>C</button>`+b.pages.map((_,i)=>`<button data-page="${i}" class="${i===pageIndex?'current':''}" aria-label="Go to page ${i+1}" ${i===pageIndex?'aria-current="page"':''}>${i+1}</button>`).join('');
+   $('.page-dots').innerHTML=`<button data-page="-1" class="${coverPage?'current':''}" aria-label="Go to front cover" title="Front cover" ${coverPage?'aria-current="page"':''}>F</button>`+b.pages.map((_,i)=>`<button data-page="${i}" class="${i===pageIndex?'current':''}" aria-label="Go to page ${i+1}" ${i===pageIndex?'aria-current="page"':''}>${i+1}</button>`).join('')+`<button data-page="${b.pages.length}" class="${back?'current':''}" aria-label="Go to back cover" title="Back cover" ${back?'aria-current="page"':''}>B</button>`;
    if(pageIndex>=0){progress[b.id]=pageIndex;persist();}
  }
  function stopAnimation() {
