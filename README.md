@@ -56,7 +56,13 @@ There are no games, hotspots, narration, sounds, live story generation, analytic
 
 ## Edit or create books with Codex
 
-Open this folder as your Codex project. Say “I want a new book.” `AGENTS.md` routes Codex to the five-question brief and creation workflow in `docs/BOOK_CREATION.md`.
+Open this folder as your Codex project. Say “I want a new book.” `AGENTS.md` routes Codex to the [five-question brief and editing workflow](docs/BOOK_CREATION.md).
+
+The workflow is: **five questions → numbered page plan → revise words and pacing → visual direction → illustrated reading preview → revisions → publish**. Start at any stage. Ask for page-count suggestions, move scenes to specific pages, split or combine pages, edit the words, or replace an illustration while keeping its text. Feedback can use page numbers or scene descriptions. Codex maintains the page mapping and regenerates only affected art.
+
+Current editable plans: [Swimming](docs/books/swim/PLAN.md), [Avi](docs/books/avi/PLAN.md), and [Blue bike adventure](docs/books/adventure/PLAN.md). New books use the [book-plan template](docs/templates/BOOK_PLAN.md).
+
+Examples: “Give the Spaceship two pages,” “Move the dance party to page 5,” “Suggest a gentler ending,” or “Keep page 4’s words, but redraw Miri using the family photo.” Asking for suggestions produces a proposal; it does not automatically change the public book.
 
 - `shared/books.js`: story text, image descriptions, colors, illustration style, page-turn style.
 - `shared/concepts.js`: ten design definitions.
@@ -68,4 +74,4 @@ Open this folder as your Codex project. Say “I want a new book.” `AGENTS.md`
 - `docs/art-prompts.json`: exact prompts used with the built-in image-generation tool.
 - `docs/verification.json`: automated browser verification results.
 
-The illustrations are invented storybook interpretations, not portraits based on family photographs. Current assets are screen-oriented first-draft illustrations, approximately 414 × 414 pixels each; larger individual illustrations can be generated after choosing a direction.
+The initial published illustrations are invented storybook interpretations. A family photo supplied afterward is the reference for future illustration work; the written character notes are in `docs/STORY_GUIDE.md`. The raw family photo is not included in this repository. Current assets are screen-oriented first-draft illustrations, approximately 414 × 414 pixels each; larger individual illustrations can be generated after choosing a direction.
