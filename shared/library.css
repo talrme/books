@@ -187,3 +187,6 @@ html:not(.site-fullscreen) .reader-controls{padding-right:90px}
 .reading-position{min-width:0}.page-counter{flex-shrink:0}.page-dots{min-width:0;overflow-x:auto;scrollbar-width:none}.page-dots::-webkit-scrollbar{display:none}.page-dots button{flex-shrink:0}
 .page-prev,.page-next{flex-shrink:0}
 @media(max-width:600px){html:not(.site-fullscreen) .reader-controls{padding-right:56px}}
+
+/* Fullscreen stays quiet; show a neutral indicator only for keyboard focus. */
+.fullscreen-toggle:focus-visible{outline:2px solid #70697b;outline-offset:3px}

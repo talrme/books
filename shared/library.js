@@ -95,11 +95,6 @@
      button.title=full?'Exit fullscreen':'Fullscreen';
      button.innerHTML=`${icon(full?'close':'expand')}<span>${full?'Exit fullscreen':'Fullscreen'}</span>`;
    });
-   if(!full&&document.activeElement===document.body){
-     const host=$('dialog[open]')||(active?reader:$('#library'));
-     const button=host.querySelector('[data-fullscreen]');
-     if(button&&!button.hidden)button.focus({preventScroll:true});
-   }
    stopAnimation();
  }
  async function leaveFullscreen() {
