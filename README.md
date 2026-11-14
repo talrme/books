@@ -10,7 +10,7 @@ A small family bookshelf with four illustrated books for reading together around
 
 Open a large front cover, then tap the right side to turn it. Tap the left side to go back. Swipes, keyboard arrows, numbered navigation, and arrow buttons also work. Escape exits fullscreen first, or returns to the shelf in normal reading. The reader fills the window and adapts to portrait or landscape without showing two story pages at once.
 
-On supported browsers, choose **Fullscreen** in the reader. A large **× Exit fullscreen** button stays visible at the top right, including during page turns. Exiting keeps your current page; Bookshelf also leaves fullscreen. Unsupported browsers simply omit the control.
+On supported browsers, choose **Fullscreen** from the bookshelf, reader, or Settings. It stays on as you finish books, return to the shelf, and open another story. A large **× Exit fullscreen** button stays available, including while scrolling the shelf or turning pages. Only the exit control or browser exit ends fullscreen; your current view and place stay intact. Unsupported browsers omit the control.
 
 Books start newest first. Open **Settings** beside the shelf filters to choose newest first, oldest first, title (A–Z), or custom order. Drag a cover with a mouse, or drag its small grip on a touch screen, to arrange books; moving a book selects custom order. Keyboard users can focus a grip and use arrow keys. Preferences are saved in this browser. **Reset order** returns to newest first without affecting favorites or reading progress. New books appear ahead of your saved custom arrangement.
 

@@ -34,9 +34,9 @@ Verify favorites/empty state/reload, separate cover and resume behavior, orienta
 
 Headless Chrome with touch emulation provides automated coverage. A physical iPad/Safari check remains a device-specific follow-up. Publish only after relevant checks pass and verify the live root and books before reporting deployment.
 
-## Fullscreen reading
+## Site-wide fullscreen
 
-Show a Fullscreen button in the reader only when the browser exposes usable standard or WebKit fullscreen support. No simulated fullscreen fallback is needed for unsupported phones. Enter only on an explicit click. Keep a large, labeled X Exit fullscreen control visible in the top-right header on every page and during turns. Exit preserves the current book/page. Escape exits fullscreen before it can close the book; returning to the bookshelf exits fullscreen. Listen for native fullscreen changes, honor safe areas, handle rejected requests gracefully, and preserve all existing reading controls. Test actual browser fullscreen, unsupported/denied paths, page turns, external exit, and layout on phone/iPad/desktop sizes.
+Fullscreen targets the document root and is available from the bookshelf, reader, and Settings wherever supported (including standard/WebKit paths). It persists through opening/finishing books, replay, returning to the bookshelf, choosing another book, filters, Settings and internal home navigation. Never leave fullscreen automatically on book close or end. Only explicit exit or the browser's own fullscreen exit ends it. Keep a large labeled X Exit fullscreen control visible: fixed at the bookshelf’s top right even while scrolling, in the reader header during turns, and in the native Settings dialog header. Exit preserves the current view/book/page. Escape exits fullscreen before it can close a book. Unsupported browsers omit all fullscreen controls; denied requests recover gracefully. Do not automatically request fullscreen on reload, since browsers require user action.
 
 ## Bookshelf order and settings
 

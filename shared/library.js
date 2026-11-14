@@ -34,55 +34,61 @@
  document.documentElement.style.setProperty('--ink',concept.ink);
  document.documentElement.style.setProperty('--accent',concept.accent);
  document.title = concept.name+' · Miri’s Little World';
- $('#app').innerHTML = `<main id="library"><header class="site-header"><a class="brand" href="./"><span class="brand-mark">${icon('flower')}</span><h1>Miri’s books</h1></a><div class="shelf-tools"><nav class="filter-tabs" aria-label="Filter books"><button data-filter="all" aria-label="All books" class="active" aria-pressed="true">All</button><button data-filter="favorites" aria-pressed="false">${icon('heart')} Favorites <span class="favorite-count">${favorites.size}</span></button></nav><button class="shelf-settings-trigger" data-shelf-settings aria-label="Settings">${icon('settings')}<span>Settings</span></button></div></header><div id="shelf"></div></main><section id="reader" class="reader reader-paper" hidden role="region" aria-label="Book reader"><header class="reader-header"><button class="back-library" data-close aria-label="Back to bookshelf">${icon('left')}<span>Bookshelf</span></button><span class="reader-title"></span><div class="reader-tools"><div class="reader-actions"></div><button class="fullscreen-toggle" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div class="reader-stage" id="reader-stage"></div><footer class="reader-footer"><div class="reader-controls"><button class="page-prev" data-prev aria-label="Previous page">${icon('left')}</button><div class="reading-position"><span class="page-counter" aria-live="polite" aria-atomic="true"></span><nav class="page-dots" aria-label="Book pages"></nav></div><button class="page-next" data-next aria-label="Next page">${icon('right')}</button></div></footer></section><div class="sr-only" role="status" id="status"></div>`;
+ $('#app').innerHTML = `<main id="library"><header class="site-header"><a class="brand" href="./"><span class="brand-mark">${icon('flower')}</span><h1>Miri’s books</h1></a><div class="shelf-tools"><nav class="filter-tabs" aria-label="Filter books"><button data-filter="all" aria-label="All books" class="active" aria-pressed="true">All</button><button data-filter="favorites" aria-pressed="false">${icon('heart')} Favorites <span class="favorite-count">${favorites.size}</span></button></nav><button class="shelf-settings-trigger" data-shelf-settings aria-label="Settings">${icon('settings')}<span>Settings</span></button><button class="fullscreen-toggle shelf-fullscreen" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div id="shelf"></div></main><section id="reader" class="reader reader-paper" hidden role="region" aria-label="Book reader"><header class="reader-header"><button class="back-library" data-close aria-label="Back to bookshelf">${icon('left')}<span>Bookshelf</span></button><span class="reader-title"></span><div class="reader-tools"><div class="reader-actions"></div><button class="fullscreen-toggle" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div class="reader-stage" id="reader-stage"></div><footer class="reader-footer"><div class="reader-controls"><button class="page-prev" data-prev aria-label="Previous page">${icon('left')}</button><div class="reading-position"><span class="page-counter" aria-live="polite" aria-atomic="true"></span><nav class="page-dots" aria-label="Book pages"></nav></div><button class="page-next" data-next aria-label="Next page">${icon('right')}</button></div></footer></section><div class="sr-only" role="status" id="status"></div>`;
 
 
- const reader=$('#reader'),fullscreenButton=$('[data-fullscreen]');
- let fullscreenPending=false,wasReaderFullscreen=false,lastFullscreenExit=-Infinity;
- const isReaderFullscreen=()=> (document.fullscreenElement||document.webkitFullscreenElement)===reader;
+ const reader=$('#reader'),fullscreenRoot=document.documentElement;
+ let fullscreenPending=false,wasSiteFullscreen=false,lastFullscreenExit=-Infinity;
+ const isSiteFullscreen=()=> (document.fullscreenElement||document.webkitFullscreenElement)===fullscreenRoot;
  const canFullscreen=()=>Boolean(
-   (reader.requestFullscreen&&document.fullscreenEnabled!==false)||
-   (reader.webkitRequestFullscreen&&document.webkitFullscreenEnabled!==false)
+   (fullscreenRoot.requestFullscreen&&document.fullscreenEnabled!==false)||
+   (fullscreenRoot.webkitRequestFullscreen&&document.webkitFullscreenEnabled!==false)
  );
  function updateFullscreen() {
-   const full=isReaderFullscreen();
-   if(wasReaderFullscreen&&!full)lastFullscreenExit=performance.now();
-   wasReaderFullscreen=full;
+   const full=isSiteFullscreen();
+   if(wasSiteFullscreen&&!full)lastFullscreenExit=performance.now();
+   wasSiteFullscreen=full;
+   fullscreenRoot.classList.toggle('site-fullscreen',full);
    reader.classList.toggle('is-fullscreen',full);
-   fullscreenButton.hidden=!full&&!canFullscreen();
-   fullscreenButton.disabled=fullscreenPending;
-   fullscreenButton.setAttribute('aria-pressed',String(full));
-   fullscreenButton.innerHTML=`${icon(full?'close':'expand')}<span>${full?'Exit fullscreen':'Fullscreen'}</span>`;
-   if(!full&&active&&document.activeElement===document.body)fullscreenButton.focus({preventScroll:true});
+   document.querySelectorAll('[data-fullscreen]').forEach(button=>{
+     button.hidden=!full&&!canFullscreen();button.disabled=fullscreenPending;
+     button.setAttribute('aria-pressed',String(full));
+     button.innerHTML=`${icon(full?'close':'expand')}<span>${full?'Exit fullscreen':'Fullscreen'}</span>`;
+   });
+   if(!full&&document.activeElement===document.body){
+     const host=$('dialog[open]')||(active?reader:$('#library'));
+     const button=host.querySelector('[data-fullscreen]');
+     if(button&&!button.hidden)button.focus({preventScroll:true});
+   }
    stopAnimation();
  }
  async function leaveFullscreen() {
-   if(!isReaderFullscreen())return;
+   if(!isSiteFullscreen())return;
    const exit=document.exitFullscreen||document.webkitExitFullscreen;
    if(exit)await exit.call(document);
  }
  async function toggleFullscreen() {
    if(fullscreenPending)return;
-   const message=$('.fullscreen-message');message.hidden=true;
-   fullscreenPending=true;fullscreenButton.disabled=true;
+   document.querySelectorAll('.fullscreen-message').forEach(message=>message.hidden=true);
+   fullscreenPending=true;document.querySelectorAll('[data-fullscreen]').forEach(button=>button.disabled=true);
    try{
-     if(isReaderFullscreen())await leaveFullscreen();
-     else if(active&&canFullscreen()){
-       const request=reader.requestFullscreen||reader.webkitRequestFullscreen;
-       await request.call(reader);
-       // A book may have been closed while the browser processed the request.
-       if(!active)await leaveFullscreen();
+     if(isSiteFullscreen())await leaveFullscreen();
+     else if(canFullscreen()){
+       const request=fullscreenRoot.requestFullscreen||fullscreenRoot.webkitRequestFullscreen;
+       await request.call(fullscreenRoot);
      }
    }catch{
-     if(active){message.textContent='Fullscreen is unavailable right now. You can keep reading here.';message.hidden=false;}
+     const host=$('dialog[open]')||(active?reader:$('#library'));
+     const message=host.querySelector('.fullscreen-message');
+     message.textContent='Fullscreen is unavailable right now. You can keep browsing here.';message.hidden=false;
    }finally{fullscreenPending=false;updateFullscreen();}
  }
  document.addEventListener('fullscreenchange',updateFullscreen);
  document.addEventListener('webkitfullscreenchange',updateFullscreen);
- updateFullscreen();
 
  const shelfOrder=window.createShelfOrder({books,onChange:changes=>{if(changes?.startViewChanged)filter=shelfOrder.preferences().startView;stopAnimation();renderShelf();},announce:message=>$('#status').textContent=message});
  filter=shelfOrder.preferences().startView;
+ updateFullscreen();
  function renderShelf() {
    shelfOrder.cancelDrag();
    const list = shelfOrder.orderedBooks().filter(b=>filter==='all'||favorites.has(b.id));
@@ -119,8 +125,7 @@
  }
  function closeBook(hash=true) {
    if(!active)return;
-   void leaveFullscreen().catch(()=>{});
-   $('.fullscreen-message').hidden=true;
+   document.querySelectorAll('.fullscreen-message').forEach(message=>message.hidden=true);
    stopAnimation();active=null;$('#reader').hidden=true;$('#library').hidden=false;document.body.classList.remove('reading');
    if(hash)setHash();renderShelf();
    $('[data-open]')?.focus({preventScroll:true});
@@ -203,6 +208,7 @@
    renderPage();setHash();animatePage(direction,previous);
  }
  document.addEventListener('click',e=>{
+   if(e.target.closest('.brand')&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&e.button===0){e.preventDefault();filter=shelfOrder.preferences().startView;renderShelf();window.scrollTo(0,0);return;}
    const b=e.target.closest('button');if(!b)return;
    if(b.hasAttribute('data-fullscreen')){void toggleFullscreen();return;}
    if(b.dataset.favorite){updateFavorite(b.dataset.favorite);return;}
@@ -215,11 +221,12 @@
    if(b.hasAttribute('data-replay'))turnTo(-1);
  });
  document.addEventListener('keydown',e=>{
-   if(!active||e.altKey||e.metaKey||e.ctrlKey)return;
-   if(e.key==='Escape'){
-     if(isReaderFullscreen()||performance.now()-lastFullscreenExit<350){void leaveFullscreen().catch(()=>{});return;}
-     e.preventDefault();closeBook();
+   if(e.altKey||e.metaKey||e.ctrlKey)return;
+   if(e.key==='Escape'&&(isSiteFullscreen()||performance.now()-lastFullscreenExit<350)){
+     e.preventDefault();void leaveFullscreen().catch(()=>{});return;
    }
+   if(!active)return;
+   if(e.key==='Escape'){e.preventDefault();closeBook();}
    if(e.key==='ArrowRight'){e.preventDefault();turnTo(pageIndex+1);}
    if(e.key==='ArrowLeft'){e.preventDefault();turnTo(pageIndex-1);}
  });

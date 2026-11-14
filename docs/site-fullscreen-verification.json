@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-14",
+  "browser": "Installed headless Chrome with actual document-root Fullscreen API",
+  "layouts": 24,
+  "checks": [
+    "Enter fullscreen from shelf; exit stays fixed while scrolling; home link uses internal navigation",
+    "All four books: cover, story pages, back cover, replay, header Bookshelf and back-cover Bookshelf preserve fullscreen; switching books stays fullscreen",
+    "Filters, favorites, sorting and Settings preserve fullscreen; Settings has its own reachable exit/entry control",
+    "Explicit exit and Escape work from reader and shelf without changing page/view",
+    "Browser history within site retains fullscreen; native external exit synchronizes all controls",
+    "Exit is visible/clickable above content in shelf, reader and scrolled Settings at eight phone/iPad/desktop sizes",
+    "Unsupported browsers omit controls; denied requests show a message in current view and recover",
+    "352 page layouts in persistent site-wide fullscreen: all text/end controls fit and exit stays visible; fullscreen persists across every book close",
+    "Legacy WebKit method/event fallback targets document root and persists between reader and shelf (simulated)"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Physical iPad/Safari not tested; prefixed WebKit API tested with simulation."
+  ],
+  "readerLayouts": 352
+}
