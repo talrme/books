@@ -34,12 +34,19 @@
  document.documentElement.style.setProperty('--ink',concept.ink);
  document.documentElement.style.setProperty('--accent',concept.accent);
  document.title = concept.name+' · Miri’s Little World';
- $('#app').innerHTML = `<main id="library"><header class="site-header"><a class="brand" href="./"><span class="brand-mark"><img src="shared/book-stack.svg" alt="" width="38" height="38"></span><h1>Miri’s books</h1></a><div class="shelf-tools"><button class="shelf-settings-trigger" data-shelf-settings aria-label="Settings">${icon('settings')}<span>Settings</span></button><button class="fullscreen-toggle shelf-fullscreen" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div id="shelf"></div></main><section id="reader" class="reader reader-paper" hidden role="region" aria-label="Book reader"><header class="reader-header"><button class="back-library" data-close aria-label="Back to bookshelf">${icon('left')}<span>Bookshelf</span></button><span class="reader-title"></span><div class="reader-tools"><button class="fullscreen-toggle" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div class="reader-stage" id="reader-stage"></div><footer class="reader-footer"><div class="reader-controls"><button class="page-prev" data-prev aria-label="Previous page">${icon('left')}</button><div class="reading-position"><span class="page-counter" aria-live="polite" aria-atomic="true"></span><nav class="page-dots" aria-label="Book pages"></nav></div><button class="page-next" data-next aria-label="Next page">${icon('right')}</button></div></footer></section><div class="share-dock"><button data-open-share aria-label="Share" title="Share">${icon('share')}<span>Share</span></button></div><dialog class="share-dialog" aria-labelledby="share-title"><div class="share-heading"><h2 id="share-title">Share</h2><button data-close-share aria-label="Close sharing">×</button></div><p class="share-description"></p><label for="share-url">Link</label><input id="share-url" type="url" readonly spellcheck="false"><div class="share-actions"><button data-copy-link>Copy link</button><button data-native-share>${icon('share')}<span>Share…</span></button></div><p class="share-status" role="status" aria-live="polite"></p></dialog><div class="sr-only" role="status" id="status"></div>`;
+ $('#app').innerHTML = `<main id="library"><header class="site-header"><a class="brand" href="./"><span class="brand-mark"><img src="shared/book-stack.svg" alt="" width="38" height="38"></span><h1>Miri’s books</h1></a><div class="shelf-tools"><button class="shelf-settings-trigger" data-shelf-settings aria-label="Settings">${icon('settings')}<span>Settings</span></button><button class="fullscreen-toggle shelf-fullscreen" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div id="shelf"></div><footer class="shelf-footer"></footer></main><section id="reader" class="reader reader-paper" hidden role="region" aria-label="Book reader"><header class="reader-header"><button class="back-library" data-close aria-label="Back to bookshelf">${icon('left')}<span>Bookshelf</span></button><span class="reader-title"></span><div class="reader-tools"><button class="fullscreen-toggle" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div class="reader-stage" id="reader-stage"></div><footer class="reader-footer"><div class="reader-controls"><button class="page-prev" data-prev aria-label="Previous page">${icon('left')}</button><div class="reading-position"><span class="page-counter" aria-live="polite" aria-atomic="true"></span><nav class="page-dots" aria-label="Book pages"></nav></div><button class="page-next" data-next aria-label="Next page">${icon('right')}</button></div></footer></section><div class="share-dock"><button data-open-share aria-label="Share" title="Share">${icon('share')}<span>Share</span></button></div><dialog class="share-dialog" aria-labelledby="share-title"><div class="share-heading"><h2 id="share-title">Share</h2><button data-close-share aria-label="Close sharing">×</button></div><p class="share-description"></p><label for="share-url">Link</label><input id="share-url" type="url" readonly spellcheck="false"><div class="share-actions"><button data-copy-link>Copy link</button><button data-native-share>${icon('share')}<span>Share…</span></button></div><p class="share-status" role="status" aria-live="polite"></p></dialog><div class="sr-only" role="status" id="status"></div>`;
 
 
  // Share the selected book, not its current page or local shelf preferences.
  const shareDialog=$('.share-dialog');
  let shareDetails=null;
+ const phoneShareLayout=matchMedia('(max-width:600px), (max-width:950px) and (max-height:500px) and (pointer:coarse)');
+ function updateSharePlacement() {
+   const dock=$('.share-dock');
+   const host=phoneShareLayout.matches?$(active?'.reader-footer':'.shelf-footer'):$('#app');
+   if(dock.parentElement!==host)host.append(dock);
+ }
+ phoneShareLayout.addEventListener('change',updateSharePlacement);
  function openShare() {
    if(isSiteFullscreen())return;
    shelfOrder.cancelDrag();
@@ -83,6 +90,7 @@
    (fullscreenRoot.webkitRequestFullscreen&&document.webkitFullscreenEnabled!==false)
  );
  function updateFullscreen() {
+   updateSharePlacement();
    const full=isSiteFullscreen();
    if(wasSiteFullscreen&&!full)lastFullscreenExit=performance.now();
    wasSiteFullscreen=full;
@@ -129,6 +137,7 @@
    const compact=shelfOrder.preferences().view==='list';
    const html=`<div class="books-grid ${compact?'books-list':''}">${list.map(compact?listCard:card).join('')}</div>`;
    $('#shelf').innerHTML=html;
+   updateSharePlacement();
  }
  const setHash = (push=false) => {
    const next = active ? `#book=${active.id}&page=${pageIndex}` : location.pathname+location.search;

@@ -190,3 +190,17 @@ html:not(.site-fullscreen) .reader-controls{padding-right:90px}
 
 /* Fullscreen stays quiet; show a neutral indicator only for keyboard focus. */
 .fullscreen-toggle:focus-visible{outline:2px solid #70697b;outline-offset:3px}
+
+/* Phone sharing belongs to the footer, after the books, rather than an overlay. */
+.shelf-footer:empty{display:none}
+@media(max-width:600px), (max-width:950px) and (max-height:500px) and (pointer:coarse){
+ .theme-parade #library{display:flex;flex-direction:column;padding-bottom:max(8px,env(safe-area-inset-bottom))}
+ .site-header{flex-shrink:0}.shelf-footer{display:flex;justify-content:flex-end;margin-top:auto;padding-top:10px}
+ .share-dock{position:static;z-index:auto;flex-shrink:0;margin-left:auto}
+ .share-dock button{width:44px;padding:10px;background:transparent;border-color:transparent}
+ .share-dock button>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .reader-footer{display:flex;align-items:center;gap:8px}
+ .reader-footer .share-dock{flex:0 0 44px}
+ html:not(.site-fullscreen) .reader-controls{padding-right:0}
+ .reader-controls{flex:1;min-width:0}
+}
