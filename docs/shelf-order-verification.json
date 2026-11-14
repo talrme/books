@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-14",
+  "browser": "Installed headless Chrome; actual mouse pointer and CDP touch input",
+  "checks": [
+    "All three automatic sort modes and native settings dialog",
+    "Actual mouse cover drag changes to custom order, persists after reload, and never opens book",
+    "Custom arrangement retained when switching modes; keyboard grips reorder and retain focus",
+    "Favorites reordering preserves relative order of hidden books",
+    "Reset returns to newest first without changing favorites or reading positions",
+    "Escape cancels drag without changing order; ordinary cover click still opens book",
+    "Sorting preferences synchronize between tabs",
+    "Settings fits eight phone/tablet/desktop viewports; Escape closes and restores focus",
+    "Real CDP touch grip drag with auto-scroll reorders and persists without opening book",
+    "Normal touch scrolling over covers leaves order unchanged and never opens a book",
+    "Corrupt IDs and duplicates removed; newly added books appear before saved custom order",
+    "Settings and reading continue when browser storage is denied"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Physical iPad/Safari not tested."
+  ]
+}

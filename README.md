@@ -12,7 +12,7 @@ Open a large front cover, then tap the right side to turn it. Tap the left side 
 
 On supported browsers, choose **Fullscreen** in the reader. A large **× Exit fullscreen** button stays visible at the top right, including during page turns. Exiting keeps your current page; Bookshelf also leaves fullscreen. Unsupported browsers simply omit the control.
 
-Books are listed newest first by creation date, with later-added books first when dates tie.
+Books start newest first. Open **Settings** beside the shelf filters to choose newest first, oldest first, title (A–Z), or custom order. Drag a cover with a mouse, or drag its small grip on a touch screen, to arrange books; moving a book selects custom order. Keyboard users can focus a grip and use arrow keys. Preferences are saved in this browser. **Reset order** returns to newest first without affecting favorites or reading progress. New books appear ahead of your saved custom arrangement.
 
 Books finish on a dimensional back cover with a large “The End,” a small reused cover illustration, a tiny creation month/year beneath the image, and playful Read Again and Bookshelf actions. Only the right half-page folds left across the center, within the stationary book’s bounds (240 ms); previous reverses the direction. Covers fade in place; rapid navigation immediately interrupts the animation. A C before the numbered navigation returns to the front cover.
 

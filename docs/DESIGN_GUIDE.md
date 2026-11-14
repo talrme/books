@@ -2,7 +2,7 @@
 
 ## Selected direction
 
-Paper Parade is the only site design. Use a compact header with the bookshelf name and all/favorites tabs. Let the book covers occupy the shelf. Sort by creation date, newest first, breaking ties by later-added books first. Preserve each book’s frame color when sorting. Keep the playful uneven borders and slight rotations, with embossed-looking hinges, page blocks, and shadows that make the books feel dimensional. Do not restore marketing headings, subtitles, duplicate card titles, the ten-design gallery, or other themes.
+Paper Parade is the only site design. Use a compact header with the bookshelf name and all/favorites tabs. Let the book covers occupy the shelf. Default to creation date newest first, breaking ties by later-added books first, while honoring browser-local sort preferences. Preserve each book’s frame color when sorting. Keep the playful uneven borders and slight rotations, with embossed-looking hinges, page blocks, and shadows that make the books feel dimensional. Do not restore marketing headings, subtitles, duplicate card titles, the ten-design gallery, or other themes.
 
 ## Reader
 
@@ -37,3 +37,7 @@ Headless Chrome with touch emulation provides automated coverage. A physical iPa
 ## Fullscreen reading
 
 Show a Fullscreen button in the reader only when the browser exposes usable standard or WebKit fullscreen support. No simulated fullscreen fallback is needed for unsupported phones. Enter only on an explicit click. Keep a large, labeled X Exit fullscreen control visible in the top-right header on every page and during turns. Exit preserves the current book/page. Escape exits fullscreen before it can close the book; returning to the bookshelf exits fullscreen. Listen for native fullscreen changes, honor safe areas, handle rejected requests gracefully, and preserve all existing reading controls. Test actual browser fullscreen, unsupported/denied paths, page turns, external exit, and layout on phone/iPad/desktop sizes.
+
+## Bookshelf order and settings
+
+Default to newest first; offer oldest first, title A–Z, and custom order in a compact Settings dialog. Save these preferences in `miri-books-shelf-v1` as `{mode, order: [bookId]}`, separate from favorites/progress. Mouse users may drag a cover or its grip; touch users drag the grip so ordinary cover scrolling stays native. Arrow keys on a focused grip reorder accessibly. Moving a book switches to custom order; switching automatic modes preserves the custom arrangement. Reset order clears only shelf preferences and returns to newest first. Custom order filters unknown/duplicate IDs and places newly added books before the retained arrangement. Reordering in Favorites moves those books within the full order and preserves hidden books’ relative order. Cancel with Escape; canceled drags never save. Suppress the post-drag click so dragging never opens a book. Support edge auto-scroll, denied/corrupt storage, cross-tab preferences, and reduced motion. Story review remains in its published newest-first order.
