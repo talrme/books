@@ -27,7 +27,7 @@ For revisions, accept page numbers, quoted text, scene descriptions, and overall
 
 ## Verification
 
-For a story change, confirm each image matches its page and all names are spelled correctly. For reader/layout changes, check every story at phone portrait and landscape and iPad portrait and landscape. Validate resume, next/previous, ending, replay, and return to shelf when changing those features. Read `docs/DESIGN_GUIDE.md` for the full checklist. Do not claim a live URL until it is deployed and verified.
+For a story change, confirm each image matches its page and all names are spelled correctly. For reader/layout changes, check every story at phone portrait and landscape and iPad portrait and landscape. Validate cover opening, next/previous, ending, replay, and return to shelf when changing those features. Read `docs/DESIGN_GUIDE.md` for the full checklist. Do not claim a live URL until it is deployed and verified.
 
 ## Site-wide fullscreen
 
@@ -35,14 +35,16 @@ Fullscreen targets the document root and is available from the bookshelf, reader
 
 ## Bookshelf order and settings
 
-Default to newest first; offer oldest first, title A–Z, and custom order in a compact Settings dialog. Save these preferences in `miri-books-shelf-v1` as `{mode, order: [bookId], motion, showContinue}`, separate from reading progress. Mouse users may drag a cover or its grip; touch users drag the grip so ordinary cover scrolling stays native. Arrow keys on a focused grip reorder accessibly. Moving a book switches to custom order; switching automatic modes preserves the custom arrangement. Reset order clears only the saved arrangement and returns to newest first. Custom order filters unknown/duplicate IDs and places newly added books before the retained arrangement. Cancel with Escape; canceled drags never save. Suppress the post-drag click so dragging never opens a book. Support edge auto-scroll, denied/corrupt storage, cross-tab preferences, and reduced motion. Story review remains in its published newest-first order.
+Default to newest first; offer oldest first, title A–Z, and custom order in a compact Settings dialog. Save these preferences in `miri-books-shelf-v1` as `{mode, order: [bookId], motion}`, separate from reading progress. Drag any cover with a mouse. On touch, hold the cover for 350 ms before dragging; a quick swipe scrolls normally and a tap opens the book. Arrow keys on a focused cover reorder accessibly. Do not add drag icons or handles. Moving a book switches to custom order; switching automatic modes preserves the custom arrangement. Reset order clears only the saved arrangement and returns to newest first. Custom order filters unknown/duplicate IDs and places newly added books before the retained arrangement. Cancel with Escape; canceled drags never save. Suppress the post-drag click so dragging never opens a book. Support edge auto-scroll, denied/corrupt storage, cross-tab preferences, and reduced motion. Story review remains in its published newest-first order.
 
 ## Reading preferences
 
-Keep the Settings button visibly labeled on phone, iPad, and desktop. Group shelf controls and reading controls in one accessible dialog with a sticky heading/close button and scrollable content on short screens. Continue links default on; hiding them never deletes progress, and cover clicks still open the cover. Page motion defaults to system-aware gentle turns, with an instant option. Always let OS reduced motion override animations. Reset order preserves reading preferences; Reset reading settings restores continue-link visibility and motion while preserving custom order and progress. New fields default safely for older saved preferences and synchronize across tabs.
+Keep the Settings button visibly labeled on phone, iPad, and desktop. Group shelf controls and reading controls in one accessible dialog with a sticky heading/close button and scrollable content on short screens. Every cover opens on the front cover. Do not add Continue reading links or a preference for them. Page motion defaults to system-aware gentle turns, with an instant option. Always let OS reduced motion override animations. Reset order preserves reading preferences; Reset reading settings restores motion while preserving custom order and progress. New fields default safely for older saved preferences and synchronize across tabs.
 
 ## Page-turn continuity
 
 Keep the old page visible while the destination illustration decodes. On portrait phones, the entire old leaf turns away and reveals the destination without a stationary half. On other layouts during a forward turn, hold the old left half steady while the old right half folds left; reverse this for previous. The back face uses the destination half and must match the real destination exactly at landing. Remove the stationary and turning overlays together without tint/opacity changes or a second content swap. Never lock navigation while decoding or animating: canceled/deferred transitions must not reappear after a later turn, resize, close, or motion preference change. Verify start/end frames in both directions, cold/slow images, rapid turns, and instant/reduced-motion reading.
 
 Favorites have been removed across all devices. Ignore legacy favorites/start-view fields without losing reading progress, custom order, or reading preferences.
+
+The shelf has no drag icons or Continue reading links. Ignore legacy showContinue preferences. Covers support mouse drag, touch hold-and-drag, and keyboard reordering.

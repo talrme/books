@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-14",
+  "browser": "Chrome with real mouse and CDP touch input",
+  "checks": [
+    "No grip icons, resume links, or resume preference; mouse and keyboard cover reordering persists; clicks always open cover; saved data survives settings reset",
+    "Actual CDP touch: holding any cover enables drag; edge scroll and dropping save order without opening the book",
+    "Normal touch swipes scroll without changing order or starting delayed drags; ordinary taps still open covers"
+  ],
+  "errors": [],
+  "limitations": [
+    "Physical Safari/iPad not tested."
+  ]
+}
