@@ -2,7 +2,7 @@
 
 - Book ID: swim
 - Stage: Published first draft; open for revision
-- Current revision: 2 — family-reference illustrations and back cover
+- Current revision: 3 — quieter page turns and simplified back cover
 - Audience and language: Age four, English, read together
 - Story brief: A swimming adventure. A little splash. A big brave day.
 - Feeling: Warm, reassuring, child-sized wonder
@@ -97,15 +97,16 @@
 
 ### Back cover
 
-- Description: A bike ride with Abba, a pool full of bubbles, and a swimming lesson with Ayla and Asher. Miri discovers that a little courage can begin with a very little splash.
-- Created: November 2026
-- Related books: Up to two other library books, shuffled per opening.
-- Actions: Read again and Bookshelf.
+- Heading: The End
+- Illustration: Small reused front-cover image.
+- Treatment: Dimensional cover with uneven border, embossed spine, and page edges.
+- Actions: Read Again and Bookshelf, with playful illustrated icons. No other content.
 
 ## Revision log
 
 | Revision | Change | Scene IDs affected | Image work needed | State |
 |---|---|---|---|---|
+| 3 | Subtle interruptible navigation, C cover shortcut, and The End back cover; story words/order unchanged | None | Reused cover image | Published revision |
 | 2 | Family-reference art, dimensional flips, and a book-jacket back cover; story words/order unchanged | All | Completed | Published revision |
 | 1 | Existing first draft transcribed into this editorial plan without changing the book | All | None for this documentation change | Published draft |
 

@@ -8,7 +8,7 @@
  const vars = b => `--book-bg:${b.color};--book-ink:${b.ink};--frame:${frame(b)}`;
  const $ = s => document.querySelector(s);
  const icon = (name) => {
-   const paths = {heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',right:'<path d="m9 5 7 7-7 7"/>',left:'<path d="m15 5-7 7 7 7"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',book:'<path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2Z"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',replay:'<path d="M3 10a9 9 0 1 1 2 8M3 3v7h7"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/>',moon:'<path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10Z"/>',flower:'<path d="M12 8C3-5-5 13 8 12c-13 9 5 17 4 4 9 13 17-5 4-4C29 3 11-5 12 8Z"/><circle cx="12" cy="12" r="2"/>',rainbow:'<path d="M2 20v-5a10 10 0 0 1 20 0v5M6 20v-5a6 6 0 0 1 12 0v5M10 20v-5a2 2 0 0 1 4 0v5"/>',spark:'<path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/>',leaf:'<path d="M20 3C6 0 0 11 7 18S24 18 20 3ZM3 22 16 9"/>',compass:'<circle cx="12" cy="12" r="10"/><path d="m16 8-2 6-6 2 2-6Z"/>',cloud:'<path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 1 1 0 12Z"/>'};
+   const paths = {reread:'<path fill="#fff9dd" d="M12 9C8 6 5 6 2 7v13c4-1 7 0 10 2 3-2 6-3 10-2V7c-3-1-6-1-10 2Z"/><path d="M12 10v12M7 3a7 7 0 0 1 12 1M19 1v4h-4"/><path fill="#efbc42" stroke="none" d="m5 1 1 2 2 1-2 1-1 2-1-2-2-1 2-1Z"/>',bookshelf:'<path fill="#e99eab" d="m3 5 4-1 3 15-4 1Z"/><path fill="#efd066" d="M10 3h4v16h-4Z"/><path fill="#97bedc" d="m16 7 4 1-2 12-4-1Z"/><path d="M2 21h20M4 8l3-1M11 7h2m4 3 2 1"/>',heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',right:'<path d="m9 5 7 7-7 7"/>',left:'<path d="m15 5-7 7 7 7"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',book:'<path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2Z"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',replay:'<path d="M3 10a9 9 0 1 1 2 8M3 3v7h7"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/>',moon:'<path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10Z"/>',flower:'<path d="M12 8C3-5-5 13 8 12c-13 9 5 17 4 4 9 13 17-5 4-4C29 3 11-5 12 8Z"/><circle cx="12" cy="12" r="2"/>',rainbow:'<path d="M2 20v-5a10 10 0 0 1 20 0v5M6 20v-5a6 6 0 0 1 12 0v5M10 20v-5a2 2 0 0 1 4 0v5"/>',spark:'<path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/>',leaf:'<path d="M20 3C6 0 0 11 7 18S24 18 20 3ZM3 22 16 9"/>',compass:'<circle cx="12" cy="12" r="10"/><path d="m16 8-2 6-6 2 2-6Z"/>',cloud:'<path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 1 1 0 12Z"/>'};
    return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.spark}</svg>`;
  };
  const esc = v => String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -16,7 +16,7 @@
  try { saved = JSON.parse(localStorage.getItem('miri-books-v1') || '{}') || {}; } catch {}
  let favorites = new Set(Array.isArray(saved.favorites) ? saved.favorites.filter(id=>books.some(b=>b.id===id)) : []);
  let progress = saved.progress && typeof saved.progress === 'object' ? saved.progress : {};
- let filter = 'all', active = null, pageIndex = -1, busy = false, transitionId = 0, recommendations=[];
+ let filter = 'all', active = null, pageIndex = -1, pageAnimation = null;
  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
  const persist = () => {try {localStorage.setItem('miri-books-v1',JSON.stringify({favorites:[...favorites],progress}));} catch {}};
  const cover = b => imageUrl(b);
@@ -53,23 +53,20 @@
  };
  function openBook(id,index,hash=true) {
    const b=books.find(b=>b.id===id);if(!b)return;
-   transitionId++;busy=false;
+   stopAnimation();
    active=b;
-   recommendations=books.filter(other=>other.id!==b.id);
-   for(let i=recommendations.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[recommendations[i],recommendations[j]]=[recommendations[j],recommendations[i]];}
-   recommendations=recommendations.slice(0,2);
    pageIndex=Number.isInteger(index)?Math.max(-1,Math.min(index,b.pages.length)):-1;
    $('#library').hidden=true;$('#reader').hidden=false;document.body.classList.add('reading');
    $('#reader').dataset.book=b.id;
    $('.reader-title').textContent=b.title;
    $('.reader-actions').innerHTML=favoriteButton(b);
    renderPage();if(hash)setHash(true);
-   if(!reduce.matches)$('#reader-stage').animate([{opacity:0,transform:'translateY(25px) scale(.94) rotate(-1deg)'},{opacity:1,transform:'none'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)'});
+   animatePage(1);
    $('#reader').tabIndex=-1;$('#reader').focus({preventScroll:true});
  }
  function closeBook(hash=true) {
    if(!active)return;
-   transitionId++;active=null;busy=false;$('#reader').hidden=true;$('#library').hidden=false;document.body.classList.remove('reading');
+   stopAnimation();active=null;$('#reader').hidden=true;$('#library').hidden=false;document.body.classList.remove('reading');
    if(hash)setHash();renderShelf();
    $('[data-open]')?.focus({preventScroll:true});
  }
@@ -80,8 +77,7 @@
    if(coverPage){
      stage.innerHTML=`<div class="cover-spread"><article class="reader-cover book-surface" style="${vars(b)}" aria-label="${esc(b.title)} front cover">${coverArt(b)}</article></div>`;
    }else if(back){
-     const date=b.created?new Intl.DateTimeFormat('en-US',{month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(b.created+'-01T12:00:00Z')):'';
-     stage.innerHTML=`<div class="cover-spread"><article class="back-cover book-surface" style="${vars(b)}" aria-label="${esc(b.title)} back cover"><div class="back-scroll"><div class="back-about"><span class="back-mark" aria-hidden="true">${icon('flower')}</span><h2>${esc(b.title)}</h2><p class="back-description">${esc(b.description||b.short)}</p>${date?`<p class="created-date">Book created · ${esc(date)}</p>`:''}</div>${recommendations.length?`<section class="more-books" aria-label="Other books"><h3>More stories</h3><div class="related-books">${recommendations.map(other=>`<button class="related-book" data-open="${other.id}" aria-label="Read ${esc(other.title)}"><img src="${cover(other)}" alt=""><span>${esc(other.title)}</span></button>`).join('')}</div></section>`:''}</div><div class="back-actions"><button class="secondary" data-replay>${icon('replay')} Read again</button><button class="primary" data-close>${icon('book')} Bookshelf</button></div><span class="back-binding" aria-hidden="true"></span></article></div>`;
+     stage.innerHTML=`<div class="cover-spread"><article class="reader-cover back-cover book-surface" style="${vars(b)}" aria-label="${esc(b.title)} back cover"><h2 class="end-title">The End</h2><figure class="end-picture"><img src="${cover(b)}" alt="${esc(b.title)} cover illustration"></figure><div class="back-actions"><button class="end-action" data-replay><span class="action-picture reread-picture">${icon('reread')}</span><span>Read Again</span></button><button class="end-action" data-close><span class="action-picture shelf-picture">${icon('bookshelf')}</span><span>Bookshelf</span></button></div><span class="cover-spine" aria-hidden="true"></span></article></div>`;
    }else{
      const p=b.pages[pageIndex];
      stage.innerHTML=`<article class="story-page book-surface"><div class="page-picture"><img src="${imageUrl(b,pageIndex+1)}" alt="${esc(p.alt)}" fetchpriority="high"></div><div class="page-copy"><p class="story-text">${esc(p.text)}</p><span class="printed-page" aria-label="Page ${pageIndex+1}">${pageIndex+1}</span></div></article>`;
@@ -90,26 +86,26 @@
    $('.page-prev').disabled=coverPage;$('.page-next').disabled=back;
    $('.page-next').setAttribute('aria-label',coverPage?'Turn the cover':pageIndex===b.pages.length-1?'Turn to back cover':'Next page');
    $('.page-counter').textContent=coverPage?'Cover':back?'Back cover':`${pageIndex+1} / ${b.pages.length}`;
-   $('.page-dots').innerHTML=b.pages.map((_,i)=>`<button data-page="${i}" class="${i===pageIndex?'current':''}" aria-label="Go to page ${i+1}" ${i===pageIndex?'aria-current="page"':''}>${i+1}</button>`).join('');
+   $('.page-dots').innerHTML=`<button data-page="-1" class="${coverPage?'current':''}" aria-label="Go to cover" ${coverPage?'aria-current="page"':''}>C</button>`+b.pages.map((_,i)=>`<button data-page="${i}" class="${i===pageIndex?'current':''}" aria-label="Go to page ${i+1}" ${i===pageIndex?'aria-current="page"':''}>${i+1}</button>`).join('');
    if(pageIndex>=0){progress[b.id]=pageIndex;persist();}
  }
- async function turnTo(index) {
-   if(!active||busy||index===pageIndex||index< -1||index>active.pages.length)return;
-   busy=true;const token=++transitionId,forward=index>pageIndex,stage=$('#reader-stage');
-   const old=stage.querySelector('.book-surface'),oldRect=old.getBoundingClientRect(),oldClone=old.cloneNode(true);
-   pageIndex=index;if(index===-1){progress[active.id]=-1;persist();}renderPage();setHash();
-   let sheet;
-   try{
-     if(!reduce.matches){
-       const target=stage.querySelector('.book-surface'),targetRect=target.getBoundingClientRect(),rect=forward?oldRect:targetRect,sr=stage.getBoundingClientRect();
-       sheet=document.createElement('div');sheet.className='flip-sheet';sheet.setAttribute('aria-hidden','true');sheet.inert=true;
-       sheet.style.cssText=`left:${rect.left-sr.left}px;top:${rect.top-sr.top}px;width:${rect.width}px;height:${rect.height}px;${vars(active)}`;
-       const clone=forward?oldClone:target.cloneNode(true);clone.style.width='100%';clone.style.height='100%';clone.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));sheet.append(clone);stage.append(sheet);
-       const frames=[{transform:'perspective(2000px) rotateY(0deg)',opacity:1,filter:'brightness(1)'},{transform:'perspective(2000px) rotateY(-28deg)',opacity:1,filter:'brightness(.96)'},{transform:'perspective(2000px) rotateY(-92deg)',opacity:.8,filter:'brightness(.76)'},{transform:'perspective(2000px) rotateY(-145deg)',opacity:0,filter:'brightness(.8)'}];
-       await sheet.animate(forward?frames:[...frames].reverse(),{duration:760,easing:'cubic-bezier(.2,.62,.22,1)',fill:'forwards'}).finished;
-     }
-   }catch(error){if(error.name!=='AbortError')throw error;}
-   finally{sheet?.remove();if(token===transitionId)busy=false;}
+ function stopAnimation() {
+   pageAnimation?.cancel();pageAnimation=null;
+ }
+ function animatePage(direction) {
+   if(reduce.matches)return;
+   const surface=$('#reader-stage .book-surface');
+   pageAnimation=surface.animate([
+     {opacity:.82,transform:`perspective(1800px) translateX(${direction*5}px) rotateY(${direction*2}deg)`},
+     {opacity:1,transform:'none'}
+   ],{duration:180,easing:'ease-out'});
+ }
+ function turnTo(index) {
+   if(!active||index===pageIndex||index< -1||index>active.pages.length)return;
+   const direction=index>pageIndex?1:-1;
+   stopAnimation();
+   pageIndex=index;if(index===-1){progress[active.id]=-1;persist();}
+   renderPage();setHash();animatePage(direction);
  }
  document.addEventListener('click',e=>{
    const b=e.target.closest('button');if(!b)return;

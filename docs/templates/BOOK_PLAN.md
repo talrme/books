@@ -7,7 +7,7 @@
 - Story brief: <characters, setting, required moments, exact phrases>
 - Feeling and things to avoid: <notes>
 - Illustration style and character references: <style, palette, clothing, written family notes; no raw family photo committed>
-- Motion: <flip; another effect requires implementation>
+- Motion: <subtle interruptible page turn>
 - Proposed story-page count: <N, excluding cover and ending>
 - Pacing recommendation: <why this length and where important moments belong>
 - Publication scope: <local review / preview requested / publish authorized by user instruction>
@@ -43,10 +43,10 @@ Use the full draft words for each scene. A scene ID stays fixed when its page nu
 
 ### Back cover
 
-- Description: <short book-jacket blurb>
-- Created: <actual YYYY-MM>
-- Related books: up to two other books, shuffled when opened
-- Actions: Read again and Bookshelf
+- Heading: The End
+- Illustration: Small reused front-cover image.
+- Treatment: Dimensional cover with uneven border, embossed spine, and page edges.
+- Actions: Read Again and Bookshelf, with playful illustrated icons. No other content.
 
 ## Revision log
 

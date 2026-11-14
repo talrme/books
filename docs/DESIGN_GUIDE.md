@@ -10,15 +10,15 @@ Use nearly the entire browser viewport. Portrait stacks a single illustration ab
 
 A book opens to a large front cover, with no additional “Open the book” button. A cover click always opens the cover; the shelf's separate continue link can resume an unfinished book. Advance from the cover using the right side, arrow, keyboard, or swipe.
 
-The final screen is a back cover styled like the book jacket. It contains `description`, `created` (YYYY-MM formatted to month/year), a shuffled selection of up to two different other books, Read again, and Bookshelf. Hide recommendations when there are no other books; handle a single recommendation. Pick recommendations once per opening, without changing them during a resize. No “you did it,” “until next time,” confetti, completion rewards, or congratulatory screen.
+The final screen is a dimensional back cover with the same uneven border, embossed hinge, and page-edge shadows as the front cover. Show a large “The End,” a small reused cover illustration, and two actions with playful illustrated icons: Read Again and Bookshelf. No blurb, creation date, recommendations, or other ending content.
 
-Show a printed page number on every story page and a current-page counter. Cover/back cover have labels rather than story numbers. Numbered navigation is optional on narrow screens; arrow buttons remain at least 44 pixels. Cover previous and back-cover next are disabled.
+Show a printed page number on every story page and a current-page counter. Cover/back cover have labels rather than story numbers. Place a C before page 1 to return to the front cover, with a meaningful accessible label and current-page state. Numbered navigation is optional on narrow screens; arrow buttons remain at least 44 pixels. Cover previous and back-cover next are disabled.
 
 ## Navigation and motion
 
 Tap/click anywhere on the left or right half of the reading area for previous/next. Ignore interactive child controls and deliberate text selections. Pointer/touch swipes, keyboard arrows, Escape, page buttons, deep links, and browser back must work. A swipe followed by a synthetic click must turn only one page.
 
-Use a dimensional folding-sheet animation with a moving shadow. Lock additional turns during a flip. Closing or opening another book during a turn must not corrupt its state. Respect `prefers-reduced-motion` with instant transitions. No automatic turns, looping animations, or surprise sound.
+Use a subtle 180 ms page entrance (5 px travel, 2 degrees of perspective, gentle opacity change). Navigation updates immediately; cancel the previous animation on every new turn rather than blocking input. Rapid repeated keyboard arrows must advance by the number of presses, up to the boundary. Cancel motion on close/open and respect `prefers-reduced-motion` with instant transitions. No automatic turns, looping animations, or surprise sound.
 
 ## State and paths
 
@@ -28,8 +28,8 @@ The root URL is the bookshelf. The previous Paper Parade route redirects to it w
 
 ## Verification
 
-Check 320×568, 390×844, 844×390, 768×1024, 834×1194, 1024×768, 1194×834, and 1440×1000. Test all three books from cover through back cover at every size. Check long titles, all printed numbers, text not overlapping controls/numbers, image loading, horizontal overflow, back-cover scrolling on short displays, and actions remaining usable.
+Check 320×568, 390×844, 844×390, 768×1024, 834×1194, 1024×768, 1194×834, and 1440×1000. Test all three books from cover through back cover at every size. Check long titles, all printed numbers, text not overlapping controls/numbers, image loading, horizontal overflow, back-cover content fitting short displays, and actions remaining usable.
 
-Verify favorites/empty state/reload, separate cover and resume behavior, orientation changes, side taps, touch swipe without double turns, keyboard arrows, direct page navigation, replay, return to shelf, related-book links, recommendation exclusions, and browser back. Check normal and reduced motion, including rapid taps and closing mid-animation. Confirm all 24 story words match their editorial plans.
+Verify favorites/empty state/reload, separate cover and resume behavior, orientation changes, side taps, touch swipe without double turns, keyboard arrows, direct page navigation, replay, return to shelf, cover navigation, and browser back. Check normal and reduced motion, including rapid keyboard presses and taps and closing mid-animation. Confirm all 24 story words match their editorial plans.
 
 Headless Chrome with touch emulation provides automated coverage. A physical iPad/Safari check remains a device-specific follow-up. Publish only after relevant checks pass and verify the live root and books before reporting deployment.

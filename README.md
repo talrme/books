@@ -10,7 +10,7 @@ A small family bookshelf with three illustrated books for reading together aroun
 
 Open a large front cover, then tap the right side to turn it. Tap the left side to go back. Swipes, keyboard arrows, numbered navigation, and arrow buttons also work. Escape returns to the shelf. The reader fills the window and adapts to portrait or landscape without showing two story pages at once.
 
-Books finish on a back cover with a short description, their creation month and year, up to two randomly ordered other books, and read-again/bookshelf buttons. All three books were created in November 2026. Recommendations use the existing library; no AI requests occur while reading.
+Books finish on a dimensional back cover with a large “The End,” a small reused cover illustration, and playful Read Again and Bookshelf actions. Page turns are subtle and take 180 ms; rapid navigation immediately interrupts the animation. A C before the numbered navigation returns to the front cover.
 
 Favorites and reading progress are saved in this browser. Tapping a cover starts at the cover; an unfinished book also has a separate “Continue at page…” link. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.
 
@@ -34,7 +34,7 @@ Current plans: [Swimming](docs/books/swim/PLAN.md), [Avi](docs/books/avi/PLAN.md
 
 Examples: “Give the Spaceship two pages,” “Move the dance party to page 5,” or “Keep page 4’s words, but change the illustration.” Suggestions alone do not change the public book.
 
-- `shared/books.js`: story words, image descriptions, back-cover descriptions, creation dates, and book colors.
+- `shared/books.js`: story words, image descriptions, editorial descriptions, creation dates, and book colors.
 - `shared/library.js`: bookshelf, reader, favorites, progress, side taps, swipes, flips, and related books.
 - `shared/library.css`: Paper Parade shelf and responsive reader.
 - `shared/assets/`: one cover and eight illustrations per book.
