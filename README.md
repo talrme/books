@@ -14,6 +14,8 @@ On supported browsers, choose **Fullscreen** in the reader. A large **× Exit fu
 
 Books start newest first. Open **Settings** beside the shelf filters to choose newest first, oldest first, title (A–Z), or custom order. Drag a cover with a mouse, or drag its small grip on a touch screen, to arrange books; moving a book selects custom order. Keyboard users can focus a grip and use arrow keys. Preferences are saved in this browser. **Reset order** returns to newest first without affecting favorites or reading progress. New books appear ahead of your saved custom arrangement.
 
+Settings also lets you start on **All books** or **Favorites**, show or hide **Continue reading** links, and choose **Gentle page turn** or **Instant — no animation**. Device reduced-motion preferences always take priority. Reading settings and book order have separate resets; neither erases favorites or saved reading positions.
+
 Books finish on a dimensional back cover with a large “The End,” a small reused cover illustration, a tiny creation month/year beneath the image, and playful Read Again and Bookshelf actions. Only the right half-page folds left across the center, within the stationary book’s bounds (240 ms); previous reverses the direction. Covers fade in place; rapid navigation immediately interrupts the animation. A C before the numbered navigation returns to the front cover.
 
 Favorites and reading progress are saved in this browser. Tapping a cover starts at the cover; an unfinished book also has a separate “Continue at page…” link. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.

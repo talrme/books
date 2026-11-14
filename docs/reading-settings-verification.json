@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-14",
+  "references": [
+    "Paths to Peace: start view and motion",
+    "Timer: less motion",
+    "Miri’s Mix & Match: grouped, device-local settings"
+  ],
+  "checks": [
+    "Start shelf persists; hiding Continue links preserves progress and restoring them resumes correctly",
+    "Instant turns persist; gentle turns restored; device reduced motion always wins",
+    "Cross-tab motion preference applies to a reader already open",
+    "Order reset preserves reading settings; reading reset preserves ordering, favorites and saved positions",
+    "Settings label visible at all eight sizes; controls scroll and close button stays visible; focus restored on Escape"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Physical iPad/Safari not tested."
+  ]
+}
