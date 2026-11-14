@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-14",
+  "checks": [
+    "Bookshelf remains default; Compact list chosen in Settings persists after reload; switching back works",
+    "Compact rows with cover, title, page count and creation date fit eight sizes in and out of fullscreen",
+    "Book logo stays visible, including 320px; header controls do not overlap",
+    "Order and reading resets preserve selected view",
+    "Actual mouse and CDP touch reorder list rows, persist after reload, and never open a dragged book; taps still open covers; keyboard reorder works"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Physical Safari/iPad not tested."
+  ]
+}

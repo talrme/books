@@ -156,3 +156,16 @@ body.theme-parade .book-drag-ghost{position:fixed;z-index:1000;pointer-events:no
 
 /* Hold a cover to rearrange on touch; quick swipes still scroll the shelf. */
 .cover-button{-webkit-touch-callout:none;touch-action:pan-y}.cover-button img{-webkit-touch-callout:none}
+
+/* The same books in a small, comfortable list. */
+.brand-mark img{width:100%;height:100%;object-fit:contain}
+.theme-parade .books-grid.books-list{grid-template-columns:minmax(0,1fr);gap:10px;width:100%;max-width:900px;margin:0 auto;padding:26px 0}
+.theme-parade .list-cover-wrap,.theme-parade .list-cover-wrap:hover{transform:none;padding:0;transition:none}
+.theme-parade .list-cover-wrap .cover-button{display:flex;align-items:center;gap:20px;aspect-ratio:auto;min-height:100px;padding:12px 18px;text-align:left;border:1px solid #28275120;border-radius:13px 17px 15px 11px;background:#fffaf0;box-shadow:2px 3px 0 #2827510c;overflow:visible}
+.theme-parade .list-cover-wrap .cover-button:hover{transform:none;background:#fffdf6;border-color:#28275155}
+.list-thumbnail{display:block;position:relative;width:56px;height:70px;flex-shrink:0;overflow:hidden;border:4px solid var(--frame);border-radius:3px 6px 5px 2px;box-shadow:2px 2px 0 #fffaf0,3px 3px 0 #b6a78c;transform:rotate(-3deg)}
+.list-thumbnail img{position:static;width:100%;height:100%;object-fit:cover}.list-thumbnail .cover-label{display:none}.list-thumbnail .cover-spine{width:7px}
+.list-details{display:flex;flex-direction:column;gap:7px;min-width:0;flex:1}.list-details strong{font-family:var(--round);font-size:20px;line-height:1.2;font-weight:800;letter-spacing:-.035em;color:#282751}.list-details>span{font-size:11px;line-height:1.4;color:#70697b}.list-arrow{color:#8c8094}.list-arrow svg{width:19px;height:19px}
+.books-list .book-card.drop-before:before,.books-list .book-card.drop-after:after{height:3px;width:auto;left:8px;right:8px;bottom:auto;box-shadow:0 0 0 2px #fffaf0}.books-list .book-card.drop-before:before{top:-7px}.books-list .book-card.drop-after:after{top:auto;bottom:-7px}
+@media(max-width:600px){.theme-parade .list-cover-wrap .cover-button{gap:14px;min-height:88px;padding:10px 12px}.list-thumbnail{width:48px;height:60px}.list-details strong{font-size:17px}.list-details>span{font-size:10px}.list-arrow{display:none}.theme-parade .books-grid.books-list{padding:20px 0}}
+@media(max-width:360px){.site-header .brand-mark{display:grid;width:25px;height:25px}.brand{gap:5px}.brand h1{font-size:18px}.site-fullscreen .site-header{padding-right:46px}}

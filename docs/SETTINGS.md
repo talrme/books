@@ -4,6 +4,7 @@ The bookshelf header has a visible Settings button at every screen size. The gro
 
 | Setting | Default | Behavior |
 |---|---|---|
+| Book view | Bookshelf | Compact list uses small covers and titles in space-saving rows |
 | Book order | Newest first | Also offers oldest first, title A–Z and custom; dragging selects custom |
 | Page turns | Gentle | Instant removes page opening/turn animations; device reduced motion always wins |
 
@@ -20,3 +21,5 @@ See phone-reader-verification.json for checked behavior and browser limits.
 Favorites have been removed across all devices. Ignore legacy favorites/start-view fields without losing reading progress, custom order, or reading preferences.
 
 The shelf has no drag icons or Continue reading links. Ignore legacy showContinue preferences. Covers support mouse drag, touch hold-and-drag, and keyboard reordering.
+
+Book view is saved in `miri-books-shelf-v1` as `view: "covers" | "list"`, defaulting to covers for older preferences. Settings offers Bookshelf and Compact list. The list shows small dimensional covers, titles, page counts, and creation month/year; the whole row opens or reorders the book. Mouse drag, touch hold-and-drag and keyboard arrows work in both views. Sorting and both resets preserve the chosen view; synchronize view changes across tabs. Use `shared/book-stack.svg` beside the site title instead of the flower, including on narrow phones.
