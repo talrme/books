@@ -160,30 +160,45 @@
    const layer=document.createElement('div');layer.className='page-turn-layer';
    layer.setAttribute('aria-hidden','true');layer.inert=true;
    layer.style.cssText=`left:${rect.left-stageRect.left}px;top:${rect.top-stageRect.top}px;width:${rect.width}px;height:${rect.height}px;${vars(active)}`;
-   const sheet=document.createElement('div');sheet.className='turning-half '+(direction>0?'turn-forward':'turn-backward');
-   for(const [side,source] of [['front',previous],['back',surface]]){
-     const face=document.createElement('div');face.className='turn-face turn-'+side;
+   const snapshot=(source,left=0)=>{
      const clone=source.cloneNode(true);
      clone.removeAttribute('id');clone.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));
-     clone.style.cssText=`position:absolute;top:0;left:${(side==='front')===(direction>0)?-rect.width/2:0}px;width:${rect.width}px;height:${rect.height}px;margin:0;box-shadow:none;`;
-     face.append(clone);sheet.append(face);
+     clone.style.cssText=`position:absolute;top:0;left:${left}px;width:${rect.width}px;height:${rect.height}px;margin:0;box-shadow:none;`;
+     return clone;
+   };
+   // Hold the old page intact while the next illustration decodes.
+   previous.style.cssText=`position:absolute;top:0;left:0;width:${rect.width}px;height:${rect.height}px;margin:0;box-shadow:none;`;
+   const stationary=document.createElement('div');stationary.className='turn-stationary '+(direction>0?'hold-left':'hold-right');stationary.hidden=true;
+   stationary.append(snapshot(previous,direction>0?0:-rect.width/2));
+   const sheet=document.createElement('div');sheet.className='turning-half '+(direction>0?'turn-forward':'turn-backward');sheet.hidden=true;
+   for(const [side,source] of [['front',previous],['back',surface]]){
+     const face=document.createElement('div');face.className='turn-face turn-'+side;
+     face.append(snapshot(source,(side==='front')===(direction>0)?-rect.width/2:0));sheet.append(face);
    }
-   layer.append(sheet);stage.append(layer);turnLayer=layer;
-   const animation=sheet.animate([
-     {transform:'rotateY(0deg)'},
-     {transform:`rotateY(${direction>0?-180:180}deg)`}
-   ],{duration:240,easing:'ease-in-out',fill:'forwards'});
-   pageAnimation=animation;
-   animation.finished.then(()=>{
-     layer.remove();
-     if(pageAnimation===animation){pageAnimation=null;turnLayer=null;}
-   },()=>layer.remove());
+   layer.dataset.phase='loading';layer.append(previous,stationary,sheet);stage.append(layer);turnLayer=layer;
+   const images=[...surface.querySelectorAll('img'),...layer.querySelectorAll('img')];
+   Promise.allSettled(images.map(image=>image.decode?image.decode():Promise.resolve())).then(()=>{
+     // A later turn, close, resize, or preference change may have replaced this layer.
+     if(turnLayer!==layer)return;
+     previous.remove();stationary.hidden=false;sheet.hidden=false;layer.dataset.phase='turning';
+     const animation=sheet.animate([
+       {transform:'rotateY(0deg)'},
+       {transform:`rotateY(${direction>0?-180:180}deg)`}
+     ],{duration:240,easing:'ease-in-out',fill:'forwards'});
+     pageAnimation=animation;
+     animation.finished.then(()=>{
+       // The landed back face matches the real page below: remove both overlays together.
+       layer.remove();
+       if(pageAnimation===animation){pageAnimation=null;turnLayer=null;}
+     },()=>layer.remove());
+   });
  }
  function turnTo(index) {
    if(!active||index===pageIndex||index< -1||index>active.pages.length)return;
    const direction=index>pageIndex?1:-1;
+   // When skipping a still-loading page, keep the last visible (decoded) page.
+   const previous=(turnLayer?.dataset.phase==='loading'?turnLayer.querySelector(':scope > .story-page'):null)||$('#reader-stage .book-surface');
    stopAnimation();
-   const previous=$('#reader-stage .book-surface');
    pageIndex=index;if(index===-1){progress[active.id]=-1;persist();}
    renderPage();setHash();animatePage(direction,previous);
  }

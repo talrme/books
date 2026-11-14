@@ -16,7 +16,7 @@ Books start newest first. Open **Settings** beside the shelf filters to choose n
 
 Settings also lets you start on **All books** or **Favorites**, show or hide **Continue reading** links, and choose **Gentle page turn** or **Instant — no animation**. Device reduced-motion preferences always take priority. Reading settings and book order have separate resets; neither erases favorites or saved reading positions.
 
-Books finish on a dimensional back cover with a large “The End,” a small reused cover illustration, a tiny creation month/year beneath the image, and playful Read Again and Bookshelf actions. Only the right half-page folds left across the center, within the stationary book’s bounds (240 ms); previous reverses the direction. Covers fade in place; rapid navigation immediately interrupts the animation. A C before the numbered navigation returns to the front cover.
+Books finish on a dimensional back cover with a large “The End,” a small reused cover illustration, a tiny creation month/year beneath the image, and playful Read Again and Bookshelf actions. Only the right half-page folds left across the center, within the stationary book’s bounds (240 ms); previous reverses the direction. Covers fade in place; rapid navigation immediately interrupts the animation. The old stationary half stays visible until the leaf lands, and the next illustration is decoded before reveal to avoid flicker. A C before the numbered navigation returns to the front cover.
 
 Favorites and reading progress are saved in this browser. Tapping a cover starts at the cover; an unfinished book also has a separate “Continue at page…” link. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.
 

@@ -75,7 +75,7 @@ body.reading{overflow:hidden}.reader{position:fixed;inset:0;z-index:20;display:f
 .turn-forward{left:50%;transform-origin:left center}.turn-backward{left:0;transform-origin:right center}
 .turn-face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;background:var(--reader-paper)}
 .turn-back{transform:rotateY(180deg)}
-.turn-face:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#2827510d,transparent 12%,transparent 88%,#2827510a)}
+.turn-stationary{position:absolute;top:0;bottom:0;width:50%;overflow:hidden}.hold-left{left:0}.hold-right{left:50%}
 
 /* Keep each additional cover gently tilted instead of increasing the angle. */
 .theme-parade .book-card{--tilt:0deg}.theme-parade .book-card:nth-child(3n+1){--tilt:2deg}.theme-parade .book-card:nth-child(3n+3){--tilt:-2deg}.theme-parade .cover-wrap{transform:perspective(1200px) rotateY(-5deg) rotate(var(--tilt))}.theme-parade .cover-wrap:hover{transform:perspective(1200px) rotateY(-5deg) rotate(var(--tilt)) translateY(-5px)}

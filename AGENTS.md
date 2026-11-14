@@ -40,3 +40,7 @@ Default to newest first; offer oldest first, title A–Z, and custom order in a 
 ## Reading preferences
 
 Keep the Settings button visibly labeled on phone, iPad, and desktop. Group shelf controls and reading controls in one accessible dialog with a sticky heading/close button and scrollable content on short screens. Start view defaults to all books; favorites is optional and applies on reload. Continue links default on; hiding them never deletes progress, and cover clicks still open the cover. Page motion defaults to system-aware gentle turns, with an instant option. Always let OS reduced motion override animations. Reset order preserves reading preferences; Reset reading settings restores start view, continue-link visibility and motion while preserving custom order, favorites and progress. New fields default safely for older saved preferences and synchronize across tabs.
+
+## Page-turn continuity
+
+Keep the old page visible while the destination illustration decodes. During a forward turn, hold the old left half steady while the old right half folds left; reverse this for previous. The back face uses the destination half and must match the real destination exactly at landing. Remove the stationary and turning overlays together without tint/opacity changes or a second content swap. Never lock navigation while decoding or animating: canceled/deferred transitions must not reappear after a later turn, resize, close, or motion preference change. Verify start/end frames in both directions, cold/slow images, rapid turns, and instant/reduced-motion reading.

@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-14",
+  "browser": "Installed headless Chrome",
+  "transitions": 64,
+  "checks": [
+    "64 forward/backward turns across all four books and eight sizes; stationary book and contained half-sheet",
+    "Delayed illustration keeps old page intact; decode completion animates cleanly; rapid arrows count immediately; canceled loads never revive after another turn, book, resize, or instant preference",
+    "Reduced-motion path stays instant",
+    "Pixel comparisons: old content retained at start and on stationary half; landing closely matches final frame without a second content swap",
+    "Additional stalled-image test: rapid turns reach the later decoded page before the skipped illustration is released; last decoded page retained while waiting."
+  ],
+  "errors": [],
+  "limitations": [
+    "Physical iPad/Safari not tested."
+  ],
+  "frameComparison": {
+    "method": "Mean absolute RGB pixel difference, cropped 8px inside page edges; 0 is identical, 255 is opposite black/white. Start/stationary tolerance allows fine image resampling differences between composited layers; landing uses a stricter tolerance.",
+    "maxStart": 1.541795615731786,
+    "maxStationary": 2.4102474448628297,
+    "maxLanding": 0.023369877230171348,
+    "startStationaryTolerance": 3,
+    "landingTolerance": 0.1,
+    "issues": []
+  },
+  "beforeChangeExample": {
+    "book": "swim",
+    "viewport": "1194x834",
+    "leftHalfStartDifference": 59.72224952781138,
+    "leftHalfLandingDifference": 0.5612750153859213
+  }
+}
