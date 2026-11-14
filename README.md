@@ -8,7 +8,9 @@ A small family bookshelf with four illustrated books for reading together around
 
 ## Reading
 
-Open a large front cover, then tap the right side to turn it. Tap the left side to go back. Swipes, keyboard arrows, numbered navigation, and arrow buttons also work. Escape returns to the shelf. The reader fills the window and adapts to portrait or landscape without showing two story pages at once.
+Open a large front cover, then tap the right side to turn it. Tap the left side to go back. Swipes, keyboard arrows, numbered navigation, and arrow buttons also work. Escape exits fullscreen first, or returns to the shelf in normal reading. The reader fills the window and adapts to portrait or landscape without showing two story pages at once.
+
+On supported browsers, choose **Fullscreen** in the reader. A large **× Exit fullscreen** button stays visible at the top right, including during page turns. Exiting keeps your current page; Bookshelf also leaves fullscreen. Unsupported browsers simply omit the control.
 
 Books are listed newest first by creation date, with later-added books first when dates tie.
 

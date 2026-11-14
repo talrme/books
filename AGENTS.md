@@ -28,3 +28,7 @@ For revisions, accept page numbers, quoted text, scene descriptions, and overall
 ## Verification
 
 For a story change, confirm each image matches its page and all names are spelled correctly. For reader/layout changes, check every story at phone portrait and landscape and iPad portrait and landscape. Validate favorites persistence, resume, next/previous, ending, replay, and return to shelf when changing those features. Read `docs/DESIGN_GUIDE.md` for the full checklist. Do not claim a live URL until it is deployed and verified.
+
+## Fullscreen reading
+
+Show a Fullscreen button in the reader only when the browser exposes usable standard or WebKit fullscreen support. No simulated fullscreen fallback is needed for unsupported phones. Enter only on an explicit click. Keep a large, labeled X Exit fullscreen control visible in the top-right header on every page and during turns. Exit preserves the current book/page. Escape exits fullscreen before it can close the book; returning to the bookshelf exits fullscreen. Listen for native fullscreen changes, honor safe areas, handle rejected requests gracefully, and preserve all existing reading controls. Test actual browser fullscreen, unsupported/denied paths, page turns, external exit, and layout on phone/iPad/desktop sizes.

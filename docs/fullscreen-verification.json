@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-14",
+  "browser": "Installed headless Google Chrome with actual Fullscreen API; mocked legacy WebKit, unsupported and denied paths",
+  "layouts": 352,
+  "checks": [
+    "Four books at eight viewport sizes: fullscreen fills viewport; large Exit fullscreen stays visible and clickable above pages and turns",
+    "Exit button preserves book/page; Escape exits fullscreen first, then closes reader on another press",
+    "Native external exit synchronizes button; rapid arrows and favorite changes retain exit control; Bookshelf leaves fullscreen",
+    "Unsupported browser hides control and reading works; rejected request recovers without losing page; legacy WebKit method/event path works"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Physical iPad/Safari not available; prefixed fallback tested with simulated WebKit API."
+  ]
+}

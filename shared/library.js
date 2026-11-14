@@ -8,7 +8,7 @@
  const vars = b => `--book-bg:${b.color};--book-ink:${b.ink};--frame:${frame(b)}`;
  const $ = s => document.querySelector(s);
  const icon = (name) => {
-   const paths = {reread:'<path fill="#fff9dd" d="M12 9C8 6 5 6 2 7v13c4-1 7 0 10 2 3-2 6-3 10-2V7c-3-1-6-1-10 2Z"/><path d="M12 10v12M7 3a7 7 0 0 1 12 1M19 1v4h-4"/><path fill="#efbc42" stroke="none" d="m5 1 1 2 2 1-2 1-1 2-1-2-2-1 2-1Z"/>',bookshelf:'<path fill="#e99eab" d="m3 5 4-1 3 15-4 1Z"/><path fill="#efd066" d="M10 3h4v16h-4Z"/><path fill="#97bedc" d="m16 7 4 1-2 12-4-1Z"/><path d="M2 21h20M4 8l3-1M11 7h2m4 3 2 1"/>',heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',right:'<path d="m9 5 7 7-7 7"/>',left:'<path d="m15 5-7 7 7 7"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',book:'<path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2Z"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',replay:'<path d="M3 10a9 9 0 1 1 2 8M3 3v7h7"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/>',moon:'<path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10Z"/>',flower:'<path d="M12 8C3-5-5 13 8 12c-13 9 5 17 4 4 9 13 17-5 4-4C29 3 11-5 12 8Z"/><circle cx="12" cy="12" r="2"/>',rainbow:'<path d="M2 20v-5a10 10 0 0 1 20 0v5M6 20v-5a6 6 0 0 1 12 0v5M10 20v-5a2 2 0 0 1 4 0v5"/>',spark:'<path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/>',leaf:'<path d="M20 3C6 0 0 11 7 18S24 18 20 3ZM3 22 16 9"/>',compass:'<circle cx="12" cy="12" r="10"/><path d="m16 8-2 6-6 2 2-6Z"/>',cloud:'<path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 1 1 0 12Z"/>'};
+   const paths = {expand:'<path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/>',reread:'<path fill="#fff9dd" d="M12 9C8 6 5 6 2 7v13c4-1 7 0 10 2 3-2 6-3 10-2V7c-3-1-6-1-10 2Z"/><path d="M12 10v12M7 3a7 7 0 0 1 12 1M19 1v4h-4"/><path fill="#efbc42" stroke="none" d="m5 1 1 2 2 1-2 1-1 2-1-2-2-1 2-1Z"/>',bookshelf:'<path fill="#e99eab" d="m3 5 4-1 3 15-4 1Z"/><path fill="#efd066" d="M10 3h4v16h-4Z"/><path fill="#97bedc" d="m16 7 4 1-2 12-4-1Z"/><path d="M2 21h20M4 8l3-1M11 7h2m4 3 2 1"/>',heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',right:'<path d="m9 5 7 7-7 7"/>',left:'<path d="m15 5-7 7 7 7"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',book:'<path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2Z"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',replay:'<path d="M3 10a9 9 0 1 1 2 8M3 3v7h7"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/>',moon:'<path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10Z"/>',flower:'<path d="M12 8C3-5-5 13 8 12c-13 9 5 17 4 4 9 13 17-5 4-4C29 3 11-5 12 8Z"/><circle cx="12" cy="12" r="2"/>',rainbow:'<path d="M2 20v-5a10 10 0 0 1 20 0v5M6 20v-5a6 6 0 0 1 12 0v5M10 20v-5a2 2 0 0 1 4 0v5"/>',spark:'<path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/>',leaf:'<path d="M20 3C6 0 0 11 7 18S24 18 20 3ZM3 22 16 9"/>',compass:'<circle cx="12" cy="12" r="10"/><path d="m16 8-2 6-6 2 2-6Z"/>',cloud:'<path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 1 1 0 12Z"/>'};
    return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.spark}</svg>`;
  };
  const esc = v => String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -34,7 +34,52 @@
  document.documentElement.style.setProperty('--ink',concept.ink);
  document.documentElement.style.setProperty('--accent',concept.accent);
  document.title = concept.name+' · Miri’s Little World';
- $('#app').innerHTML = `<main id="library"><header class="site-header"><a class="brand" href="./"><span class="brand-mark">${icon('flower')}</span><h1>Miri’s books</h1></a><nav class="filter-tabs" aria-label="Filter books"><button data-filter="all" class="active" aria-pressed="true">All books</button><button data-filter="favorites" aria-pressed="false">${icon('heart')} Favorites <span class="favorite-count">${favorites.size}</span></button></nav></header><div id="shelf"></div></main><section id="reader" class="reader reader-paper" hidden role="region" aria-label="Book reader"><header class="reader-header"><button class="back-library" data-close>${icon('left')}<span>Bookshelf</span></button><span class="reader-title"></span><div class="reader-actions"></div></header><div class="reader-stage" id="reader-stage"></div><footer class="reader-footer"><div class="reader-controls"><button class="page-prev" data-prev aria-label="Previous page">${icon('left')}</button><div class="reading-position"><span class="page-counter" aria-live="polite" aria-atomic="true"></span><nav class="page-dots" aria-label="Book pages"></nav></div><button class="page-next" data-next aria-label="Next page">${icon('right')}</button></div></footer></section><div class="sr-only" role="status" id="status"></div>`;
+ $('#app').innerHTML = `<main id="library"><header class="site-header"><a class="brand" href="./"><span class="brand-mark">${icon('flower')}</span><h1>Miri’s books</h1></a><nav class="filter-tabs" aria-label="Filter books"><button data-filter="all" class="active" aria-pressed="true">All books</button><button data-filter="favorites" aria-pressed="false">${icon('heart')} Favorites <span class="favorite-count">${favorites.size}</span></button></nav></header><div id="shelf"></div></main><section id="reader" class="reader reader-paper" hidden role="region" aria-label="Book reader"><header class="reader-header"><button class="back-library" data-close aria-label="Back to bookshelf">${icon('left')}<span>Bookshelf</span></button><span class="reader-title"></span><div class="reader-tools"><div class="reader-actions"></div><button class="fullscreen-toggle" data-fullscreen hidden aria-pressed="false">${icon('expand')}<span>Fullscreen</span></button></div></header><p class="fullscreen-message" role="status" hidden></p><div class="reader-stage" id="reader-stage"></div><footer class="reader-footer"><div class="reader-controls"><button class="page-prev" data-prev aria-label="Previous page">${icon('left')}</button><div class="reading-position"><span class="page-counter" aria-live="polite" aria-atomic="true"></span><nav class="page-dots" aria-label="Book pages"></nav></div><button class="page-next" data-next aria-label="Next page">${icon('right')}</button></div></footer></section><div class="sr-only" role="status" id="status"></div>`;
+
+
+ const reader=$('#reader'),fullscreenButton=$('[data-fullscreen]');
+ let fullscreenPending=false,wasReaderFullscreen=false,lastFullscreenExit=-Infinity;
+ const isReaderFullscreen=()=> (document.fullscreenElement||document.webkitFullscreenElement)===reader;
+ const canFullscreen=()=>Boolean(
+   (reader.requestFullscreen&&document.fullscreenEnabled!==false)||
+   (reader.webkitRequestFullscreen&&document.webkitFullscreenEnabled!==false)
+ );
+ function updateFullscreen() {
+   const full=isReaderFullscreen();
+   if(wasReaderFullscreen&&!full)lastFullscreenExit=performance.now();
+   wasReaderFullscreen=full;
+   reader.classList.toggle('is-fullscreen',full);
+   fullscreenButton.hidden=!full&&!canFullscreen();
+   fullscreenButton.disabled=fullscreenPending;
+   fullscreenButton.setAttribute('aria-pressed',String(full));
+   fullscreenButton.innerHTML=`${icon(full?'close':'expand')}<span>${full?'Exit fullscreen':'Fullscreen'}</span>`;
+   if(!full&&active&&document.activeElement===document.body)fullscreenButton.focus({preventScroll:true});
+   stopAnimation();
+ }
+ async function leaveFullscreen() {
+   if(!isReaderFullscreen())return;
+   const exit=document.exitFullscreen||document.webkitExitFullscreen;
+   if(exit)await exit.call(document);
+ }
+ async function toggleFullscreen() {
+   if(fullscreenPending)return;
+   const message=$('.fullscreen-message');message.hidden=true;
+   fullscreenPending=true;fullscreenButton.disabled=true;
+   try{
+     if(isReaderFullscreen())await leaveFullscreen();
+     else if(active&&canFullscreen()){
+       const request=reader.requestFullscreen||reader.webkitRequestFullscreen;
+       await request.call(reader);
+       // A book may have been closed while the browser processed the request.
+       if(!active)await leaveFullscreen();
+     }
+   }catch{
+     if(active){message.textContent='Fullscreen is unavailable right now. You can keep reading here.';message.hidden=false;}
+   }finally{fullscreenPending=false;updateFullscreen();}
+ }
+ document.addEventListener('fullscreenchange',updateFullscreen);
+ document.addEventListener('webkitfullscreenchange',updateFullscreen);
+ updateFullscreen();
 
  function renderShelf() {
    const list = books.filter(b=>filter==='all'||favorites.has(b.id));
@@ -65,12 +110,14 @@
    $('#reader').dataset.book=b.id;
    $('.reader-title').textContent=b.title;
    $('.reader-actions').innerHTML=favoriteButton(b);
-   renderPage();if(hash)setHash(true);
+   renderPage();updateFullscreen();if(hash)setHash(true);
    animatePage(1);
    $('#reader').tabIndex=-1;$('#reader').focus({preventScroll:true});
  }
  function closeBook(hash=true) {
    if(!active)return;
+   void leaveFullscreen().catch(()=>{});
+   $('.fullscreen-message').hidden=true;
    stopAnimation();active=null;$('#reader').hidden=true;$('#library').hidden=false;document.body.classList.remove('reading');
    if(hash)setHash();renderShelf();
    $('[data-open]')?.focus({preventScroll:true});
@@ -139,6 +186,7 @@
  }
  document.addEventListener('click',e=>{
    const b=e.target.closest('button');if(!b)return;
+   if(b.hasAttribute('data-fullscreen')){void toggleFullscreen();return;}
    if(b.dataset.favorite){updateFavorite(b.dataset.favorite);return;}
    if(b.dataset.open){openBook(b.dataset.open,b.dataset.resume?progress[b.dataset.open]:-1);return;}
    if(b.hasAttribute('data-close')){closeBook();return;}
@@ -150,7 +198,10 @@
  });
  document.addEventListener('keydown',e=>{
    if(!active||e.altKey||e.metaKey||e.ctrlKey)return;
-   if(e.key==='Escape'){e.preventDefault();closeBook();}
+   if(e.key==='Escape'){
+     if(isReaderFullscreen()||performance.now()-lastFullscreenExit<350){void leaveFullscreen().catch(()=>{});return;}
+     e.preventDefault();closeBook();
+   }
    if(e.key==='ArrowRight'){e.preventDefault();turnTo(pageIndex+1);}
    if(e.key==='ArrowLeft'){e.preventDefault();turnTo(pageIndex-1);}
  });

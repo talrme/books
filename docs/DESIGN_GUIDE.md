@@ -33,3 +33,7 @@ Check 320×568, 390×844, 844×390, 768×1024, 834×1194, 1024×768, 1194×834, 
 Verify favorites/empty state/reload, separate cover and resume behavior, orientation changes, side taps, touch swipe without double turns, keyboard arrows, direct page navigation, replay, return to shelf, cover navigation, and browser back. Check normal and reduced motion, including rapid keyboard presses and taps and closing mid-animation. Confirm all story words match their editorial plans.
 
 Headless Chrome with touch emulation provides automated coverage. A physical iPad/Safari check remains a device-specific follow-up. Publish only after relevant checks pass and verify the live root and books before reporting deployment.
+
+## Fullscreen reading
+
+Show a Fullscreen button in the reader only when the browser exposes usable standard or WebKit fullscreen support. No simulated fullscreen fallback is needed for unsupported phones. Enter only on an explicit click. Keep a large, labeled X Exit fullscreen control visible in the top-right header on every page and during turns. Exit preserves the current book/page. Escape exits fullscreen before it can close the book; returning to the bookshelf exits fullscreen. Listen for native fullscreen changes, honor safe areas, handle rejected requests gracefully, and preserve all existing reading controls. Test actual browser fullscreen, unsupported/denied paths, page turns, external exit, and layout on phone/iPad/desktop sizes.
