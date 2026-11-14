@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-13",
+  "browser": "Headless installed Google Chrome; touch input emulated via CDP",
+  "pageLayouts": 2400,
+  "viewports": [
+    {
+      "width": 320,
+      "height": 568
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 844,
+      "height": 390
+    },
+    {
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "width": 834,
+      "height": 1194
+    },
+    {
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "width": 1194,
+      "height": 834
+    },
+    {
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "checks": [
+    "10 shelves \u00d7 8 viewport sizes; 3 books \u00d7 cover + 8 pages + ending in every design and viewport",
+    "Favorites reload persistence, filtering, removal and empty state in all ten designs",
+    "Resume on reload and shelf reopen; page preserved through rotation; keyboard arrows, Escape, and direct page navigation",
+    "Browser state shared across staging designs",
+    "Cloud Nine carousel arrows and thumbnail selection",
+    "Browser back closes the reader",
+    "Touch-emulated swipe changes a page",
+    "Gallery filters, shortlist, and shortlist persistence",
+    "All 24 illustrated draft pages available for story review",
+    "All three animated turn styles; close and reopen during a transition"
+  ],
+  "issues": [],
+  "errors": [],
+  "failedRequests": [],
+  "limitations": [
+    "Not tested on a physical iPad/Safari.",
+    "These browser checks ran against the local build before deployment."
+  ]
+}
