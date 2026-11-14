@@ -139,5 +139,68 @@ window.BOOKS = [
     ],
     "created": "2026-11",
     "description": "With a homemade map, her blue bike, and Abba beside her, Miri sets off to find a very big adventure. A snail, a rainbow, and a picnic might be just the beginning."
+  },
+  {
+    "id": "rainbow-song",
+    "title": "Rainbow Baby Sings!",
+    "short": "A tiny voice. A sky full of songs.",
+    "category": "A singing adventure",
+    "color": "#eee9f7",
+    "ink": "#68517f",
+    "accent": "#bf7c9c",
+    "style": "Dreamy watercolor",
+    "motion": "flip",
+    "created": "2026-11",
+    "description": "Avi and Miri sing through rain, sunshine, and a make-believe rainbow adventure before a joyful school show.",
+    "pages": [
+      {
+        "text": "Every morning, Avi has a song. “Ooo! Aaah!” sings Avi. “Good morning, Rainbow Baby,” says Miri. “Where shall we sing today?”",
+        "alt": "Miri sings beside infant Avi in rainbow pajamas on a blanket at home, with Mama and Abba nearby."
+      },
+      {
+        "text": "Pitter-patter, here comes rain! Mama holds Avi close. He reaches for a raindrop. Miri sings, “Drip, drop, little song. Rainbow Baby, sing along!”",
+        "alt": "Mama cradles rainbow-clad Avi as he and Miri enjoy gentle rain under a yellow umbrella."
+      },
+      {
+        "text": "Abba holds Avi above a puddle. His rainbow booties make a tiny splash. Miri makes a BIG splash. Even the ducks join in. Quack, quack, quack!",
+        "alt": "Abba supports baby Avi above a shallow puddle while Miri splashes beside little ducks."
+      },
+      {
+        "text": "Out comes the sun. Avi kicks his rainbow feet on the picnic blanket. “Hello, sunshine!” sings Miri. “Aaah!” sings Avi. His happy song feels warm.",
+        "alt": "Rainbow-clad Avi kicks on a sunny picnic blanket while Miri sings with family nearby."
+      },
+      {
+        "text": "In the garden, Miri hums to a bumblebee. Avi coos to a flower. The wind rustles through the leaves. Their little song is growing!",
+        "alt": "Mama supports Avi near a daisy while Miri hums beside a little bumblebee."
+      },
+      {
+        "text": "“What if your song could fly?” asks Miri. She closes her eyes. In her imagination, a rainbow becomes a path across the sky.",
+        "alt": "In a make-believe sky, Miri holds Avi on a soft cloud and points toward a rainbow, with family around them."
+      },
+      {
+        "text": "A gentle unicorn is waiting! Miri sits behind Avi and holds him snug. Up they float, over the rainbow. “Ooo!” sings Rainbow Baby. “Wheee!” sings Miri.",
+        "alt": "In their imaginary adventure, Miri holds rainbow-clad baby Avi snugly on a gentle unicorn above a rainbow."
+      },
+      {
+        "text": "They sing to pink clouds. They sing to the moon, still peeking through the blue. “Drip, drop, little song. Rainbow Baby, sing along!”",
+        "alt": "Miri and baby Avi sing as their imaginary unicorn carries them among pink clouds and a pale daytime moon."
+      },
+      {
+        "text": "Next stop in their make-believe adventure: school! Ayla shakes a little bell. Asher taps a little drum. “Avi can be in our show!” says Miri.",
+        "alt": "At a pretend school music room, Avi rests in a supportive baby seat while Miri, Ayla, and Asher gather with a bell and drum."
+      },
+      {
+        "text": "They practice together. Ding goes Ayla. Boom goes Asher. La-la goes Miri. Avi listens. Then… “Ooo!” Everyone giggles. That is exactly the right note.",
+        "alt": "Miri sings, Ayla shakes a bell, and Asher taps a drum as rainbow-clad baby Avi joins their school-show practice."
+      },
+      {
+        "text": "The curtains open! Avi sits snug in his rainbow baby seat. Miri, Ayla, and Asher sing beside him. Mama and Abba wave from the audience.",
+        "alt": "Rainbow-clad infant Avi performs from a supportive baby seat beside Miri, Ayla, and Asher; Mama, Abba, and other adults watch from the audience."
+      },
+      {
+        "text": "“Ooo! Aaah!” sings Avi. Clap, clap, CLAP! Mama, Abba, Miri, Ayla, Asher—everybody cheers. “Hooray for Rainbow Baby!” Avi beams his biggest baby smile.",
+        "alt": "Miri, Ayla, Asher, Mama, Abba, and other adults clap and cheer for smiling Rainbow Baby Avi at the school show."
+      }
+    ]
   }
 ];

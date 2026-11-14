@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-14",
+  "book": "Rainbow Baby Sings!",
+  "browser": "Installed headless Google Chrome",
+  "layouts": 112,
+  "viewports": [
+    {
+      "width": 320,
+      "height": 568
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 844,
+      "height": 390
+    },
+    {
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "width": 834,
+      "height": 1194
+    },
+    {
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "width": 1194,
+      "height": 834
+    },
+    {
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "checks": [
+    "Four-cover shelf remains within viewport at eight phone/tablet/desktop sizes",
+    "New book front cover, twelve numbered story pages and back cover at all eight sizes",
+    "All images decode; text, printed numbers, ending controls fit; thirteen navigation positions",
+    "Favorites persistence, independent resume, rapid arrows, final cheer on page 12, ending, replay, C and page 12 shortcuts",
+    "36-page parent review and new book navigation; all twelve published texts match numbered editorial plan",
+    "Thirteen distinct final illustrations; private family original remains outside public tree"
+  ],
+  "issues": [],
+  "errors": [],
+  "missing": [],
+  "limitations": [
+    "Physical iPad/Safari not tested."
+  ]
+}

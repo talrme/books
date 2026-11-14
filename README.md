@@ -1,6 +1,6 @@
 # Miri’s books — Paper Parade
 
-A small family bookshelf with three illustrated books for reading together around age four. Paper Parade is the selected design, with uneven colorful borders, dimensional book bindings, and a compact header.
+A small family bookshelf with four illustrated books for reading together around age four. Paper Parade is the selected design, with uneven colorful borders, dimensional book bindings, and a compact header.
 
 **Website:** https://talrme.github.io/books/
 
@@ -14,7 +14,7 @@ Books finish on a dimensional back cover with a large “The End,” a small reu
 
 Favorites and reading progress are saved in this browser. Tapping a cover starts at the cover; an unfinished book also has a separate “Continue at page…” link. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.
 
-The 27 individual illustrations use the parent-supplied family reference, including Miri’s light braids and her missing two upper front teeth. The raw family photo is not committed or published. Images are screen-oriented 1254-pixel square illustrations, optimized to WebP.
+The 40 individual illustrations use the parent-supplied family reference, including Miri’s light braids and her missing two upper front teeth. The raw family photo is not committed or published. Images are screen-oriented 1254-pixel square illustrations, optimized to WebP.
 
 ## Run or publish
 
@@ -30,14 +30,16 @@ Visit http://localhost:8080. There are no packages, build steps, accounts, exter
 
 Open this project and say “I want a new book.” Follow the [five questions and editing workflow](docs/BOOK_CREATION.md): numbered storyboard, text/pacing edits, visual direction, illustrations, reading preview, revisions, and publication. Start at any stage for an existing book.
 
-Current plans: [Swimming](docs/books/swim/PLAN.md), [Avi](docs/books/avi/PLAN.md), and [Blue bike adventure](docs/books/adventure/PLAN.md). New books use the [book-plan template](docs/templates/BOOK_PLAN.md).
+The private family appearance reference is kept outside this public repository at `~/Documents/Codex/family-references/miri-avi-family.png`; its adjacent README identifies everyone and records current appearance notes. Future illustration work should use it. The original photo is excluded from site assets and download archives.
+
+Current plans: [Swimming](docs/books/swim/PLAN.md), [Avi](docs/books/avi/PLAN.md), and [Blue bike adventure](docs/books/adventure/PLAN.md), and [Rainbow Baby Sings!](docs/books/rainbow-song/PLAN.md). New books use the [book-plan template](docs/templates/BOOK_PLAN.md).
 
 Examples: “Give the Spaceship two pages,” “Move the dance party to page 5,” or “Keep page 4’s words, but change the illustration.” Suggestions alone do not change the public book.
 
 - `shared/books.js`: story words, image descriptions, editorial descriptions, creation dates, and book colors.
 - `shared/library.js`: bookshelf, reader, favorites, progress, side taps, swipes, and half-page turns.
 - `shared/library.css`: Paper Parade shelf and responsive reader.
-- `shared/assets/`: one cover and eight illustrations per book.
+- `shared/assets/`: one cover plus eight or twelve story illustrations per book.
 - `docs/STORY_GUIDE.md`: family and illustration notes.
 - `docs/DESIGN_GUIDE.md`: reader behavior and verification requirements.
 - `docs/art-prompts-family.json`: exact built-in image generation prompts for the current art.

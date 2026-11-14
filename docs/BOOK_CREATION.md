@@ -47,7 +47,7 @@ Keep a short revision log in the plan: what changed, which scenes were affected,
 
 ## 4. Establish the visual direction
 
-Read `STORY_GUIDE.md` for character details, family facts, and tone. Define recurring clothing, palette, framing, and style. Use the supplied family photo as a private visual reference when available. Keep the raw photo out of the public repository and published assets. If the reference is unavailable in a later chat, use the written character notes; request the photo again only when an image task needs it.
+Read `STORY_GUIDE.md` for character details, family facts, and tone. Define recurring clothing, palette, framing, and style. Use the durable private family photo at `~/Documents/Codex/family-references/miri-avi-family.png` as the appearance reference; its adjacent README identifies everyone and records updated features. Keep the raw photo out of the public repository and published assets. If the reference is unavailable in a later chat, use the written character notes; request the photo again only when an image task needs it.
 
 For a new or uncertain style, start with a representative illustration or cover and show it alongside its proposed text. When a previous instruction already authorizes full illustration generation, proceed without introducing a new approval step. Use the established visual direction as the reference for the remaining pages.
 
