@@ -202,5 +202,84 @@ window.BOOKS = [
         "alt": "Miri, Ayla, Asher, Mama, Abba, and other adults clap and cheer for smiling Rainbow Baby Avi at the school show."
       }
     ]
+  },
+  {
+    "id": "six-sleeps",
+    "title": "Six Sleeps Until Cousin Hugs",
+    "short": "Six sleeps. So many dreams. One great big cousin hug.",
+    "category": "A Thanksgiving cousin adventure",
+    "color": "#eee5f7",
+    "ink": "#4e3769",
+    "accent": "#d1a145",
+    "style": "Dreamy watercolor",
+    "motion": "flip",
+    "description": "Miri counts six sleeps until Levi, Matan, Aunt Taylor and Uncle Lior arrive from Minnesota. Her bedtime dreams hold ferry rides, cousin adventures and a Thanksgiving feast.",
+    "created": "2026-11-15",
+    "pages": [
+      {
+        "text": "“Abba! Levi and Matan are coming in SIX sleeps!” Miri wriggled under her blanket. “A whole Thanksgiving week with my cousins!” Abba smiled. “First, let’s do this sleep.”",
+        "alt": "Miri counts six sleeps with Abba beside her bed, beneath a lavender blanket in warm bedside light."
+      },
+      {
+        "text": "Miri closed her eyes. Her room grew quiet. But inside her dreams… her cousins were already here! “Come on, Levi! Come on, Matan!” she called. “I have so much to show you!”",
+        "alt": "Sleeping Miri dreams of greeting Levi, Matan and Ayla on golden cloud paths while Mama holds rainbow-swaddled baby Avi."
+      },
+      {
+        "text": "First came gymnastics. Tuck, roll, tumble! Miri did a somersault. Matan rolled beside her. Levi made a very wobbly shape. Ayla giggled, and Rainbow Baby Avi kicked his happy feet.",
+        "alt": "Miri and Matan tumble on padded gymnastics mats, Levi balances playfully, and Ayla laughs while Mama holds Avi nearby."
+      },
+      {
+        "text": "Then they sailed on the ferry to San Francisco. Whoosh went the wind! Splash went the waves! “Look!” shouted Miri. “The city is getting bigger!” Her cousins leaned close to see.",
+        "alt": "Miri, Levi, Matan and Ayla look toward San Francisco from a ferry railing with Abba and Mama carrying baby Avi."
+      },
+      {
+        "text": "At Adventure Playground, Miri had important work to do. Tap, tap, tap! With Abba helping, she hammered a nail into wood. Levi and Matan were builders, too. “Our cousin construction crew!” said Miri.",
+        "alt": "Abba helps Miri hammer a nail into a board at Berkeley’s wooden Adventure Playground while her cousins build and the family watches."
+      },
+      {
+        "text": "Then came the paint. Blue here. Yellow there. Ayla painted a rainbow, and Miri added a tiny crown. Soon their corner of the playground looked as cheerful as Rainbow Baby!",
+        "alt": "Miri paints a crown beside Ayla’s rainbow while Levi and Matan paint the playground and Mama carries rainbow-swaddled Avi."
+      },
+      {
+        "text": "Matan climbed up to the zip line. “Wheeeee!” Miri was still too little for that ride. Today, she was the cheering crew. “Go, Matan, go!” she called, louder than anyone.",
+        "alt": "Matan sits on the zip-line seat while Miri, Levi and Ayla cheer beside Abba, with Mama and Avi safely to the side."
+      },
+      {
+        "text": "Next, their dream became a castle. Queen Miri and King Avi welcomed their cousins. “Levi! Matan! Ayla!” called the queen. “You are just in time for the royal giggling!”",
+        "alt": "The supplied royal portrait of Queen Miri and baby King Avi appears in a golden castle frame, surrounded by Levi, Matan and Ayla in paper crowns."
+      },
+      {
+        "text": "At Dan and Ellen’s house, Thanksgiving dinner stretched all the way down the table. Turkey! Potatoes! So many voices! Miri squeezed in beside her cousins. There was room for everyone.",
+        "alt": "A large Thanksgiving gathering fills Dan and Ellen’s candlelit table with turkey, shared dishes, laughing cousins and family, including Mama holding Avi."
+      },
+      {
+        "text": "“What are you thankful for?” someone asked. “My cousins!” said Miri. “And pie. And that poop and pee stay in the bathroom!” Levi snorted. Matan giggled. Even the grown-ups laughed.",
+        "alt": "Miri, Levi, Matan and Ayla laugh together at Thanksgiving dinner while the grown-ups smile and Mama holds baby Avi."
+      },
+      {
+        "text": "In the redwoods, the trees reached up, up, UP. Miri tipped her head back. “Do you think they can touch the clouds?” she asked. Her cousins looked up with her. Everything felt wonderfully tall.",
+        "alt": "Miri, Levi, Matan and Ayla gaze up at giant sunlit redwoods with Abba and Mama carrying infant Avi."
+      },
+      {
+        "text": "Then Miri pedaled her blue bike around town. Levi rode along. Matan rode along. Ayla joined the parade. “Follow me!” called Miri. There were so many places to show them.",
+        "alt": "Helmeted Miri leads a bicycle parade on her blue bike with Levi, Matan and Ayla while Abba walks nearby and Mama pushes Avi’s stroller."
+      },
+      {
+        "text": "Morning sunshine peeked into Miri’s room. She ran to Mama, Abba, and Avi. “FIVE sleeps!” she announced. “And I already dreamed up our adventures!” Avi waved one tiny hand.",
+        "alt": "Miri greets Mama, Abba and rainbow-swaddled Avi in a sunlit bedroom, excited that only five sleeps remain."
+      },
+      {
+        "text": "Every night, Miri tucked another dream under her pillow. Four sleeps. Three sleeps. Two sleeps. ONE sleep! “Almost here,” she whispered. Even waiting felt like a little adventure.",
+        "alt": "Four flowing bedtime vignettes show Miri counting down the nights, snuggling her bunny and receiving a goodnight kiss from Abba."
+      },
+      {
+        "text": "At last, an airplane carried Levi, Matan, Aunt Taylor, and Uncle Lior from Minnesota to California. “We’re coming, Miri!” Down below, Miri was getting her biggest hugs ready.",
+        "alt": "An airplane cabin cutaway shows Lior, Taylor, Levi and Matan traveling toward California, above a separate vignette of Miri waiting with her family."
+      },
+      {
+        "text": "And then… there they were! “LEVI! MATAN!” Miri rushed into a great big cousin hug. Mama, Abba, Avi, Aunt Taylor, and Uncle Lior gathered close. No more sleeps to count. Let the adventures begin!",
+        "alt": "Miri embraces Levi and Matan at airport arrivals with Ayla alongside them, while Taylor, Lior, Abba and Mama holding Avi smile behind them."
+      }
+    ]
   }
 ].reverse().sort((a,b)=>(b.created||'').localeCompare(a.created||''));

@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-15",
+  "book": "six-sleeps",
+  "layouts": 288,
+  "checks": [
+    "Fifth book is newest by default and precedes retained custom arrangement; appears in both shelf views; all 16 approved texts preserved exactly",
+    "288 cover/story/back layouts across eight sizes, normal and fullscreen: all words/images/numbers fit, title and end actions fit, Share stays separate; F/B links and creation note correct",
+    "New book shares its exact front-cover link; interruptible portrait full-leaf turns count rapid arrows; reduced motion stays instant",
+    "Story-review page includes all 16 matching words and pictures"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Phone/iPad dimensions emulated in Chrome; physical Safari/iPad not tested."
+  ]
+}

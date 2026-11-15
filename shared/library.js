@@ -4,7 +4,7 @@
  const concept = {name:'Miri’s books',layout:'parade',reader:'paper',font:'round',color:'#f8ead2',ink:'#282751',accent:'#ce4055'};
  const assetRoot = 'shared/assets/';
  const imageUrl = (b,n=0) => `${assetRoot}${b.id}-${n}.webp?v=family2`;
- const frame = b => ({swim:'#97bedc',avi:'#e99eab',adventure:'#e7c658','rainbow-song':'#b8a0cf'}[b.id] || '#97bedc');
+ const frame = b => ({swim:'#97bedc',avi:'#e99eab',adventure:'#e7c658','rainbow-song':'#b8a0cf','six-sleeps':'#bca5d5'}[b.id] || '#97bedc');
  const vars = b => `--book-bg:${b.color};--book-ink:${b.ink};--frame:${frame(b)}`;
  const $ = s => document.querySelector(s);
  const icon = (name) => {

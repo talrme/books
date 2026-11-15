@@ -1,6 +1,6 @@
 # Miri’s books — Paper Parade
 
-A small family bookshelf with four illustrated books for reading together around age four. Paper Parade is the selected design, with uneven colorful borders, dimensional book bindings, and a compact header.
+A small family bookshelf with five illustrated books for reading together around age four. Paper Parade is the selected design, with uneven colorful borders, dimensional book bindings, and a compact header.
 
 **Website:** https://talrme.github.io/books/
 
@@ -20,7 +20,7 @@ Books finish on a dimensional back cover with a large “The End,” a small reu
 
 Reading progress is saved in this browser. Tapping a cover always starts at the cover. State does not sync between devices. Blocked storage does not prevent reading. Reduced-motion settings make turns instant.
 
-The 40 individual illustrations use the parent-supplied family reference, including Miri’s light braids and her missing two upper front teeth. The raw family photo is not committed or published. Images are screen-oriented 1254-pixel square illustrations, optimized to WebP.
+The 57 individual illustrations use the parent-supplied family reference, including Miri’s light braids and her missing two upper front teeth. The raw family photo is not committed or published. Images are screen-oriented 1254-pixel square illustrations, optimized to WebP.
 
 ## Run or publish
 
@@ -66,3 +66,5 @@ Book view is saved in `miri-books-shelf-v1` as `view: "covers" | "list"`, defaul
 Use the subtle Share button to share the bookshelf, or the exact book currently open. On phones it sits at the bottom after the books, or in the reader footer; on desktop it stays in the bottom right. Book links start on the front cover. The panel offers Copy link and the device’s Share option where supported; sharing is hidden in fullscreen. Its connected-dots icon follows the existing Workout site.
 
 Settings offers illustrated, directly tappable cards for book view, book order, and page turns, with selected choices shown in soft purple. There are no dropdown pickers; changes save immediately in this browser.
+
+Newest book: [Six Sleeps Until Cousin Hugs](https://talrme.github.io/books/#book=six-sleeps), sixteen story pages of dreamy watercolor for Thanksgiving cousin adventures. Its approved words, scene IDs and revision record are in [the book plan](docs/books/six-sleeps/PLAN.md).
