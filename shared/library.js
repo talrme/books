@@ -43,7 +43,8 @@
  const phoneShareLayout=matchMedia('(max-width:600px), (max-width:950px) and (max-height:500px) and (pointer:coarse)');
  function updateSharePlacement() {
    const dock=$('.share-dock');
-   const host=phoneShareLayout.matches?$(active?'.reader-footer':'.shelf-footer'):$('#app');
+   const inline=phoneShareLayout.matches||active&&$('#reader').classList.contains('navigation-hidden');
+   const host=inline?$(active?'.reader-footer':'.shelf-footer'):$('#app');
    if(dock.parentElement!==host)host.append(dock);
  }
  phoneShareLayout.addEventListener('change',updateSharePlacement);
@@ -129,8 +130,16 @@
  document.addEventListener('fullscreenchange',updateFullscreen);
  document.addEventListener('webkitfullscreenchange',updateFullscreen);
 
- const shelfOrder=window.createShelfOrder({books,onChange:()=>{stopAnimation();renderShelf();},announce:message=>$('#status').textContent=message});
- updateFullscreen();
+ const autoHideNavigation=matchMedia('(max-width:1100px), (any-pointer:coarse)');
+ function applyReaderPreferences(){
+   const setting=shelfOrder.preferences().navigation;
+   reader.classList.toggle('navigation-hidden',setting==='hide'||setting==='auto'&&autoHideNavigation.matches);
+   reader.classList.toggle('navigation-shown',setting==='show');
+   updateSharePlacement();
+ }
+ autoHideNavigation.addEventListener('change',()=>{stopAnimation();applyReaderPreferences();});
+ const shelfOrder=window.createShelfOrder({books,onChange:()=>{stopAnimation();applyReaderPreferences();renderShelf();},announce:message=>$('#status').textContent=message});
+ applyReaderPreferences();updateFullscreen();
  function renderShelf() {
    shelfOrder.cancelDrag();
    const list = shelfOrder.orderedBooks();
@@ -179,6 +188,7 @@
    $('.page-next').setAttribute('aria-label',coverPage?'Turn the cover':pageIndex===b.pages.length-1?'Turn to back cover':'Next page');
    $('.page-counter').textContent=coverPage?'Cover':back?'Back cover':`${pageIndex+1} / ${b.pages.length}`;
    $('.page-dots').innerHTML=`<button data-page="-1" class="${coverPage?'current':''}" aria-label="Go to front cover" title="Front cover" ${coverPage?'aria-current="page"':''}>F</button>`+b.pages.map((_,i)=>`<button data-page="${i}" class="${i===pageIndex?'current':''}" aria-label="Go to page ${i+1}" ${i===pageIndex?'aria-current="page"':''}>${i+1}</button>`).join('')+`<button data-page="${b.pages.length}" class="${back?'current':''}" aria-label="Go to back cover" title="Back cover" ${back?'aria-current="page"':''}>B</button>`;
+   if(reader.classList.contains('navigation-hidden'))$('#status').textContent=b.title+', '+$('.page-counter').textContent;
    if(pageIndex>=0){progress[b.id]=pageIndex;persist();}
  }
  function stopAnimation() {

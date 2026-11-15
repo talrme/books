@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-15",
+  "layouts": 3120,
+  "checks": [
+    "3120 story layouts: five books, ten device sizes/types, Auto/Show/Hide, normal/fullscreen; printed numbers and text fit; bottom controls follow the setting",
+    "Preference persists across reload, reset returns to Auto, and touch/keyboard page turns and sharing work while navigation is hidden",
+    "Older preferences get Auto while retaining custom shelf order, view and motion; desktop default still shows navigation"
+  ],
+  "issues": [],
+  "errors": [],
+  "limitations": [
+    "Native iPad Safari fullscreen X cannot be rendered in headless Chrome; verified the reserved 84px touch-device space. Physical iPad follow-up remains."
+  ]
+}

@@ -68,3 +68,5 @@ Use the subtle Share button to share the bookshelf, or the exact book currently 
 Settings offers illustrated, directly tappable cards for book view, book order, and page turns, with selected choices shown in soft purple. There are no dropdown pickers; changes save immediately in this browser.
 
 Newest book: [Six Sleeps Until Cousin Hugs](https://talrme.github.io/books/#book=six-sleeps), sixteen story pages of dreamy watercolor for Thanksgiving cousin adventures. Its approved words, scene IDs and revision record are in [the book plan](docs/books/six-sleeps/PLAN.md).
+
+Bottom arrows, page links and the counter default to hidden on phones/iPads and smaller windows, leaving the printed numbers on each page. **Settings → Bottom navigation → Auto / Show / Hide** controls this per browser. Auto shows the controls on larger desktop screens. Taps, swipes and keyboard arrows still turn pages in every mode. Touch fullscreen shifts Bookshelf to the right to leave room for the browser’s native close control.

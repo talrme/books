@@ -223,3 +223,26 @@ html:not(.site-fullscreen) .reader-controls{padding-right:90px}
 .shelf-settings .reset-shelf-order,.shelf-settings .reset-reading-settings{flex-shrink:0;min-height:44px;margin:0;padding:8px 3px;border:0;background:none;font-size:10px;color:#70617f;text-decoration:underline;text-underline-offset:3px}
 .shelf-settings .settings-local{margin:14px 0 0;padding:12px 0 0;border-color:#28275112;text-align:center;font-size:10px;color:#8a8092}
 @media(max-width:360px){.shelf-settings{padding-left:16px;padding-right:16px}.choice-body{padding:10px 9px;gap:7px;font-size:11px}}
+
+/* Bottom navigation follows the saved preference; printed numbers stay on the page. */
+.reader.navigation-hidden .reader-controls{display:none}
+.reader.navigation-hidden .reader-footer{display:flex;justify-content:flex-end;min-height:0;padding:0 16px max(6px,env(safe-area-inset-bottom))}
+.reader.navigation-hidden .share-dock{position:static;z-index:auto;margin-left:auto}
+.reader.navigation-hidden.is-fullscreen .reader-footer{display:none}
+.reader.navigation-shown .page-dots{display:flex}
+.navigation-choices .choice-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.navigation-choices .choice-body{position:relative;flex-direction:column;justify-content:center;min-height:68px;gap:6px;padding:10px 6px}
+.navigation-choices .choice-check{position:absolute;top:7px;right:7px}
+.shelf-settings .navigation-help{margin:10px 0 20px;line-height:1.55}
+@media(max-width:760px), (max-height:620px) and (orientation:landscape){
+ .reader.navigation-shown .reading-position{flex-direction:column;flex:1;gap:1px}
+ .reader.navigation-shown .page-dots{max-width:calc(100vw - 200px);width:100%}
+}
+/* Leave the native iPad/iPhone fullscreen close control its own top-left space. */
+@media(any-pointer:coarse){
+ .reader.is-fullscreen .reader-header{padding-left:max(84px,calc(env(safe-area-inset-left) + 64px))}
+ .reader.is-fullscreen .reader-title{display:none}
+}
+@media(min-width:600px) and (any-pointer:coarse){
+ .site-fullscreen .site-header{padding-left:64px}
+}
