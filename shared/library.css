@@ -246,3 +246,11 @@ html:not(.site-fullscreen) .reader-controls{padding-right:90px}
 @media(min-width:600px) and (any-pointer:coarse){
  .site-fullscreen .site-header{padding-left:64px}
 }
+
+/* Portrait phone covers keep the whole illustration below a separate title. */
+@media(max-width:600px) and (orientation:portrait){
+ .reader-cover:not(.back-cover){display:flex;flex-direction:column;height:auto;max-height:100%}
+ .reader-cover:not(.back-cover)>img{position:static;order:1;width:100%;height:auto;min-height:0;flex:1 1 auto;object-fit:contain}
+ .reader-cover:not(.back-cover) .cover-label{position:relative;flex:0 0 auto;min-height:0;padding:16px 18px 18px 28px;background:var(--book-bg)}
+ .reader-cover:not(.back-cover) .cover-label strong{font-size:28px}
+}

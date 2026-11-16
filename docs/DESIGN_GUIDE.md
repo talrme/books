@@ -10,6 +10,8 @@ Use nearly the entire browser viewport. Portrait stacks a single illustration ab
 
 A book opens to a large front cover, with no additional “Open the book” button. A cover click always opens the cover. There are no resume links or drag icons. Advance from the cover using the right side, arrow, keyboard, or swipe.
 
+For portrait phones up to 600px, keep the front cover content-sized (`height:auto`, bounded by the available stage height). Stack a non-overlaid title above the complete cover illustration with `object-fit:contain`; do not stretch the book vertically or crop the square art to fill a tall rectangle. The picture may shrink on short screens, including with navigation shown, but must remain fully visible. Preserve existing back-cover, story-page and wider-device layouts.
+
 The final screen is a dimensional back cover with the same uneven border, embossed hinge, and page-edge shadows as the front cover. Show a large “The End,” a small reused cover illustration, and two actions with playful illustrated icons: Read Again and Bookshelf. Add a tiny “Created Month Year” note beneath the image. No blurb or recommendations.
 
 Show a printed page number on every story page and a current-page counter. Cover/back cover have labels rather than story numbers. Place F before page 1 and B after the final page, linking to the front and back covers, with meaningful accessible labels and current-page states. Bottom navigation defaults to hidden on phones/tablets; Settings can show or hide it. When shown, arrow buttons remain at least 44 pixels. Cover previous and back-cover next are disabled.
@@ -33,6 +35,8 @@ Check 320×568, 390×844, 844×390, 768×1024, 834×1194, 1024×768, 1194×834, 
 Verify reload, cover opening, orientation changes, side taps, touch swipe without double turns, keyboard arrows, direct page navigation, replay, return to shelf, cover navigation, and browser back. Check normal and reduced motion, including rapid keyboard presses and taps and closing mid-animation. Confirm all story words match their editorial plans.
 
 Headless Chrome with touch emulation provides automated coverage. A physical iPad/Safari check remains a device-specific follow-up. Publish only after relevant checks pass and verify the live root and books before reporting deployment.
+
+`node tests/portrait-fit.cjs` (Playwright and Chrome required) checks all five books at eleven phone/tablet/desktop sizes, Auto/Show/Hide navigation and normal/fullscreen. It verifies separate uncropped portrait-cover images, all story-page fitting, printed-number clearance, replay and return to shelf. Set `BOOKS_TEST_URL` to repeat against a deployment; default uses an isolated ephemeral local server. Optional `CHROME_PATH` selects another Chrome executable. Phone screenshots go to `/private/tmp`.
 
 ## Site-wide fullscreen
 
