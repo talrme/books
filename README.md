@@ -71,6 +71,8 @@ Settings offers illustrated, directly tappable cards for book view, book order, 
 
 Newest book: [Six Sleeps Until Cousin Hugs](https://talrme.github.io/books/#book=six-sleeps), sixteen story pages of dreamy watercolor for Thanksgiving cousin adventures. Its approved words, scene IDs and revision record are in [the book plan](docs/books/six-sleeps/PLAN.md).
 
-Bottom arrows, page links and the counter default to hidden on phones/iPads and smaller windows, leaving the printed numbers on each page. **Settings → Bottom navigation → Auto / Show / Hide** controls this per browser. Auto shows the controls on larger desktop screens. Taps, swipes and keyboard arrows still turn pages in every mode. Touch fullscreen shifts Bookshelf to the right to leave room for the browser’s native close control.
+Bottom arrows, page links and the counter default to hidden on phones/iPads and smaller windows, leaving the printed numbers on each page. **Settings → Bottom navigation → Auto / Show / Hide** controls this per browser. Auto shows the controls on larger desktop screens. Taps, swipes and keyboard arrows still turn pages in every mode. Tablet fullscreen reserves space for the browser's native close control; phones keep Bookshelf at the left. Landscape phone fullscreen endings use one centered stack: The End, illustration, and Read Again / Bookshelf.
+
+Run `node tests/landscape-ending.cjs` with Playwright and Chrome installed to check all five book endings, fullscreen/normal layouts, phone/tablet sizes, navigation settings, replay and return to the shelf. Set `BOOKS_TEST_URL` to test a deployment instead of the built-in local server.
 
 PNG icons are rendered from one complete `book-stack.svg` at the target size, with an opaque cream background. Current home-screen and directory references use fresh v2 filenames to avoid cached malformed icons; the original PNG filenames also contain corrected copies.

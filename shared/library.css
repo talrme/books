@@ -238,12 +238,12 @@ html:not(.site-fullscreen) .reader-controls{padding-right:90px}
  .reader.navigation-shown .reading-position{flex-direction:column;flex:1;gap:1px}
  .reader.navigation-shown .page-dots{max-width:calc(100vw - 200px);width:100%}
 }
-/* Leave the native iPad/iPhone fullscreen close control its own top-left space. */
-@media(any-pointer:coarse){
+/* Reserve native fullscreen close space on tablets, not on phones. */
+@media(min-width:601px) and (min-height:501px) and (any-pointer:coarse){
  .reader.is-fullscreen .reader-header{padding-left:max(84px,calc(env(safe-area-inset-left) + 64px))}
- .reader.is-fullscreen .reader-title{display:none}
 }
-@media(min-width:600px) and (any-pointer:coarse){
+@media(any-pointer:coarse){.reader.is-fullscreen .reader-title{display:none}}
+@media(min-width:601px) and (min-height:501px) and (any-pointer:coarse){
  .site-fullscreen .site-header{padding-left:64px}
 }
 
@@ -253,4 +253,17 @@ html:not(.site-fullscreen) .reader-controls{padding-right:90px}
  .reader-cover:not(.back-cover)>img{position:static;order:1;width:100%;height:auto;min-height:0;flex:1 1 auto;object-fit:contain}
  .reader-cover:not(.back-cover) .cover-label{position:relative;flex:0 0 auto;min-height:0;padding:16px 18px 18px 28px;background:var(--book-bg)}
  .reader-cover:not(.back-cover) .cover-label strong{font-size:28px}
+}
+
+/* A single compact back cover in phone fullscreen, not a two-column spread. */
+@media(max-height:500px) and (orientation:landscape){
+ .reader.is-fullscreen .back-cover.reader-cover{width:min(360px,100%);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;justify-items:center;gap:6px;padding:8px 16px;border-width:8px}
+ .reader.is-fullscreen .back-cover .end-title{font-size:28px;align-self:center;grid-column:auto;grid-row:auto;letter-spacing:0}
+ .reader.is-fullscreen .back-cover .end-illustration{display:grid;grid-template-rows:minmax(0,1fr) auto;justify-items:center;align-items:center;grid-column:auto;grid-row:auto;width:100%;max-width:100%;height:100%;gap:4px}
+ .reader.is-fullscreen .back-cover .end-picture{grid-column:auto;grid-row:auto;width:auto;height:100%;max-height:110px;max-width:110px;border-width:4px}
+ .reader.is-fullscreen .back-cover .creation-note{font-size:9px}
+ .reader.is-fullscreen .back-cover .back-actions{align-self:center;gap:14px;padding:0;max-width:260px}
+ .reader.is-fullscreen .back-cover .end-action{flex:1;flex-direction:row;min-height:44px;gap:8px;padding:5px 0;font-size:11px}
+ .reader.is-fullscreen .back-cover .action-picture{width:28px;height:28px;border-radius:6px;box-shadow:1px 2px 0 var(--book-ink)}
+ .reader.is-fullscreen .back-cover .action-picture svg{width:19px;height:19px}
 }
