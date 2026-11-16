@@ -69,7 +69,7 @@ Use the subtle Share button to share the bookshelf, or the exact book currently 
 
 Settings offers illustrated, directly tappable cards for book view, book order, and page turns, with selected choices shown in soft purple. There are no dropdown pickers; changes save immediately in this browser.
 
-Newest book: [Six Sleeps Until Cousin Hugs](https://talrme.github.io/books/#book=six-sleeps), sixteen story pages of dreamy watercolor for Thanksgiving cousin adventures. Its approved words, scene IDs and revision record are in [the book plan](docs/books/six-sleeps/PLAN.md).
+Newest book: [Six Sleeps Until Cousin Hugs](https://talrme.github.io/books/#book=six-sleeps), sixteen story pages of dreamy watercolor for Thanksgiving cousin adventures. Its approved words, scene IDs and revision record are in [the book plan](docs/books/six-sleeps/PLAN.md). Revision 3 puts Avi in Abba's arms on pages 4, 7 and 13, has Mama holding Miri at the zip line, and explicitly shows Miri waking from the dream on page 13. Per-book image versions refresh revised illustrations in both the reader and story review without invalidating other books' images.
 
 Bottom arrows, page links and the counter default to hidden on phones/iPads and smaller windows, leaving the printed numbers on each page. **Settings → Bottom navigation → Auto / Show / Hide** controls this per browser. Auto shows the controls on larger desktop screens. Taps, swipes and keyboard arrows still turn pages in every mode. Tablet fullscreen reserves space for the browser's native close control; phones keep Bookshelf at the left. Landscape phone fullscreen endings use one centered stack: The End, illustration, and Read Again / Bookshelf.
 

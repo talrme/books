@@ -205,6 +205,7 @@ window.BOOKS = [
   },
   {
     "id": "six-sleeps",
+    "imageVersion": "six-sleeps3",
     "title": "Six Sleeps Until Cousin Hugs",
     "short": "Six sleeps. So many dreams. One great big cousin hug.",
     "category": "A Thanksgiving cousin adventure",
@@ -230,7 +231,7 @@ window.BOOKS = [
       },
       {
         "text": "Then they sailed on the ferry to San Francisco. Whoosh went the wind! Splash went the waves! “Look!” shouted Miri. “The city is getting bigger!” Her cousins leaned close to see.",
-        "alt": "Miri, Levi, Matan and Ayla look toward San Francisco from a ferry railing with Abba and Mama carrying baby Avi."
+        "alt": "Miri, Levi, Matan and Ayla look toward San Francisco from a ferry railing while Abba cradles rainbow-swaddled baby Avi and Mama smiles beside them."
       },
       {
         "text": "At Adventure Playground, Miri had important work to do. Tap, tap, tap! With Abba helping, she hammered a nail into wood. Levi and Matan were builders, too. “Our cousin construction crew!” said Miri.",
@@ -242,7 +243,7 @@ window.BOOKS = [
       },
       {
         "text": "Matan climbed up to the zip line. “Wheeeee!” Miri was still too little for that ride. Today, she was the cheering crew. “Go, Matan, go!” she called, louder than anyone.",
-        "alt": "Matan sits on the zip-line seat while Miri, Levi and Ayla cheer beside Abba, with Mama and Avi safely to the side."
+        "alt": "Mama crouches beside Miri and holds her as she cheers with Levi and Ayla for Matan on the zip line; Abba stands safely behind them holding baby Avi in his rainbow blanket."
       },
       {
         "text": "Next, their dream became a castle. Queen Miri and King Avi welcomed their cousins. “Levi! Matan! Ayla!” called the queen. “You are just in time for the royal giggling!”",
@@ -265,8 +266,8 @@ window.BOOKS = [
         "alt": "Helmeted Miri leads a bicycle parade on her blue bike with Levi, Matan and Ayla while Abba walks nearby and Mama pushes Avi’s stroller."
       },
       {
-        "text": "Morning sunshine peeked into Miri’s room. She ran to Mama, Abba, and Avi. “FIVE sleeps!” she announced. “And I already dreamed up our adventures!” Avi waved one tiny hand.",
-        "alt": "Miri greets Mama, Abba and rainbow-swaddled Avi in a sunlit bedroom, excited that only five sleeps remain."
+        "text": "Miri woke up in the morning sunshine. The cousin adventures had all been a dream! She ran to Mama and Abba, who was holding Avi. “FIVE sleeps!” she announced. “I dreamed up our adventures!” Avi waved one tiny hand.",
+        "alt": "Wide-awake Miri in lavender pajamas greets Mama and Abba in the morning sunlight, her rumpled bed visible through the doorway; Abba cradles rainbow-swaddled Avi, who waves a tiny hand."
       },
       {
         "text": "Every night, Miri tucked another dream under her pillow. Four sleeps. Three sleeps. Two sleeps. ONE sleep! “Almost here,” she whispered. Even waiting felt like a little adventure.",

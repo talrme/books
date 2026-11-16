@@ -1,0 +1,31 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "date": "2026-11-15",
+  "book": "six-sleeps",
+  "revision": 3,
+  "referenceRoles": [
+    "Existing page illustration as edit target",
+    "Private family photo as appearance reference only; never publish"
+  ],
+  "edits": [
+    {
+      "sceneId": "six-sleeps-s04",
+      "page": 4,
+      "prompt": "Use case: precise-object-edit. Asset: page 4 of an existing children's picture book, Six Sleeps Until Cousin Hugs. Image 1 is the EDIT TARGET, the square watercolor ferry scene. Image 2 is PRIVATE APPEARANCE REFERENCE ONLY: left adult Abba (swept wavy brown hair, short beard), middle Miri (four-year-old blonde girl, two braids), right adult Mama (brown tied-back hair), infant Avi in carrier. Edit only the baby-holding arrangement in Image 1: transfer the tiny sleeping baby Avi in his existing rainbow blanket and blue cap from Mama to Abba. Abba must visibly and safely cradle Avi against his chest with supported head and body; his hands should support the infant instead of resting on a child's shoulder. Mama remains beside the family at the ferry rail smiling, with no baby or rainbow carrier on her. Preserve the four older children, their positions and outfits: tall Levi teal, younger Matan ochre, blonde Miri lavender stars with both upper front teeth missing, dark-ponytailed Ayla coral. Preserve the San Francisco skyline, bay, ferry railing, warm lantern, beautiful lilac/gold luminous watercolor/pencil texture, square composition, lighting and recognizable existing illustrated faces. Keep all seven family members exactly once. One baby only. No new people, no text, no lettering, no watermarks.",
+      "asset": "shared/assets/six-sleeps-4.webp"
+    },
+    {
+      "sceneId": "six-sleeps-s07",
+      "page": 7,
+      "prompt": "Use case: precise-object-edit. Asset: page 7 of existing children's picture book Six Sleeps Until Cousin Hugs. Image 1 is the EDIT TARGET, square dreamy watercolor zip-line illustration. Image 2 is PRIVATE APPEARANCE REFERENCE ONLY: left adult Abba swept wavy brown hair short beard, middle Miri four-year-old blonde girl two braids, right adult Mama brown tied-back hair, Avi tiny infant. Change only the two adults' positions and whom they hold. In the LOWER LEFT FOREGROUND, replace Abba with Mama crouched down close to Miri, lovingly holding Miri around her waist/shoulders while Miri cheers. Miri should remain the blonde girl with two braids, lavender golden-star shirt, blue leggings, pink shoes, and clear gap from BOTH UPPER FRONT TEETH missing. In the UPPER LEFT BACKGROUND where Mama previously stood, put Abba standing safely away from the zip-line path, cradling tiny sleeping infant Avi securely in the RAINBOW blanket and blue cap. Mama must not hold the infant. Abba must not also appear crouched in foreground. Preserve Matan in ochre riding the red seated zip line on the right (only one rider), taller Levi in teal cheering, dark-ponytailed Ayla in coral clapping, all surroundings, soft lilac dream clouds and sparkles, golden light, watercolor and pencil texture, existing illustrated face identities. Seven people total, exactly once each: Mama, Abba, Miri, Avi, Levi, Matan, Ayla. One baby. Square finished art with no text, no lettering, no watermark.",
+      "asset": "shared/assets/six-sleeps-7.webp"
+    },
+    {
+      "sceneId": "six-sleeps-s13",
+      "page": 13,
+      "prompt": "Use case: precise-object-edit. Asset: page 13 of existing children's picture book Six Sleeps Until Cousin Hugs. Image 1 is EDIT TARGET: the square watercolor family bedroom morning illustration. Image 2 is PRIVATE APPEARANCE REFERENCE ONLY: left adult Abba swept wavy brown hair short beard, middle Miri four-year-old blonde girl two braids, right adult Mama brown tied-back hair, infant Avi. Revise the picture so Abba, not Mama, is securely holding tiny infant Avi in the existing rainbow blanket and blue cap. Abba sits on the bed, cradling baby's head and body with both arms, Avi awake with a tiny waving hand. Mama sits next to them smiling toward Miri, empty-handed and reaching toward her. Make unmistakable that Miri has JUST WOKEN FROM HER DREAM and come to talk to her parents in a real morning: she is awake at the bedside in lavender star pajamas (matching soft lavender pajama bottoms, bare feet rather than daytime blue jeans and pink shoes), a little tousled blonde hair in two braids, bright open eyes, missing BOTH UPPER FRONT TEETH. Her own small recently-vacated bed with a rumpled blanket and pillow can be subtly visible through an open doorway at far left, secondary to the family. Keep a single continuous real bedroom scene, no inset/montage, no magical dream cloud, no floating sparkles, no fantasy scenery. Strong clear morning sunlight through the existing window, familiar quilt, plant and bookshelf. Keep existing recognizable expressive illustrated faces, luminous warm watercolor and delicate pencil on textured paper, square composition, emotional warmth, four people total exactly once. No cousins present, no extra baby, no text, lettering or watermark.",
+      "asset": "shared/assets/six-sleeps-13.webp"
+    }
+  ],
+  "output": "Three individually edited square images, optimized to 1254px WebP, quality 86. Original illustrations preserved in Git history."
+}

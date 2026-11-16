@@ -2,7 +2,7 @@
 
 - Book ID: six-sleeps
 - Stage: published
-- Current revision: 2 — November 15, 2026
+- Current revision: 3 — November 15, 2026
 - Audience and language: age four, English, read together
 - Story brief: Miri counts six sleeps until Levi, Matan, Aunt Taylor and Uncle Lior visit from Minnesota for Thanksgiving week. Bedtime dreams anticipate the adventures; real arrival closes the book.
 - Feeling and things to avoid: excited, loving, playful; gentle bathroom humor with no gross imagery. No implying the dream adventures already happened.
@@ -10,7 +10,7 @@
 - Motion: existing shared page turn, including portrait-phone full leaf; no new effects.
 - Proposed story-page count: 16, excluding covers.
 - Pacing recommendation: sixteen short pages give each activity room, separate the dream from the real countdown, and leave a full page for arrival hugs.
-- Publication scope: parent approved completing, illustrating and publishing the book on November 15, 2026, with later edits if needed. All 16 approved story texts remain unchanged.
+- Publication scope: parent approved completing, illustrating and publishing the book on November 15, 2026, with later edits if needed. Revision 3 changes page 13's words and illustrations on pages 4, 7 and 13; all other words and page order remain unchanged.
 - Reader: https://talrme.github.io/books/#book=six-sleeps
 - Numbered story review: https://talrme.github.io/books/stories.html#six-sleeps
 - Original approved draft: retained locally under outputs/thanksgiving-draft/.
@@ -56,7 +56,7 @@
 
 - Scene ID: six-sleeps-s04
 - Words: Then they sailed on the ferry to San Francisco. Whoosh went the wind! Splash went the waves! “Look!” shouted Miri. “The city is getting bigger!” Her cousins leaned close to see.
-- Illustration: Dream: ferry deck with railing; San Francisco skyline ahead. Miri, Levi, Matan and Ayla look across the bay, while Abba stands with them and Mama carries rainbow-clad Avi.
+- Illustration: Dream: ferry deck with railing; San Francisco skyline ahead. Miri, Levi, Matan and Ayla look across the bay. Abba safely cradles rainbow-swaddled Avi; Mama stands beside them without the baby.
 - Image status: ready
 - Current asset: shared/assets/six-sleeps-4.webp
 
@@ -80,7 +80,7 @@
 
 - Scene ID: six-sleeps-s07
 - Words: Matan climbed up to the zip line. “Wheeeee!” Miri was still too little for that ride. Today, she was the cheering crew. “Go, Matan, go!” she called, louder than anyone.
-- Illustration: Dream: Matan seated on the zip-line seat, one rider only. Miri cheers from safely outside its path with Levi and Ayla. Abba supervises; Mama holds Avi farther back. Miri does not ride.
+- Illustration: Dream: Matan seated on the zip-line seat, one rider only. Mama crouches beside Miri and holds her as she cheers with Levi and Ayla. Abba stands safely in the background holding infant Avi in his rainbow blanket. Miri does not ride.
 - Image status: ready
 - Current asset: shared/assets/six-sleeps-7.webp
 
@@ -127,8 +127,8 @@
 ### Page 13 — Five sleeps!
 
 - Scene ID: six-sleeps-s13
-- Words: Morning sunshine peeked into Miri’s room. She ran to Mama, Abba, and Avi. “FIVE sleeps!” she announced. “And I already dreamed up our adventures!” Avi waved one tiny hand.
-- Illustration: Real morning: dream edging disappears. Miri in pajamas greets Mama, Abba and rainbow-clad infant Avi. Visiting cousins are not present yet.
+- Words: Miri woke up in the morning sunshine. The cousin adventures had all been a dream! She ran to Mama and Abba, who was holding Avi. “FIVE sleeps!” she announced. “I dreamed up our adventures!” Avi waved one tiny hand.
+- Illustration: Real morning, not a dream: awake Miri wears matching lavender star pajamas and bare feet; her rumpled bed is visible through the doorway. Abba cradles rainbow-swaddled Avi on the parents' bed and Mama welcomes Miri beside him. Clear morning sunlight, no dream clouds or magical sparkles. Visiting cousins are not present yet.
 - Image status: ready
 - Current asset: shared/assets/six-sleeps-13.webp
 
@@ -174,11 +174,14 @@ Its older visitor guide specifies a seated zip-line ride for ages six and older:
 |---|---|---|---|---|
 | 1 | Initial text and illustration plan from parent's brief; confirmed Ayla and Lior | All | None generated; royal image already supplied | Local review |
 | 2 | Parent approved full generation/publication; dreamy watercolor using Spaceship palette; all words and page order preserved | All | 17 finished images, including cover; royal portrait incorporated on page 8 | Published |
+| 3 | Abba holds Avi on pages 4, 7 and 13; Mama holds Miri at zip line; explicitly wake Miri from her dream on page 13 | s04, s07, s13 | Three targeted edits using existing art and private family appearance reference; exact prompts in ART_PROMPTS_REVISION_3.json | Verified for publication |
 
 ## Page mapping after structural revisions
 
 Initial draft: scene s01 maps to page 1 through s16 to page 16. Keep these scene IDs stable when incorporating edits. Interpret page-number feedback against revision 1, then renumber once.
 
 ## Final check
+
+Revision 3: the three edited images were visually reviewed, including phone portrait and landscape reader screenshots. All other artwork and story words remain unchanged. `tests/six-sleeps-revision.cjs` passed 45 checks across phone/tablet/desktop, normal/fullscreen, image decoding/cache versions, waking text, fitting and story review. `tests/portrait-fit.cjs` passed 330 cover and 3,432 story checks across eleven viewports and all navigation settings. These are Chrome-emulated layouts, not physical Safari testing. The built-in image tool produced each edit separately; final optimized assets remain at the existing page paths, original art in Git history, exact prompts in ART_PROMPTS_REVISION_3.json. The optional `imageVersion` field versions this book's art in both reader and review without changing other books' image URLs.
 
 All 17 illustrations have been generated individually and visually reviewed. Current files are square optimized WebP assets; the back cover reuses the front cover. Exact prompts and reference roles are in ART_PROMPTS.json. Responsive and content checks passed: see VERIFICATION.json. The publication includes 288 checked reader layouts across phone, iPad and desktop sizes, both in and out of fullscreen; exact draft words, links, numbering, sharing, replay and reduced motion are verified. Live publication is verified after pushing this release.
